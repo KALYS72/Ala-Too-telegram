@@ -1,73 +1,495 @@
 {   
     "university":"ALATOO INTERNATIONAL UNIVERSITY - DEPARTMENT OF COMPUTER SCIENCE",
     "semester":"2023-2024 SPRING SEMESTER",
+    "schedule":"https://docs.google.com/spreadsheets/d/1jlJ6kG4FXChjH3a01dOmEX6BQ3i-QHeQzFgyjDup35o/edit#gid=1118793443",
+    "groups":["COMSEP-23","EEAIR-23","COMCEH-23","COMSE-23","COMFCI-23","IEMIT-23","COM-22a","COM-22b","COM-21a","COM-21b","COM-20"],
     "days":{
-        "monday":{
-            "COMSEP-23":[
-                {
-                    "lesson":"Programming Languages - 1",
-                    "time":"10:45-12:10",
-                    "teacher":"Mr. Dim Shayahmetov",
-                    "audience":"B213"
-                },
-                {
-                    "lesson":"LUNCH-TIME",
-                    "time":"12:15-12:55"
-                },
-                {
-                    "lesson":"Physical Education",
-                    "time":"21:00-23:00",
-                    "audience":"Gym",
-                    "teacher":"Mr. Zamir Chynybekov"
-                }
-            ]
-        },
-        "tuesday":{
-            "COMSEP-23":[
-                {
-                    "lesson":"ELECTIVES",
-                    "time":"08:30-23:00",
-                    "electives":["English / Mr. Murray / B205","French / Ms. Aida Iliyazova / B205","German Beginner / Ms. Dinara / B202","German Elemantary/ Ms. Aruuke - Ms. Erika / B203","Turkish / Ms. Aigul Beisheeva/ B204"]
-    
-                },
-                {
-                    "lesson":"Calculus - 11",
-                    "time":"10:45-12:10",
-                    "audience":"B204",
-                    "teacher":"Mr. Hussien Chebsi"
-                },
-                {
-                    "lesson":"Discrete Mathematics1",
-                    "time":"12:15-13:40",
-                    "audience":"B205",
-                    "teacher":"Ms. Dr. Remudin Mekuria"
-                },
-                {
-                    "lesson":"LUNCH-TIME",
-                    "time":"13:45-14:25"
-                }
-                	
-            ]   	
-                    
-                    
-                    
-                    
-                    
-        },
-        "wednesday":{
-
-        },
-        "thursday":{
-
-        },
-        "friday":{
-
-        },
-        "saturday":[
-
+      "monday":{
+        "COMSEP-23":[
+          {
+            "lesson":"Programming Languages - 1",
+            "time":"10:45-12:10",
+            "teacher":"Mr. Dim Shayahmetov",
+            "audience":"B213"
+          },
+          {
+            "lesson":"LUNCH-TIME",
+            "time":"12:15-12:55"
+          },
+          {
+            "lesson":"Physical Education",
+            "time":"13:00-14:25",
+            "audience":"Gym",
+            "teacher":"Mr. Zamir Chynybekov"
+          },
+          {
+            "lesson":"ELECTIVES",
+            "time":"14:30-16:40",
+            "electives":["Philosophy / Edilova M / Unknown","Pedagogy (ONLY YEAR 2) / Aikokul Mamaeva / Unknown"]
+          }
+        ],
+        "EEAIR-23": [
+          {
+            "lesson": "Calculus - ll",
+            "time": "09:15-12:10",
+            "teacher": "Mr. Esen Rakhmanov",
+            "audience": "B205"
+          },
+          {
+            "lesson":"LUNCH-TIME",
+            "time":"12:15-12:55"
+          },
+          {
+            "lesson":"Physical Education",
+            "time":"13:00-14:25",
+            "audience":"Gym",
+            "teacher":"Mr. Zamir Chynybekov"
+          },
+          {
+            "lesson":"ELECTIVES",
+            "time":"14:30-16:40",
+            "electives":["Philosophy / Edilova M / Unknown","Pedagogy (ONLY YEAR 2) / Aikokul Mamaeva / Unknown"]
+          }
+        ],
+        "COMSE-23": [
+          {
+            "lesson":"LUNCH-TIME",
+            "time":"12:15-12:55"
+          },
+          {
+            "lesson": "Discrete Mathematics",
+            "time": "13:00-14:25",
+            "teacher": "Ms. Dr. Remudin Mekuria",
+            "audience": "B203"
+          },
+          {
+            "lesson":"ELECTIVES",
+            "time":"14:30-16:40",
+            "electives":["Philosophy / Edilova M / Unknown","Pedagogy (ONLY YEAR 2) / Aikokul Mamaeva / Unknown"]
+          }
+        ],
+        "COMFCI-23": [
+          {
+            "lesson": "Discrete Mathematics",
+            "time": "10:00-12:10",
+            "teacher": "Ms. Dr. Remudin Mekuria",
+            "audience": "B203"
+          },
+          {
+            "lesson":"LUNCH-TIME",
+            "time":"12:15-12:55"
+          },
+          {
+            "lesson": "Calculus - ll",
+            "time": "13:00-14:25",
+            "teacher": "Mr. Esen Rakhmanov",
+            "audience": "B205"
+          },
+          {
+            "lesson":"ELECTIVES",
+            "time":"14:30-16:40",
+            "electives":["Philosophy / Edilova M / Unknown","Pedagogy (ONLY YEAR 2) / Aikokul Mamaeva / Unknown"]
+          }
+        ],
+        "IEMIT-23": [
+          {
+            "lesson": "Discrete Mathematics",
+            "time": "10:00-12:10",
+            "teacher": "Ms. Dr. Remudin Mekuria",
+            "audience": "B203"
+          },
+          {
+            "lesson":"LUNCH-TIME",
+            "time":"12:15-12:55"
+          },
+          {
+            "lesson": "Calculus - ll",
+            "time": "13:00-14:25",
+            "teacher": "Mr. Esen Rakhmanov",
+            "audience": "B205"
+          },
+          {
+            "lesson":"ELECTIVES",
+            "time":"14:30-16:40",
+            "electives":["Philosophy / Edilova M / Unknown","Pedagogy (ONLY YEAR 2) / Aikokul Mamaeva / Unknown"]
+          }
+        ],
+        "COM-22a": [
+          {
+            "lesson": "Design & Analysis of Algorithms",
+            "time": "09:15-10:40",
+            "teacher": "Ms. Mekia Gaso Shigute",
+            "audience": "B213"
+          },
+          {
+            "lesson": "Geography of Kyrgyzstan",
+            "time": "10:45-12:10",
+            "teacher": "Mr. Emil",
+            "audience": "B204"
+          },
+          {
+            "lesson":"LUNCH-TIME",
+            "time":"12:15-12:55"
+          },
+          {
+            "lesson": "DEPARTMENT_ELETIVE",
+            "time": "13:00-14:25",
+            "electives": ["Electronics / Dr. Tauheed Khan / B213", "Competitive programming / Mr. Zhenishbek Orozakhunov / B211", "Data Analysis & Visualization with Python / Ms. Mekia Gaso Shigute / B210"]
+          },
+          {
+            "lesson":"ELECTIVES",
+            "time":"14:30-16:40",
+            "electives":["Philosophy / Edilova M / Unknown","Pedagogy (ONLY YEAR 2) / Aikokul Mamaeva / Unknown"]
+          }
+        ],
+        "COM-22b": [
+          {
+            "lesson": "Geography of Kyrgyzstan",
+            "time": "08:30-09:55",
+            "teacher": "Mr. Emil",
+            "audience": "B201"
+          },
+          {
+            "lesson": "Backend development",
+            "time": "10:00-12:10",
+            "teacher": "Mr. Zhavlon Khamidov",
+            "audience": "Big Lab"
+          },
+          {
+            "lesson":"LUNCH-TIME",
+            "time":"12:15-12:55"
+          },
+          {
+            "lesson": "DEPARTMENT_ELETIVE",
+            "time": "13:00-14:25",
+            "electives": ["Electronics / Dr. Tauheed Khan / B213", "Competitive programming / Mr. Zhenishbek Orozakhunov / B211", "Data Analysis & Visualization with Python / Ms. Mekia Gaso Shigute / B210"]
+          },
+          {
+            "lesson":"ELECTIVES",
+            "time":"14:30-16:40",
+            "electives":["Philosophy / Edilova M / Unknown","Pedagogy (ONLY YEAR 2) / Aikokul Mamaeva / Unknown"]
+          }
+        ],
+        "COM-21a": [
+          {
+            "lesson": "Artificial Intelligence Systems",
+            "time": "08:30-09:55",
+            "teacher": "Mr. Dim Shayahmetov",
+            "audience": "Big Lab"
+          },
+          {
+            "lesson": "Operating Systems",
+            "time": "10:00-11:25",
+            "teacher": "Mr. Imtiyaz Gulbarga",
+            "audience": "B201"
+          },
+          {
+            "lesson":"LUNCH-TIME",
+            "time":"12:15-12:55"
+          }
+        ],
+        "COM-21b": [],
+        "COM-20": []
+      },
+      "tuesday":{
+        "COMSEP-23":[
+          {
+            "lesson":"LANGUAGE_ELECTIVES",
+            "time":"08:30-10:40",
+            "electives":["English / Mr. Murray / B205","French / Ms. Aida Iliyazova / B205","German Beginner / Ms. Dinara / B202","German Elemantary/ Ms. Aruuke - Ms. Erika / B203","Turkish / Ms. Aigul Beisheeva/ B204"]
+          },
+          {
+            "lesson":"Calculus - 11",
+            "time":"10:45-12:10",
+            "audience":"B204",
+            "teacher":"Mr. Hussien Chebsi"
+          },
+          {
+            "lesson":"Discrete Mathematics1",
+            "time":"12:15-13:40",
+            "audience":"B205",
+            "teacher":"Ms. Dr. Remudin Mekuria"
+          },
+          {
+            "lesson":"LUNCH-TIME",
+            "time":"13:45-14:25"
+          },
+          {
+            "lesson":"ELECTIVES",
+            "time":"14:30-16:40",
+            "electives":["English ll / Mr. Murray / B205","Informatics ll (14:30-15:55)/ Mr. Imitiyaz Gulbarga / B211","Informatics l (14:30-15:55)/ Ms. Burul Shambetova / B210","Russian Language (Only YEAR 1)/ Ms. S. Alymbekova / B201", "Russian Language (Only YEAR 1) / Ms. G. Chokusheva / B204", "Russian Language (Only YEAR 1)/ Ms. A. Orozova / B203","Family psychology / Nurzat Kubanychbek kyzy / D106"]
+          }
+        ],
+        "EEAIR-23": [
+          {
+            "lesson":"LANGUAGE_ELECTIVES",
+            "time":"08:30-10:40",
+            "electives":["English / Mr. Murray / B205","French / Ms. Aida Iliyazova / B205","German Beginner / Ms. Dinara / B202","German Elemantary/ Ms. Aruuke - Ms. Erika / B203","Turkish / Ms. Aigul Beisheeva/ B204"]
+          },
+          {
+            "lesson":"Calculus - 11",
+            "time":"10:45-12:10",
+            "audience":"B202",
+            "teacher":"Mr. Esen Rakhmanov"
+          },
+          {
+            "lesson":"Programming Languages - ll",
+            "time":"12:15-13:40",
+            "audience":"B210",
+            "teacher":"Mr. Zhenishbek Orozakhunov"
+          },
+          {
+            "lesson":"LUNCH-TIME",
+            "time":"13:45-14:25"
+          },
+          {
+            "lesson":"ELECTIVES",
+            "time":"14:30-16:40",
+            "electives":["English ll / Mr. Murray / B205","Informatics ll (14:30-15:55)/ Mr. Imitiyaz Gulbarga / B211","Informatics l (14:30-15:55)/ Ms. Burul Shambetova / B210","Russian Language (Only YEAR 1)/ Ms. S. Alymbekova / B201", "Russian Language (Only YEAR 1) / Ms. G. Chokusheva / B204", "Russian Language (Only YEAR 1)/ Ms. A. Orozova / B203","Family psychology / Nurzat Kubanychbek kyzy / D106"]
+          }
+        ],
+        "COMCEH-23": [
+          {
+            "lesson":"LANGUAGE_ELECTIVES",
+            "time":"08:30-10:40",
+            "electives":["English / Mr. Murray / B205","French / Ms. Aida Iliyazova / B205","German Beginner / Ms. Dinara / B202","German Elemantary/ Ms. Aruuke - Ms. Erika / B203","Turkish / Ms. Aigul Beisheeva/ B204"]
+          },
+          {
+            "lesson":"Calculus - 11",
+            "time":"10:45-12:10",
+            "audience":"B202",
+            "teacher":"Mr. Esen Rakhmanov"
+          },
+          {
+            "lesson":"Programming Languages - ll",
+            "time":"12:15-13:40",
+            "audience":"B210",
+            "teacher":"Mr. Zhenishbek Orozakhunov"
+          },
+          {
+            "lesson":"LUNCH-TIME",
+            "time":"13:45-14:25"
+          },
+          {
+            "lesson":"ELECTIVES",
+            "time":"14:30-16:40",
+            "electives":["English ll / Mr. Murray / B205","Informatics ll (14:30-15:55)/ Mr. Imitiyaz Gulbarga / B211","Informatics l (14:30-15:55)/ Ms. Burul Shambetova / B210","Russian Language (Only YEAR 1)/ Ms. S. Alymbekova / B201", "Russian Language (Only YEAR 1) / Ms. G. Chokusheva / B204", "Russian Language (Only YEAR 1)/ Ms. A. Orozova / B203","Family psychology / Nurzat Kubanychbek kyzy / D106"]
+          }
+        ],
+        "COMSE-23": [
+          {
+            "lesson":"LANGUAGE_ELECTIVES",
+            "time":"08:30-10:40",
+            "electives":["English / Mr. Murray / B205","French / Ms. Aida Iliyazova / B205","German Beginner / Ms. Dinara / B202","German Elemantary/ Ms. Aruuke - Ms. Erika / B203","Turkish / Ms. Aigul Beisheeva/ B204"]
+          },
+          {
+            "lesson":"Programming Languages - 1",
+            "time":"10:45-12:10",
+            "audience":"Big Lab",
+            "teacher":"Mr. Dim Shayahmetov"
+          },
+          {
+            "lesson":"Calculus - 11",
+            "time":"12:15-13:40",
+            "audience":"B202",
+            "teacher":"Mr. Esen Rakhmanov"
+          },
+          {
+            "lesson":"LUNCH-TIME",
+            "time":"13:45-14:25"
+          },
+          {
+            "lesson":"ELECTIVES",
+            "time":"14:30-16:40",
+            "electives":["English ll / Mr. Murray / B205","Informatics ll (14:30-15:55)/ Mr. Imitiyaz Gulbarga / B211","Informatics l (14:30-15:55)/ Ms. Burul Shambetova / B210","Russian Language (Only YEAR 1)/ Ms. S. Alymbekova / B201", "Russian Language (Only YEAR 1) / Ms. G. Chokusheva / B204", "Russian Language (Only YEAR 1)/ Ms. A. Orozova / B203","Family psychology / Nurzat Kubanychbek kyzy / D106"]
+          }
+        ],
+        "COMFCI-23": [
+          {
+            "lesson":"LANGUAGE_ELECTIVES",
+            "time":"08:30-10:40",
+            "electives":["English / Mr. Murray / B205","French / Ms. Aida Iliyazova / B205","German Beginner / Ms. Dinara / B202","German Elemantary/ Ms. Aruuke - Ms. Erika / B203","Turkish / Ms. Aigul Beisheeva/ B204"]
+          },
+          {
+            "lesson":"Discrete Mathematics",
+            "time":"10:45-12:10",
+            "audience":"B205",
+            "teacher":"Ms. Dr. Remudin Mekuria"
+          },
+          {
+            "lesson":"Programming Languages - 1",
+            "time":"12:15-13:40",
+            "audience":"Big Lab",
+            "teacher":"Mr. Dim Shayahmetov"
+          },
+          {
+            "lesson":"LUNCH-TIME",
+            "time":"13:45-14:25"
+          },
+          {
+            "lesson":"ELECTIVES",
+            "time":"14:30-16:40",
+            "electives":["English ll / Mr. Murray / B205","Informatics ll (14:30-15:55)/ Mr. Imitiyaz Gulbarga / B211","Informatics l (14:30-15:55)/ Ms. Burul Shambetova / B210","Russian Language (Only YEAR 1)/ Ms. S. Alymbekova / B201", "Russian Language (Only YEAR 1) / Ms. G. Chokusheva / B204", "Russian Language (Only YEAR 1)/ Ms. A. Orozova / B203","Family psychology / Nurzat Kubanychbek kyzy / D106"]
+          }
+        ],
+        "IEMIT-23": [
+          {
+            "lesson":"LANGUAGE_ELECTIVES",
+            "time":"08:30-10:40",
+            "electives":["English / Mr. Murray / B205","French / Ms. Aida Iliyazova / B205","German Beginner / Ms. Dinara / B202","German Elemantary/ Ms. Aruuke - Ms. Erika / B203","Turkish / Ms. Aigul Beisheeva/ B204"]
+          },
+          {
+            "lesson":"Discrete Mathematics",
+            "time":"10:45-12:10",
+            "audience":"B205",
+            "teacher":"Ms. Dr. Remudin Mekuria"
+          },
+          {
+            "lesson":"Programming Languages - 1",
+            "time":"12:15-13:40",
+            "audience":"Big Lab",
+            "teacher":"Mr. Dim Shayahmetov"
+          },
+          {
+            "lesson":"LUNCH-TIME",
+            "time":"13:45-14:25"
+          },
+          {
+            "lesson":"ELECTIVES",
+            "time":"14:30-16:40",
+            "electives":["English ll / Mr. Murray / B205","Informatics ll (14:30-15:55)/ Mr. Imitiyaz Gulbarga / B211","Informatics l (14:30-15:55)/ Ms. Burul Shambetova / B210","Russian Language (Only YEAR 1)/ Ms. S. Alymbekova / B201", "Russian Language (Only YEAR 1) / Ms. G. Chokusheva / B204", "Russian Language (Only YEAR 1)/ Ms. A. Orozova / B203","Family psychology / Nurzat Kubanychbek kyzy / D106"]
+          }
+        ],
+        "COM-22a": [
+          {
+            "lesson":"Physical Education",
+            "time":"08:30-09:55",
+            "audience":"Gym",
+            "teacher":"Mr. Zamir Chynybekov"
+          },
+          {
+            "lesson":"Backend development",
+            "time":"10:00-11:25",
+            "audience":"Unknown",
+            "teacher":"Mr. Zhavlon Khamidov"
+          },
+          {
+            "lesson":"Kyrgyz language",
+            "time":"11:30-12:55",
+            "audience":"Unknown",
+            "teacher":"Ms. Elnura Kaldybaeva / Ms. Gulshair Samatova / Ms. Altynai Saidalieva"
+          },
+          {
+            "lesson":"LUNCH-TIME",
+            "time":"13:45-14:25"
+          },
+          {
+            "lesson":"ELECTIVES",
+            "time":"14:30-16:40",
+            "electives":["English ll / Mr. Murray / B205","Informatics ll (14:30-15:55)/ Mr. Imitiyaz Gulbarga / B211","Informatics l (14:30-15:55)/ Ms. Burul Shambetova / B210","Russian Language (Only YEAR 1)/ Ms. S. Alymbekova / B201", "Russian Language (Only YEAR 1) / Ms. G. Chokusheva / B204", "Russian Language (Only YEAR 1)/ Ms. A. Orozova / B203","Family psychology / Nurzat Kubanychbek kyzy / D106"]
+          }
+        ],
+        "COM-22b": [
+          {
+            "lesson":"Physical Education",
+            "time":"08:30-09:55",
+            "audience":"Gym",
+            "teacher":"Mr. Zamir Chynybekov"
+          },
+          {
+            "lesson":"Design & Analysis of Algorithms",
+            "time":"10:00-11:25",
+            "audience":"B213",
+            "teacher":"Ms. Mekia Gaso Shigute"
+          },
+          {
+            "lesson":"Kyrgyz language",
+            "time":"11:30-12:55",
+            "audience":"Unknown",
+            "teacher":"Ms. Elnura Kaldybaeva / Ms. Gulshair Samatova / Ms. Altynai Saidalieva"
+          },
+          {
+            "lesson":"LUNCH-TIME",
+            "time":"13:45-14:25"
+          },
+          {
+            "lesson":"ELECTIVES",
+            "time":"14:30-16:40",
+            "electives":["English ll / Mr. Murray / B205","Informatics ll (14:30-15:55)/ Mr. Imitiyaz Gulbarga / B211","Informatics l (14:30-15:55)/ Ms. Burul Shambetova / B210","Russian Language (Only YEAR 1)/ Ms. S. Alymbekova / B201", "Russian Language (Only YEAR 1) / Ms. G. Chokusheva / B204", "Russian Language (Only YEAR 1)/ Ms. A. Orozova / B203","Family psychology / Nurzat Kubanychbek kyzy / D106"]
+          }
+        ],
+        "COM-21a": [
+          {
+            "lesson":"Computers and peripherals",
+            "time":"08:30-10:40",
+            "audience":"Big Lab",
+            "teacher":"Dr. Arslan Khan"
+          },
+          {
+            "lesson":"Operating Systems",
+            "time":"11:30-12:55",
+            "audience":"B213",
+            "teacher":"Mr. Imtiyaz Gulbarga"
+          },
+          {
+            "lesson":"LUNCH-TIME",
+            "time":"13:45-14:25"
+          }
+        ],
+        "COM-21b": [
+          {
+            "lesson":"Operating Systems",
+            "time":"08:30-09:55",
+            "audience":"B210",
+            "teacher":"Mr. Imtiyaz Gulbarga"
+          },
+          {
+            "lesson":"Software Engineering - ll",
+            "time":"10:00-12:10",
+            "audience":"B210",
+            "teacher":"Dr. Gulzada Esenalieva"
+          },
+          {
+            "lesson":"LUNCH-TIME",
+            "time":"12:15-12:55"
+          },
+          {
+            "lesson":"Operating Systems",
+            "time":"13:00-14:25",
+            "audience":"B210",
+            "teacher":"Mr. Imtiyaz Gulbarga"
+          }
+        ],
+        "COM-20": [
+          {
+            "lesson":"LUNCH-TIME",
+            "time":"13:00-13:40"
+          },
+          {
+            "lesson":"Metrology Standart & Certification",
+            "time":"13:45-15:10",
+            "audience":"B202",
+            "teacher":"Dr. Arslan Khan"
+          },
+          {
+            "lesson":"Basics of Scientific Research",
+            "time":"15:15-16:40",
+            "audience":"B202",
+            "teacher":"Dr. Gulzada Esenalieva"
+          }
         ]
-    },
-    "groups":[
-        "COMSEP-23","EEAIR-23","COMCEH-23","COMSE-23","COMFCI-23","IEMIT-23","COM-22a","COM-22b","COM-21a","COM-21b","COM-20"
-    ]
+      },
+      "wednesday":{
+        
+      },
+      "thursday":{
+
+      },
+      "friday":{
+
+      },
+      "saturday":{
+
+      }
+    }
 }
