@@ -1,9 +1,19 @@
 from datetime import datetime, timedelta
 import json
 
+#TODO сделать кнопки одноразовыми
+# переписать все под ООП
+# оптимизировать JSON
+
+
 def split_time(time_range):
     start_time, end_time = time_range.split('-')
     return start_time.strip(), end_time.strip()
+
+def user_exists(user, file):
+    if user in file.keys():
+        return True
+    return False
 
 def record_get(file):
     try:
@@ -39,9 +49,14 @@ def get_schedule_for_group(group, day):                                         
                         for elective in lesson['electives']:
                             result += f"\n{elective}"
                         result += f"\nTime: {lesson['time']}\n\n"
+                    elif lesson['lesson'] == "DEPARTMENT_ELECTIVE":
+                        result += f"Department electives:"
+                        for elective in lesson['electives']:
+                            result += f"\n{elective}"
+                        result += f"\nTime: {lesson['time']}\n\n"
                     else:
                         result += f"Lesson: {lesson['lesson']}\nAudience: {lesson['audience']}\nTeacher: {lesson['teacher']}\nTime: {lesson['time']}\n\n"
-            result += '\n'
+            result += '\n\n'
         return result                
     if day == 'today':
         today = datetime.now().strftime('%A').lower()
@@ -49,8 +64,8 @@ def get_schedule_for_group(group, day):                                         
             return 'Today is a sunday, you dont have any lessons'
     else:
         today = day
-    if group not in week["days"][today]:
-        return "Your group doesn't any lessons on this day"
+    if group not in week["days"][today] or len(week['days'][today][group]) == 0:
+        return f"Your group doesn't any lessons on {today}"
     result = ''
     for lesson in week['days'][today][group]:
         if lesson["lesson"] == "LUNCH-TIME":
@@ -65,7 +80,13 @@ def get_schedule_for_group(group, day):                                         
             for elective in lesson['electives']:
                 result += f"\n{elective}"
             result += f"\nTime: {lesson['time']}\n\n"
+        elif lesson['lesson'] == "DEPARTMENT_ELECTIVE":
+            result += f"Department electives:"
+            for elective in lesson['electives']:
+                result += f"\n{elective}"
+            result += f"\nTime: {lesson['time']}\n\n"
         else:
+            print(lesson['audience'])
             result += f"Lesson: {lesson['lesson']}\nAudience: {lesson['audience']}\nTeacher: {lesson['teacher']}\nTime: {lesson['time']}\n\n"
     return result
     
@@ -76,39 +97,34 @@ def time_to_minutes(time):
     result = int(hours) * 60 + int(minutes)
     return result
 
-def next_or_current_lesson_today(group):                    
+def next_or_current_lesson_today(group):
     current_lesson = None
     next_lesson = None
     next_lesson_time = None
-    now = datetime.strftime((datetime.now() + timedelta(hours=1)), '%H:%M')
+    now = datetime.strftime(((datetime.now() + timedelta(hours=1)) + timedelta(minutes=2)), '%H:%M')
     today_name = datetime.now().strftime("%A").lower()
     today_schedule = week["days"].get(today_name, {}).get(group, {})
+    now_minutes = time_to_minutes(now)
+
     if not today_schedule:
         return None, None 
-    
     for lesson in today_schedule:
         lesson_start = time_to_minutes(lesson["time"].split('-')[0].strip())
         lesson_end = time_to_minutes(lesson["time"].split('-')[1].strip())
-        now_minutes = time_to_minutes(now)
-        
         if lesson_start <= now_minutes <= lesson_end:
             current_lesson = lesson
-        elif now_minutes <= lesson_start:
-            if current_lesson is None or lesson_start < next_lesson_time or next_lesson_time is None:
+        elif now_minutes < lesson_start:
+            if (current_lesson is None and next_lesson_time is None) or (next_lesson_time is not None and lesson_start < next_lesson_time):
                 next_lesson = lesson
                 next_lesson_time = lesson_start
-    
     return current_lesson, next_lesson
 
 def time_left(end_time, state):
     current_time = datetime.strftime(((datetime.now() + timedelta(hours=1)) + timedelta(minutes=2)), '%H:%M')
     end_time_datetime = datetime.strptime(end_time, "%H:%M")
     end_time_hour = datetime.strftime(end_time_datetime, "%H:%M")
-
     time_difference = time_to_minutes(end_time_hour) - time_to_minutes(current_time)
-
     hours, minutes = time_difference // 60, time_difference % 60
-
     if state == 'going_on':
         if hours == 0:
             return f"Time left until the end: {minutes} minutes"
@@ -136,6 +152,11 @@ def get_lesson(group):                                                          
             for elective in current_lesson['electives']:
                 result += f"\n{elective}"
             return result
+        elif current_lesson['lesson'] == "DEPARTMENT_ELECTIVE":
+            result = f"Your department elective is going on!: {time_left(current_lesson['time'].split('-')[1].strip(), 'going_on')}\nTime: {current_lesson['time']}"
+            for elective in current_lesson['electives']:
+                result += f"\n{elective}"
+            return result
         else:
             return f"Your lesson is going on!: {time_left(current_lesson['time'].split('-')[1].strip(), 'going_on')}\nLesson: {current_lesson['lesson']}\nAudience: {current_lesson['audience']}\nTeacher: {current_lesson['teacher']}\nTime: {current_lesson['time']}"
     elif next_lesson: 
@@ -151,13 +172,15 @@ def get_lesson(group):                                                          
             for elective in next_lesson['electives']:
                 result += f"\n{elective}"
             return result
+        elif next_lesson['lesson'] == "DEPARTMENT_ELECTIVE":
+            result = f"Your department elective is gonna start!: {time_left(next_lesson['time'].split('-')[0].strip(), 'next')}\nTime: {next_lesson['time']}"
+            for elective in next_lesson['electives']:
+                result += f"\n{elective}"
+            return result
         else:
             return f"Your next lesson is {next_lesson['lesson']}!:  {time_left(next_lesson['time'].split('-')[0].strip(), 'next')}\nAudience: {next_lesson['audience']}\nTeacher: {next_lesson['teacher']}\nTime: {next_lesson['time']}"
     else:
         return "Your group doesn't have any lessons for today or they already passed"
 
-# print(get_lesson('COMSEP-23'))
+# print(get_lesson('EEAIR-23'))
 # print(get_schedule_for_group('EEAIR-23', 'monday')) 
-
-for lesson in week['groups']:
-    print(lesson + '\n')

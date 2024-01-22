@@ -1,10 +1,9 @@
 from decouple import config
 from telebot import types
 import telebot
-from main import record_get, record_push, get_schedule_for_group, get_lesson
+from main import record_get, record_push, get_schedule_for_group, get_lesson, user_exists
 
 week = record_get("source.json")
-users = record_get("users.json")
 token = config("TOKEN")
 bot =  telebot.TeleBot(token)
 days = ['monday', 'tuesday', 'wednesday', 'thursday', 'saturday', 'friday']
@@ -31,9 +30,10 @@ def get_group(message):
 
 @bot.message_handler(commands=['schedule'])
 def schedule(message):
-    user = message.from_user.id
+    users = record_get("users.json")
+    user = str(message.from_user.id)
     keyboard = types.InlineKeyboardMarkup()
-    if not user in users.keys():
+    if not user_exists(user, users):
         bot.send_message(message.chat.id, 'Looks like you haven\'t chosen your group yet. Let\'s choose one:\n', reply_markup=keyboard)
         get_group(message)
     else:
@@ -50,6 +50,7 @@ def schedule(message):
 
 @bot.callback_query_handler(func=lambda call: call.data.startswith('group'))
 def choose_group(call):
+    users = record_get("users.json")
     user = call.from_user.id
     group = call.data.split('_')[1]
     bot.send_message(call.message.chat.id, f'Great! Your group is {group}!\nPress /schedule to begin to use our bot.')
@@ -58,7 +59,8 @@ def choose_group(call):
 
 @bot.callback_query_handler(func=lambda call: call.data.startswith('day'))
 def choose_group(call):
-    user = call.from_user.id
+    users = record_get("users.json")
+    user = str(call.from_user.id)
     group = users[user]
     day = call.data.split('_')[1]
     result = get_schedule_for_group(group, day)
@@ -67,7 +69,8 @@ def choose_group(call):
 
 @bot.callback_query_handler(func=lambda call: call.data.startswith('week'))
 def choose_group(call):
-    user = call.from_user.id
+    users = record_get("users.json")
+    user = str(call.from_user.id)
     group = users[user]
     result = get_schedule_for_group(group, "week")
     bot.send_message(call.message.chat.id, f'{result}')
@@ -75,7 +78,8 @@ def choose_group(call):
 
 @bot.callback_query_handler(func=lambda call: call.data.startswith('lesson'))
 def choose_group(call):
-    user = call.from_user.id
+    users = record_get("users.json")
+    user = str(call.from_user.id)
     group = users[user]
     result = get_lesson(group)
     bot.send_message(call.message.chat.id, f'{result}')
@@ -84,7 +88,8 @@ def choose_group(call):
 
 @bot.callback_query_handler(func=lambda call: call.data.startswith('change_group'))
 def change_group(call):
-    user = call.from_user.id
+    users = record_get("users.json")
+    user = str(call.from_user.id)
     if user in users:
         del users[user]
         record_push('users.json', users)
