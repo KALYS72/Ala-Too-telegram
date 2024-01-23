@@ -142,42 +142,42 @@ def get_lesson(group):                                                          
         if current_lesson['lesson'] == "LUNCH-TIME":
             return f"Your group is having a lunch! {time_left(current_lesson['time'].split('-')[1].strip(), 'going_on')}\nTime of lunch:{current_lesson['time']}"
         elif current_lesson['lesson'] == "ELECTIVES":
-            result = f"Your electives is going on!: {time_left(current_lesson['time'].split('-')[1].strip(), 'going_on')}\nTime: {current_lesson['time']}"
+            result = f"Your electives is going on!: {time_left(current_lesson['time'].split('-')[1].strip(), 'going_on')}\n\nTime: {current_lesson['time']}"
             for elective in current_lesson['electives']:
                 result += f"\n{elective}"
             return result
         elif current_lesson['lesson'] == "LANGUAGE_ELECTIVES":
-            result = f"Your language is going on!: {time_left(current_lesson['time'].split('-')[1].strip(), 'going_on')}\nTime: {current_lesson['time']}"
+            result = f"Your language is going on!: {time_left(current_lesson['time'].split('-')[1].strip(), 'going_on')}\n\nTime: {current_lesson['time']}"
             for elective in current_lesson['electives']:
                 result += f"\n{elective}"
             return result
         elif current_lesson['lesson'] == "DEPARTMENT_ELECTIVE":
-            result = f"Your department elective is going on!: {time_left(current_lesson['time'].split('-')[1].strip(), 'going_on')}\nTime: {current_lesson['time']}"
+            result = f"Your department elective is going on!: {time_left(current_lesson['time'].split('-')[1].strip(), 'going_on')}\n\nTime: {current_lesson['time']}"
             for elective in current_lesson['electives']:
                 result += f"\n{elective}"
             return result
         else:
-            return f"Your lesson is going on!: {time_left(current_lesson['time'].split('-')[1].strip(), 'going_on')}\nLesson: {current_lesson['lesson']}\nAudience: {current_lesson['audience']}\nTeacher: {current_lesson['teacher']}\nTime: {current_lesson['time']}"
+            return f"Your lesson is going on!: {time_left(current_lesson['time'].split('-')[1].strip(), 'going_on')}\n\nLesson: {current_lesson['lesson']}\nAudience: {current_lesson['audience']}\nTeacher: {current_lesson['teacher']}\nTime: {current_lesson['time']}"
     elif next_lesson: 
         if next_lesson['lesson'] == "LUNCH-TIME": 
             return f"You're gonna have a lunch! {time_left(next_lesson['time'].split('-')[0].strip(), 'next')}\nTime of lunch: {next_lesson['time']}"
         elif next_lesson['lesson'] == "ELECTIVES":
-            result = f"Your electives is gonna start!: {time_left(next_lesson['time'].split('-')[0].strip(), 'next')}\nTime: {next_lesson['time']}"
+            result = f"Your electives is gonna start!: {time_left(next_lesson['time'].split('-')[0].strip(), 'next')}\n\nTime: {next_lesson['time']}"
             for elective in next_lesson['electives']:
                 result += f"\n{elective}"
             return result
         elif next_lesson['lesson'] == "LANGUAGE_ELECTIVES":
-            result = f"Your language is gonna start!: {time_left(next_lesson['time'].split('-')[0].strip(), 'next')}\nTime: {next_lesson['time']}"
+            result = f"Your language is gonna start!: {time_left(next_lesson['time'].split('-')[0].strip(), 'next')}\n\nTime: {next_lesson['time']}"
             for elective in next_lesson['electives']:
                 result += f"\n{elective}"
             return result
         elif next_lesson['lesson'] == "DEPARTMENT_ELECTIVE":
-            result = f"Your department elective is gonna start!: {time_left(next_lesson['time'].split('-')[0].strip(), 'next')}\nTime: {next_lesson['time']}"
+            result = f"Your department elective is gonna start!: {time_left(next_lesson['time'].split('-')[0].strip(), 'next')}\n\nTime: {next_lesson['time']}"
             for elective in next_lesson['electives']:
                 result += f"\n{elective}"
             return result
         else:
-            return f"Your next lesson is {next_lesson['lesson']}!:  {time_left(next_lesson['time'].split('-')[0].strip(), 'next')}\nAudience: {next_lesson['audience']}\nTeacher: {next_lesson['teacher']}\nTime: {next_lesson['time']}"
+            return f"Your next lesson is {next_lesson['lesson']}!:  {time_left(next_lesson['time'].split('-')[0].strip(), 'next')}\n\nAudience: {next_lesson['audience']}\nTeacher: {next_lesson['teacher']}\nTime: {next_lesson['time']}"
     else:
         return "Your group doesn't have any lessons for today or they already passed"
 
