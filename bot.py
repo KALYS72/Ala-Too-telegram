@@ -38,15 +38,16 @@ def schedule(message):
         get_group(message)
     else:
         group = users[user]
-        bot.send_message(message.chat.id, f'Your group is {group}!\nChoose the option:\n', reply_markup=keyboard)
         for day in days:
             button_day = types.InlineKeyboardButton(text=day, callback_data=f"day_{day}")
             keyboard.add(button_day)
         button_week = types.InlineKeyboardButton(text="week", callback_data=f"week")
         button_lesson = types.InlineKeyboardButton(text="next or current lesson", callback_data=f"lesson")
         button_change_group = types.InlineKeyboardButton(text="change the group", callback_data=f"change_group")
-        keyboard.add(button_week).add(button_lesson).add(button_change_group)
-        bot.send_message(message.chat.id, 'Please choose an option:', reply_markup=keyboard)
+        keyboard.add(button_week, button_lesson, button_change_group)
+        text = f'Your group is {group}!\nPlease choose an option:'
+        bot.send_message(message.chat.id, text=text, reply_markup=keyboard)
+
 
 @bot.callback_query_handler(func=lambda call: call.data.startswith('group'))
 def choose_group(call):
@@ -56,6 +57,8 @@ def choose_group(call):
     bot.send_message(call.message.chat.id, f'Great! Your group is {group}!\nPress /schedule to begin to use our bot.')
     users[user] = group
     record_push("users.json", users)
+    # bot.delete_message(chat_id=call.message.chat.id, message_id=call.message.message_id)
+    
 
 @bot.callback_query_handler(func=lambda call: call.data.startswith('day'))
 def choose_group(call):
@@ -85,7 +88,6 @@ def choose_group(call):
     bot.send_message(call.message.chat.id, f'{result}')
     bot.send_message(call.message.chat.id,'Press /schedule to use bot again.')
 
-
 @bot.callback_query_handler(func=lambda call: call.data.startswith('change_group'))
 def change_group(call):
     users = record_get("users.json")
@@ -99,6 +101,5 @@ def change_group(call):
         bot.send_message(call.message.chat.id, 'You don\'t have a group to delete. Choose one:\n')
         get_group(call.message)
     
-
 if __name__ == '__main__':
     bot.infinity_polling()

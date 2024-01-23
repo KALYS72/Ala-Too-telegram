@@ -33,9 +33,9 @@ week = record_get("source.json")
 def get_schedule_for_group(group, day):                                         # получить расписание
     if day == 'week':
         result = ""
-        for day, lessons in week["days"].items():
-            if group in lessons:
-                result += f"{day.capitalize()}:\n\n"
+        for today, lessons in week["days"].items():
+            if group in lessons and len(week['days'][today][group]) != 0:
+                result += f"{today.capitalize()}:\n\n"
                 for lesson in lessons[group]:
                     if lesson["lesson"] == "LUNCH-TIME":
                         result += f"Lunch at {lesson['time']}\n\n"
@@ -86,7 +86,6 @@ def get_schedule_for_group(group, day):                                         
                 result += f"\n{elective}"
             result += f"\nTime: {lesson['time']}\n\n"
         else:
-            print(lesson['audience'])
             result += f"Lesson: {lesson['lesson']}\nAudience: {lesson['audience']}\nTeacher: {lesson['teacher']}\nTime: {lesson['time']}\n\n"
     return result
     
