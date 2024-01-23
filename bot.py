@@ -44,11 +44,11 @@ def schedule(message):
         get_group(message)
     else:
         group = users[user]
-        button_days = types.InlineKeyboardButton(text="days", callback_data=f"days")
-        button_week = types.InlineKeyboardButton(text="week", callback_data=f"week")
+        button_days = types.InlineKeyboardButton(text="Days", callback_data=f"days")
+        button_week = types.InlineKeyboardButton(text="Week", callback_data=f"week")
         keyboard.add(button_days, button_week)
-        button_lesson = types.InlineKeyboardButton(text="next or current lesson", callback_data=f"lesson")
-        button_change_group = types.InlineKeyboardButton(text="change the group", callback_data=f"change_group")
+        button_lesson = types.InlineKeyboardButton(text="Next/Current lesson", callback_data=f"lesson")
+        button_change_group = types.InlineKeyboardButton(text="Change the group", callback_data=f"change_group")
         keyboard.add(button_lesson, button_change_group)
         text = f'Your group is {group}!\nPlease choose an option:'
         bot.send_message(message.chat.id, text=text, reply_markup=keyboard)
@@ -67,7 +67,7 @@ def choose_group_callback(call):
 def choose_days_callback(call):
     keyboard = types.InlineKeyboardMarkup()
     for day in days:
-        button_day = types.InlineKeyboardButton(text=day, callback_data=f"day_{day}")
+        button_day = types.InlineKeyboardButton(text=day.capitalize(), callback_data=f"day_{day}")
         keyboard.add(button_day)
     bot.send_message(call.message.chat.id, 'Choose a day:', reply_markup=keyboard)
 
