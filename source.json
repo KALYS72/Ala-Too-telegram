@@ -822,6 +822,23 @@
             "electives":["Startup: from idea to launch / Mr. Radmir Gumerov / B202","Web design / Mr. Zhavlon Khamidov / B211","Physics(14:30-15:55)(COMCEH / COMFCI / COMSE / COMSEP) / Ms. Asiya Abdyldaeva / B203","Sociology / Edilova M. / unknown","Accounting & Finance(14:00-16:30) / unknown / unknown","Crime Prevention and Legal Culture(15:40-18:00) / Dzhalgasynova G. / D202","Family psychology / Nurzat Kubanychbek kyzy / D106"]
           }
         ],
+        "IEMIT-23":[
+          {
+            "lesson":"Programming Languages - 1",
+            "time":"12:15-13:40",
+            "audience":"Big Lab",
+            "teacher":"Mr. Dim Shayahmetov"
+          },
+          {
+            "lesson":"LUNCH-TIME",
+            "time":"13:45-14:25"
+          },
+          {
+            "lesson":"ELECTIVES",
+            "time":"14:30-16:40",
+            "electives":["Startup: from idea to launch / Mr. Radmir Gumerov / B202","Web design / Mr. Zhavlon Khamidov / B211","Physics(14:30-15:55)(COMCEH / COMFCI / COMSE / COMSEP) / Ms. Asiya Abdyldaeva / B203","Sociology / Edilova M. / unknown","Accounting & Finance(14:00-16:30) / unknown / unknown","Crime Prevention and Legal Culture(15:40-18:00) / Dzhalgasynova G. / D202","Family psychology / Nurzat Kubanychbek kyzy / D106"]
+          }
+        ],
         "COM-22a":[
           {
             "lesson":"Design & Analysis of Algorithms",
@@ -1004,7 +1021,9 @@
           },
           {
             "lesson":"Programming Languages - 1",
-            "time":"10:00-12:55"
+            "time":"10:00-12:55",
+            "audience":"Big Lab",
+            "teacher":"Mr. Dim Shayahmetov"
           },
           {
             "lesson":"LUNCH-TIME",
