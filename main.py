@@ -36,6 +36,7 @@ def get_schedule_for_group(group, day):                                         
         for today, lessons in week["days"].items():
             if group in lessons and len(week['days'][today][group]) != 0:
                 result += f"{today.capitalize()}:\n\n"
+                print(today)
                 for lesson in lessons[group]:
                     if lesson["lesson"] == "LUNCH-TIME":
                         result += f"Lunch at {lesson['time']}\n\n"
@@ -183,3 +184,4 @@ def get_lesson(group):                                                          
 
 # print(get_lesson('EEAIR-23'))
 # print(get_schedule_for_group('EEAIR-23', 'monday')) 
+# print('\033[1m:\033[0m')

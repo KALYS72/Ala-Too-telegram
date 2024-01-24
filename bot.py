@@ -10,13 +10,22 @@ days = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday']
 
 @bot.message_handler(commands=['start'])
 def start_message(message):
-    bot.send_message(message.chat.id, '''Hello, I am a bot that will help you to know where you are supposed to be at a particular time!\n\nCommands:\n\n/info - information about bot and Ala-too\n/schedule - begin to work with a bot!\n''')
+    bot.send_message(
+        message.chat.id, 
+        'Hello, I am a bot that will help you to know where you are supposed to be at a particular time!\n\nCommands:\n\n/info - information about bot and Ala-too\n/schedule - begin to work with a bot!\n'
+    )
 
 @bot.message_handler(commands=["info"])
 def info(message):
     keyboard = types.InlineKeyboardMarkup()
-    ala_too_website = types.InlineKeyboardButton(text="Info about Ala-Too", url='http://alatoo.edu.kg/#gsc.tab=0')
-    schedule = types.InlineKeyboardButton(text="Original Schedule (access required)", url=week['schedule'])
+    ala_too_website = types.InlineKeyboardButton(
+        text="Info about Ala-Too", 
+        url='http://alatoo.edu.kg/#gsc.tab=0'
+    )
+    schedule = types.InlineKeyboardButton(
+        text="Original Schedule (access required)", 
+        url=week['schedule']
+    )
     keyboard.add(ala_too_website)
     keyboard.add(schedule)
     bot.send_message(message.chat.id, f"Schedule information:\n\nUniversity: {week['university']}\nSemester: {week['semester']}", reply_markup=keyboard)
@@ -25,7 +34,10 @@ def get_group(message):
     keyboard = types.InlineKeyboardMarkup()
     count = []
     for group in week['groups']:
-        button = types.InlineKeyboardButton(text=group, callback_data=f"group_{group}")
+        button = types.InlineKeyboardButton(
+            text=group,
+            callback_data=f"group_{group}",  
+        )
         count.append(button)
         if len(count) == 2:
             keyboard.add(count[0], count[1])
@@ -78,9 +90,8 @@ def choose_day_callback(call):
     group = users[user]
     day = call.data.split('_')[1]
     result = get_schedule_for_group(group, day)
-    bot.send_message(call.message.chat.id, f'{result}')
+    bot.send_message(call.message.chat.id, f'<b>{result}</b>', parse_mode='HTML')
     bot.send_message(call.message.chat.id, 'Press /schedule to use bot again.')
-
 
 @bot.callback_query_handler(func=lambda call: call.data.startswith('week'))
 def choose_group(call):
@@ -88,8 +99,8 @@ def choose_group(call):
     user = str(call.from_user.id)
     group = users[user]
     result = get_schedule_for_group(group, "week")
-    bot.send_message(call.message.chat.id, f'{result}')
-    bot.send_message(call.message.chat.id,'Press /schedule to use bot again.')
+    bot.send_message(call.message.chat.id, result, parse_mode='Markdown')
+    bot.send_message(call.message.chat.id, 'Press /schedule to use bot again.')
 
 @bot.callback_query_handler(func=lambda call: call.data.startswith('lesson'))
 def choose_group(call):
