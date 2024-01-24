@@ -34,10 +34,7 @@ def get_group(message):
     keyboard = types.InlineKeyboardMarkup()
     count = []
     for group in week['groups']:
-        button = types.InlineKeyboardButton(
-            text=group,
-            callback_data=f"group_{group}",  
-        )
+        button = types.InlineKeyboardButton(text=group, callback_data=f"group_{group}")
         count.append(button)
         if len(count) == 2:
             keyboard.add(count[0], count[1])
@@ -73,7 +70,6 @@ def choose_group_callback(call):
     bot.send_message(call.message.chat.id, f'Great! Your group is {group}!\nPress /schedule to begin to use our bot.')
     users[user] = group
     record_push("users.json", users)
-    # bot.delete_message(chat_id=call.message.chat.id, message_id=call.message.message_id)
 
 @bot.callback_query_handler(func=lambda call: call.data == 'days')
 def choose_days_callback(call):
@@ -90,7 +86,7 @@ def choose_day_callback(call):
     group = users[user]
     day = call.data.split('_')[1]
     result = get_schedule_for_group(group, day)
-    bot.send_message(call.message.chat.id, f'<b>{result}</b>', parse_mode='HTML')
+    bot.send_message(call.message.chat.id, f'{result}')
     bot.send_message(call.message.chat.id, 'Press /schedule to use bot again.')
 
 @bot.callback_query_handler(func=lambda call: call.data.startswith('week'))

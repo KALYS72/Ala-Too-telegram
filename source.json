@@ -685,7 +685,9 @@
           },
           {
             "lesson":"Software Engineering - ll",
-            "time":"12:15-14:25"
+            "time":"12:15-14:25",
+            "audience":"Lab3 - B210",
+            "teacher":"Dr. Elzada Esenalieva"
           }
         ],
         "COM-21b":[
