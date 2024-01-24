@@ -228,7 +228,7 @@
             "teacher":"Mr. Hussien Chebsi"
           },
           {
-            "lesson":"Discrete Mathematics1",
+            "lesson":"Discrete Mathematics",
             "time":"12:15-13:40",
             "audience":"B205",
             "teacher":"Ms. Dr. Remudin Mekuria"
@@ -399,7 +399,8 @@
           {
             "lesson":"Kyrgyz language",
             "time":"11:30-12:55",
-            "teacher":"Ms. Elnura Kaldybaeva / C410 / Ms. Gulshair Samatova / C302 / Ms. Altynai Saidalieva / C303"
+            "teacher":"Ms. Elnura Kaldybaeva / C410 / Ms. Gulshair Samatova / C302 / Ms. Altynai Saidalieva / C303",
+            "audience":"unknown"
           },
           {
             "lesson":"LUNCH-TIME",
@@ -427,7 +428,8 @@
           {
             "lesson":"Kyrgyz language",
             "time":"11:30-12:55",
-            "teacher":"Ms. Elnura Kaldybaeva / C410 / Ms. Gulshair Samatova / C302 / Ms. Altynai Saidalieva / C303"
+            "teacher":"Ms. Elnura Kaldybaeva / C410 / Ms. Gulshair Samatova / C302 / Ms. Altynai Saidalieva / C303",
+            "audience":"unknown"
           },
           {
             "lesson":"LUNCH-TIME",
@@ -501,7 +503,7 @@
         ]
       },
       "wednesday":{
-        "COMCEP-23": [
+        "COMSEP-23": [
           {
             "lesson":"Calculus - ll",
             "time":"09:15-10:40",
@@ -686,8 +688,8 @@
           {
             "lesson":"Software Engineering - ll",
             "time":"12:15-14:25",
-            "audience":"Lab3 - B210",
-            "teacher":"Dr. Elzada Esenalieva"
+            "audience":"unknown",
+            "teacher":"unknown"
           }
         ],
         "COM-21b":[
@@ -729,7 +731,7 @@
         ]
       },
       "thursday":{
-        "COMCEP-23":[
+        "COMSEP-23":[
           {
             "lesson":"Programming Languages - 1",
             "time":"10:45-12:10",
@@ -828,12 +830,28 @@
             "teacher":"Ms. Mekia Gaso Shigute"
           },
           {
-            "lesson":"1. History of Kyrgyzstan / B201 / 2. Kyrgyz language / Ms. Altynai Saidalieva B202",
-            "time":"10:00-11:25"
+            "lesson":"History of Kyrgyzstan",
+            "time":"10:00-11:25",
+            "audience":"B201",
+            "teacher":"unknown"
           },
           {
-            "lesson":"1.Kyrgyz language / Ms. Gulzada Narmamatova B201 / Ms. Gulshair Samatova / B202 / 2.History of Kyrgyzstan / B203",
-            "time":"11:30-12:55"
+            "lesson":"Kyrgyz language",
+            "time":"10:00-11:25",
+            "audience":"B202",
+            "teacher":"Ms. Altynai Saidalieva"
+          },
+          {
+            "lesson":"Kyrgyz language",
+            "time":"11:30-12:55",
+            "audience":"1: B201 / 2: B202",
+            "teacher":"Dr. Gulzada Narmatova / Ms. Gulshair Samatova"
+          },
+          {
+            "lesson":"History of Kyrgyzstan",
+            "time":"11:30-12:55",
+            "audience":"B203",
+            "teacher":"unknown"
           },
           {
             "lesson":"LUNCH-TIME",
@@ -853,12 +871,28 @@
             "teacher":"Mr. Zhavlon Khamidov"
           },
           {
-            "lesson":"1. History of Kyrgyzstan / B201 / 2. Kyrgyz language / Ms. Altynai Saidalieva B202",
-            "time":"10:00-11:25"
+            "lesson":"History of Kyrgyzstan",
+            "time":"10:00-11:25",
+            "audience":"B201",
+            "teacher":"unknown"
           },
           {
-            "lesson":"1.Kyrgyz language / Ms. Gulzada Narmamatova B201 / Ms. Gulshair Samatova / B202 / 2.History of Kyrgyzstan / B203",
-            "time":"11:30-12:55"
+            "lesson":"Kyrgyz language",
+            "time":"10:00-11:25",
+            "audience":"B202",
+            "teacher":"Ms. Altynai Saidalieva"
+          },
+          {
+            "lesson":"Kyrgyz language",
+            "time":"11:30-12:55",
+            "audience":"1: B201 / 2: B202",
+            "teacher":"Dr. Gulzada Narmatova / Ms. Gulshair Samatova"
+          },
+          {
+            "lesson":"History of Kyrgyzstan",
+            "time":"11:30-12:55",
+            "audience":"B203",
+            "teacher":"unknown"
           },
           {
             "lesson":"LUNCH-TIME",
@@ -888,13 +922,11 @@
             "time":"12:15-12:55"
           }
         ],
-        "COM-21b":[
-        ],
-        "COM-20":[
-        ]
+        "COM-21b":[],
+        "COM-20":[]
       },
       "friday":{
-        "COMCEP-23":[
+        "COMSEP-23":[
           {
             "lesson":"LUNCH-TIME",
             "time":"13:00-13:40" 
