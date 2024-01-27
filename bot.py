@@ -30,7 +30,7 @@ def info(message):
     keyboard.add(schedule)
     bot.send_message(message.chat.id, f"Schedule information:\n\nUniversity: {week['university']}\nSemester: {week['semester']}", reply_markup=keyboard)
 
-def get_group(message):
+def get_group_with_elective(message):
     keyboard = types.InlineKeyboardMarkup()
     count = []
     for group in week['groups']:
@@ -43,6 +43,7 @@ def get_group(message):
         keyboard.add(count[0])
     bot.send_message(message.chat.id, 'Choose your group:\n', reply_markup=keyboard)
 
+
 @bot.message_handler(commands=['schedule'])
 def schedule(message):
     users = record_get("users.json")
@@ -50,7 +51,7 @@ def schedule(message):
     keyboard = types.InlineKeyboardMarkup()
     if not user_exists(user, users):
         bot.send_message(message.chat.id, 'Looks like you haven\'t chosen your group yet. Let\'s choose one:\n', reply_markup=keyboard)
-        get_group(message)
+        get_group_with_elective(message)
     else:
         group = users[user]
         button_days = types.InlineKeyboardButton(text="Days", callback_data=f"days")
@@ -85,7 +86,10 @@ def choose_day_callback(call):
     user = str(call.from_user.id)
     group = users[user]
     day = call.data.split('_')[1]
-    result = get_schedule_for_group(group, day)
+    day_list = get_schedule_for_group(group, day)
+    result = ''
+    for day in day_list:
+        result += day
     bot.send_message(call.message.chat.id, f'{result}')
     bot.send_message(call.message.chat.id, 'Press /schedule to use bot again.')
 
@@ -94,8 +98,11 @@ def choose_group(call):
     users = record_get("users.json")
     user = str(call.from_user.id)
     group = users[user]
-    result = get_schedule_for_group(group, "week")
-    bot.send_message(call.message.chat.id, result, parse_mode='Markdown')
+    week_list = get_schedule_for_group(group, "week")
+    result = ''
+    for day in week_list:
+        result += day
+    bot.send_message(call.message.chat.id, result)
     bot.send_message(call.message.chat.id, 'Press /schedule to use bot again.')
 
 @bot.callback_query_handler(func=lambda call: call.data.startswith('lesson'))
@@ -103,8 +110,11 @@ def choose_group(call):
     users = record_get("users.json")
     user = str(call.from_user.id)
     group = users[user]
-    result = get_lesson(group)
-    bot.send_message(call.message.chat.id, f'{result}')
+    lesson_list = get_lesson(group)
+    result = ''
+    for day in lesson_list:
+        result += day
+    bot.send_message(call.message.chat.id, result)
     bot.send_message(call.message.chat.id,'Press /schedule to use bot again.')
 
 @bot.callback_query_handler(func=lambda call: call.data.startswith('change_group'))
@@ -115,10 +125,10 @@ def change_group(call):
         del users[user]
         record_push('users.json', users)
         bot.send_message(call.message.chat.id, 'Your group has been deleted. Choose another one:\n')
-        get_group(call.message)
+        get_group_with_elective(call.message)
     else:
         bot.send_message(call.message.chat.id, 'You don\'t have a group to delete. Choose one:\n')
-        get_group(call.message)
+        get_group_with_elective(call.message)
     
 if __name__ == '__main__':
     bot.infinity_polling()
