@@ -90,15 +90,20 @@ def get_schedule_for_group(group, day):                                         
                         result.append(f"Lesson: {lesson['lesson']}\nAudience: {lesson['audience']}\nTeacher: {lesson['teacher']}\nTime: {lesson['time']}\n\n")
             result.append('\n\n')
         return result                
+    result = []
     if day == 'today':
         today = datetime.now().strftime('%A').lower()
         if today == 'sunday':
-            return 'Today is a sunday, you dont have any lessons'
+            result.append('Today is a sunday, you dont have any lessons')
+            return result
+        elif "saturday" not in week['days'].keys() and today == "saturday":
+            result.append('Today is a saturday, you dont have any lessons')
+            return result
+        result.append(f"Today is {today}:\n\n")
     else:
         today = day
     if group not in week["days"][today] or len(week['days'][today][group]) == 0:
-        return f"Your group doesn't any lessons on {today}"
-    result = []
+        return f"Your group doesn't any lessons on {today}\n"
     for lesson in week['days'][today][group]:
         if lesson["lesson"] == "LUNCH-TIME":
             result.append(f"Lunch at {lesson['time']}\n\n")
@@ -126,7 +131,7 @@ def next_or_current_lesson_today(group):
     current_lesson = None
     next_lesson = None
     next_lesson_time = None
-    now = datetime.strftime(((datetime.now() + timedelta(hours=1)) + timedelta(minutes=2)), '%H:%M')
+    now = datetime.strftime(datetime.now(), '%H:%M')
     today_name = datetime.now().strftime("%A").lower()
     today_schedule = week["days"].get(today_name, {}).get(group, {})
     now_minutes = time_to_minutes(now)
@@ -145,7 +150,7 @@ def next_or_current_lesson_today(group):
     return current_lesson, next_lesson
 
 def time_left(end_time, state):
-    current_time = datetime.strftime(((datetime.now() + timedelta(hours=1)) + timedelta(minutes=2)), '%H:%M')
+    current_time = datetime.strftime(datetime.now(), '%H:%M')
     end_time_datetime = datetime.strptime(end_time, "%H:%M")
     end_time_hour = datetime.strftime(end_time_datetime, "%H:%M")
     time_difference = time_to_minutes(end_time_hour) - time_to_minutes(current_time)
@@ -203,7 +208,6 @@ def get_lesson(group):                                                          
         result.append("Your group doesn't have any lessons for today or they already passed")
     return result
 
-
 # print(get_lesson('EEAIR-23'))
 # print(get_schedule_for_group('EEAIR-23', 'monday')) 
-# print(passed_or_not(week['days']['monday']['COMSEP-23'][0], 'lesson'))
+# print(passed_or_not(week['days']['monday']['COMSEP-23'][0], 'lesson')
