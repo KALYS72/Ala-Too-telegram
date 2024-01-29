@@ -26,6 +26,18 @@ The main features of the bot include:
 - The bot has an intuitively understandable interface, making it easy to use even for less experienced users.
 
 "Bot Name" - this Telegram bot will be a reliable assistant in organizing the educational process and day-to-day tasks for students.
+
+Commands:
+Days - Displays the days of the week
+Week - Displays the schedule for the whole week
+Next/Current lesson - Shows the remaining time until the end of the lesson
+Today - Schedule for current day
+Change the group - Change the group
+
+Schedule information:
+
+University: ALATOO INTERNATIONAL UNIVERSITY - DEPARTMENT OF COMPUTER SCIENCE
+Semester: 2023-2024 SPRING SEMESTER
     """
     keyboard = types.InlineKeyboardMarkup()
     ala_too_website = types.InlineKeyboardButton(
