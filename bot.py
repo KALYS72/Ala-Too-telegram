@@ -63,9 +63,28 @@ def get_group_with_elective(message):
             count = []
     if len(count) == 1:
         keyboard.add(count[0])
-    bot.send_message(message.chat.id, 'Choose your group:\n', reply_markup=keyboard)
+    bot.send_message(message.chat.id, 'Your group has been deleted. Choose another one:\n', reply_markup=keyboard)
 
-
+def schedule_menu(message, user=None, back=None): 
+    users = record_get("users.json")
+    if not user:
+        user = str(message.from_user.id)
+    group = users[user]
+    keyboard = types.InlineKeyboardMarkup()
+    button_days = types.InlineKeyboardButton(text="Days", callback_data='days')
+    button_today = types.InlineKeyboardButton(text="Today", callback_data='today')
+    button_week = types.InlineKeyboardButton(text="Week", callback_data='week')
+    button_lesson = types.InlineKeyboardButton(text="Next/Current lesson", callback_data='lesson')
+    button_change_group = types.InlineKeyboardButton(text="Change the group", callback_data='change_group')
+    keyboard.add(button_days, button_week)
+    keyboard.add(button_today, button_lesson)
+    keyboard.add(button_change_group)
+    text = f'Your group is {group}!\nPlease choose an option:'
+    if back:
+        bot.edit_message_text(chat_id=back[0], message_id=back[1], text=text, reply_markup=keyboard)
+    else :
+        bot.send_message(message.chat.id, text=text, reply_markup=keyboard)
+    
 @bot.message_handler(commands=['schedule'])
 def schedule(message):
     users = record_get("users.json")
@@ -75,37 +94,35 @@ def schedule(message):
         bot.send_message(message.chat.id, 'Looks like you haven\'t chosen your group yet. Let\'s choose one:\n', reply_markup=keyboard)
         get_group_with_elective(message)
     else:
-        group = users[user]
-        button_days = types.InlineKeyboardButton(text="Days", callback_data=f"days")
-        button_today = types.InlineKeyboardButton(text="Today", callback_data=f"today")
-        button_week = types.InlineKeyboardButton(text="Week", callback_data=f"week")
-        button_lesson = types.InlineKeyboardButton(text="Next/Current lesson", callback_data=f"lesson")
-        button_change_group = types.InlineKeyboardButton(text="Change the group", callback_data=f"change_group")
-        keyboard.add(button_days, button_week)
-        keyboard.add(button_today, button_lesson)
-        keyboard.add(button_change_group)
-        text = f'Your group is {group}!\nPlease choose an option:'
-        bot.send_message(message.chat.id, text=text, reply_markup=keyboard)
+        schedule_menu(message)
+
+@bot.callback_query_handler(func=lambda call: call.data.startswith('back'))
+def choose_group(call):
+    schedule_menu(call.message, user=str(call.from_user.id), back=(call.message.chat.id, call.message.message_id))
 
 @bot.callback_query_handler(func=lambda call: call.data.startswith('group'))
 def choose_group_callback(call):
     users = record_get("users.json")
     user = call.from_user.id
     group = call.data.split('_')[1]
-    bot.send_message(call.message.chat.id, f'Great! Your group is {group}!\nPress /schedule to begin to use our bot.')
     users[user] = group
     record_push("users.json", users)
+    schedule_menu(call.message, str(call.from_user.id))
 
-@bot.callback_query_handler(func=lambda call: call.data == 'days')
+@bot.callback_query_handler(func=lambda call: call.data.startswith('days'))
 def choose_days_callback(call):
     keyboard = types.InlineKeyboardMarkup()
     for day in week['days'].keys():
-        button_day = types.InlineKeyboardButton(text=day.capitalize(), callback_data=f"day_{day}")
-        keyboard.add(button_day)
-    bot.send_message(call.message.chat.id, 'Choose a day:', reply_markup=keyboard)
+        button = types.InlineKeyboardButton(text=day.capitalize(), callback_data=f"day_{day}")
+        keyboard.add(button)
+    button_back = types.InlineKeyboardButton(text="<< Back to schedule", callback_data='back')
+    keyboard.add(button_back)
+    bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id, text='Choose a day:', reply_markup=keyboard)
 
 @bot.callback_query_handler(func=lambda call: call.data.startswith('day_'))
 def choose_day_callback(call):
+    bot.delete_message(chat_id=call.message.chat.id, message_id=call.message.message_id)
+    bot.delete_message(chat_id=call.message.chat.id, message_id=call.message.message_id-1)
     users = record_get("users.json")
     user = str(call.from_user.id)
     group = users[user]
@@ -115,10 +132,12 @@ def choose_day_callback(call):
     for day in day_list:
         result += day
     bot.send_message(call.message.chat.id, f'{result}')
-    bot.send_message(call.message.chat.id, 'Press /schedule to use bot again.')
+    schedule_menu(call.message, str(call.from_user.id))
 
 @bot.callback_query_handler(func=lambda call: call.data.startswith('today'))
 def choose_group(call):
+    bot.delete_message(chat_id=call.message.chat.id, message_id=call.message.message_id)
+    bot.delete_message(chat_id=call.message.chat.id, message_id=call.message.message_id-1)
     users = record_get("users.json")
     user = str(call.from_user.id)
     group = users[user]
@@ -127,11 +146,12 @@ def choose_group(call):
     for day in today_list:
         result += day
     bot.send_message(call.message.chat.id, f'{result}')
-    bot.send_message(call.message.chat.id, 'Press /schedule to use bot again.')
-    
+    schedule_menu(call.message, str(call.from_user.id))
 
 @bot.callback_query_handler(func=lambda call: call.data.startswith('week'))
 def choose_group(call):
+    bot.delete_message(chat_id=call.message.chat.id, message_id=call.message.message_id)
+    bot.delete_message(chat_id=call.message.chat.id, message_id=call.message.message_id-1)
     users = record_get("users.json")
     user = str(call.from_user.id)
     group = users[user]
@@ -140,10 +160,12 @@ def choose_group(call):
     for day in week_list:
         result += day
     bot.send_message(call.message.chat.id, result)
-    bot.send_message(call.message.chat.id, 'Press /schedule to use bot again.')
+    schedule_menu(call.message, str(call.from_user.id))
 
 @bot.callback_query_handler(func=lambda call: call.data.startswith('lesson'))
 def choose_group(call):
+    bot.delete_message(chat_id=call.message.chat.id, message_id=call.message.message_id)
+    bot.delete_message(chat_id=call.message.chat.id, message_id=call.message.message_id-1)
     users = record_get("users.json")
     user = str(call.from_user.id)
     group = users[user]
@@ -152,16 +174,17 @@ def choose_group(call):
     for day in lesson_list:
         result += day
     bot.send_message(call.message.chat.id, result)
-    bot.send_message(call.message.chat.id,'Press /schedule to use bot again.')
+    schedule_menu(call.message, str(call.from_user.id))
 
 @bot.callback_query_handler(func=lambda call: call.data.startswith('change_group'))
 def change_group(call):
+    bot.delete_message(chat_id=call.message.chat.id, message_id=call.message.message_id)
+    bot.delete_message(chat_id=call.message.chat.id, message_id=call.message.message_id-1)
     users = record_get("users.json")
     user = str(call.from_user.id)
     if user in users:
         del users[user]
         record_push('users.json', users)
-        bot.send_message(call.message.chat.id, 'Your group has been deleted. Choose another one:\n')
         get_group_with_elective(call.message)
     else:
         bot.send_message(call.message.chat.id, 'You don\'t have a group to delete. Choose one:\n')
