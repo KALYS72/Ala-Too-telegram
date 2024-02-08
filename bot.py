@@ -1,9 +1,10 @@
 from decouple import config
 from telebot import types
 import telebot
-from main import record_get, record_push, get_schedule_for_group, get_lesson, user_exists
+from main import record_get, record_push, get_schedule_for_group, get_lesson, user_exists, sort_today
 
 week = record_get("source.json")
+reviews = record_get('reviews.json')
 token = config("TOKEN")
 bot =  telebot.TeleBot(token)
 
@@ -11,8 +12,10 @@ bot =  telebot.TeleBot(token)
 def start_message(message):
     bot.send_message(
         message.chat.id, 
-        'Hello, I am a bot that will help you to know where you are supposed to be at a particular time!\n\nCommands:\n\n/info - information about bot and Ala-too\n/schedule - begin to work with a bot!\n'
+        'Hello, I am a bot that will help you to know where you are supposed to be at a particular time!\n\nCommands:\n\n/info - information about bot and Ala-too\n/schedule - begin to work with a bot!'
     )
+    review_message = bot.send_message(message.chat.id, '/review - Please leave your review if:\n-Something goes wrong (nothing shows up on some button, then leave what group you were using and what a particular button doesnt works)\n-You have some idea to improve this bot')
+    bot.pin_chat_message(message.chat.id, review_message.id)
 
 @bot.message_handler(commands=["info"])
 def info(message):
@@ -38,6 +41,23 @@ Commands:
     keyboard.add(ala_too_website)
     keyboard.add(schedule)
     bot.send_message(message.chat.id, f"{define_text}\n\nSchedule information:\n\nUniversity: {week['university']}\nSemester: {week['semester']}", reply_markup=keyboard, parse_mode="HTML")
+
+
+@bot.message_handler(commands=['review'])
+def start_message(message):
+    bot.send_message(message.chat.id, "Please leave your review: (If this is an Error 'EEAIR-23 Today')")
+    bot.register_next_step_handler(message, process_review)
+
+def process_review(message):
+    review_text = message.text
+    user_id = str(message.from_user.id)
+    reviews = record_get('reviews.json')
+    if user_id in reviews:
+        reviews[user_id].append(review_text)
+    else:
+        reviews[user_id] = [review_text]
+    record_push('reviews.json', reviews)
+    bot.send_message(message.chat.id, "Thank you for your review!\n\nCommands:\n\n/start - get back to menu\n/info - information about bot and Ala-too\n/schedule - begin to work with a bot!")
 
 def get_group_with_elective(message):
     keyboard = types.InlineKeyboardMarkup()
@@ -133,9 +153,7 @@ def choose_group(call):
     user = str(call.from_user.id)
     group = users[user]
     today_list = get_schedule_for_group(group, 'today')
-    result = ''
-    for day in today_list:
-        result += day
+    result = sort_today(today_list=today_list)
     bot.send_message(chat_id=call.message.chat.id, text=result, parse_mode="HTML")
     schedule_menu(call.message, str(call.from_user.id))
 
