@@ -17,28 +17,15 @@ def start_message(message):
 @bot.message_handler(commands=["info"])
 def info(message):
     define_text = """
-The Telegram bot "Bot Name" is a convenient tool for students, providing instant access to class schedules. The bot is developed with the needs of the student community in mind, offering a fast and easy way to check current and upcoming classes.
-
-The main features of the bot include:
-
-- The ability to view schedules by day, week, or specific subjects.
-- Students can also receive notifications about upcoming classes, deadlines, or changes in the schedule.
-- The bot has an intuitively understandable interface, making it easy to use even for less experienced users.
-
-"Bot Name" - this Telegram bot will be a reliable assistant in organizing the educational process and day-to-day tasks for students.
+The Telegram bot "Bot Name" is a convenient tool for students, providing instant access to class schedules. 
 
 Commands:
-Days - Displays the days of the week
-Week - Displays the schedule for the whole week
-Next/Current lesson - Shows the remaining time until the end of the lesson
-Today - Schedule for current day
-Change the group - Change the group
-
-Schedule information:
-
-University: ALATOO INTERNATIONAL UNIVERSITY - DEPARTMENT OF COMPUTER SCIENCE
-Semester: 2023-2024 SPRING SEMESTER
-    """
+<b>Days</b> - Displays the days of the week
+<b>Week</b> - Displays the schedule for the whole week
+<b>Next/Current lesson</b> - Shows the remaining time until the end of the lesson
+<b>Today</b> - Schedule for current day
+<b>Change the group</b> - Change the group
+"""
     keyboard = types.InlineKeyboardMarkup()
     ala_too_website = types.InlineKeyboardButton(
         text="Info about Ala-Too", 
@@ -50,7 +37,7 @@ Semester: 2023-2024 SPRING SEMESTER
     )
     keyboard.add(ala_too_website)
     keyboard.add(schedule)
-    bot.send_message(message.chat.id, f"{define_text}\n\nSchedule information:\n\nUniversity: {week['university']}\nSemester: {week['semester']}", reply_markup=keyboard)
+    bot.send_message(message.chat.id, f"{define_text}\n\nSchedule information:\n\nUniversity: {week['university']}\nSemester: {week['semester']}", reply_markup=keyboard, parse_mode="HTML")
 
 def get_group_with_elective(message):
     keyboard = types.InlineKeyboardMarkup()
@@ -63,7 +50,8 @@ def get_group_with_elective(message):
             count = []
     if len(count) == 1:
         keyboard.add(count[0])
-    bot.send_message(message.chat.id, 'Your group has been deleted. Choose another one:\n', reply_markup=keyboard)
+    text='Your group has been deleted. Choose another one:\n'
+    bot.send_message(chat_id=message.chat.id, text=text, reply_markup=keyboard)
 
 def schedule_menu(message, user=None, back=None): 
     users = record_get("users.json")
@@ -83,7 +71,7 @@ def schedule_menu(message, user=None, back=None):
     if back:
         bot.edit_message_text(chat_id=back[0], message_id=back[1], text=text, reply_markup=keyboard)
     else :
-        bot.send_message(message.chat.id, text=text, reply_markup=keyboard)
+        bot.send_message(message.chat.id, text=text, reply_markup=keyboard, parse_mode="HTML")
     
 @bot.message_handler(commands=['schedule'])
 def schedule(message):
@@ -107,11 +95,12 @@ def choose_group_callback(call):
     group = call.data.split('_')[1]
     users[user] = group
     record_push("users.json", users)
+    bot.delete_message(chat_id=call.message.chat.id, message_id=call.message.message_id)
     schedule_menu(call.message, str(call.from_user.id))
 
 @bot.callback_query_handler(func=lambda call: call.data.startswith('days'))
 def choose_days_callback(call):
-    keyboard = types.InlineKeyboardMarkup()
+    keyboard = types.InlineKeyboardMarkup()  
     for day in week['days'].keys():
         button = types.InlineKeyboardButton(text=day.capitalize(), callback_data=f"day_{day}")
         keyboard.add(button)
@@ -122,7 +111,8 @@ def choose_days_callback(call):
 @bot.callback_query_handler(func=lambda call: call.data.startswith('day_'))
 def choose_day_callback(call):
     bot.delete_message(chat_id=call.message.chat.id, message_id=call.message.message_id)
-    bot.delete_message(chat_id=call.message.chat.id, message_id=call.message.message_id-1)
+    if call.message.message_id-1:
+        bot.delete_message(chat_id=call.message.chat.id, message_id=call.message.message_id-1)
     users = record_get("users.json")
     user = str(call.from_user.id)
     group = users[user]
@@ -131,13 +121,14 @@ def choose_day_callback(call):
     result = ''
     for day in day_list:
         result += day
-    bot.send_message(call.message.chat.id, f'{result}')
+    bot.send_message(chat_id=call.message.chat.id, text=result, parse_mode="HTML")
     schedule_menu(call.message, str(call.from_user.id))
 
 @bot.callback_query_handler(func=lambda call: call.data.startswith('today'))
 def choose_group(call):
     bot.delete_message(chat_id=call.message.chat.id, message_id=call.message.message_id)
-    bot.delete_message(chat_id=call.message.chat.id, message_id=call.message.message_id-1)
+    if call.message.message_id-1:
+        bot.delete_message(chat_id=call.message.chat.id, message_id=call.message.message_id-1)
     users = record_get("users.json")
     user = str(call.from_user.id)
     group = users[user]
@@ -145,13 +136,14 @@ def choose_group(call):
     result = ''
     for day in today_list:
         result += day
-    bot.send_message(call.message.chat.id, f'{result}')
+    bot.send_message(chat_id=call.message.chat.id, text=result, parse_mode="HTML")
     schedule_menu(call.message, str(call.from_user.id))
 
 @bot.callback_query_handler(func=lambda call: call.data.startswith('week'))
 def choose_group(call):
     bot.delete_message(chat_id=call.message.chat.id, message_id=call.message.message_id)
-    bot.delete_message(chat_id=call.message.chat.id, message_id=call.message.message_id-1)
+    if call.message.message_id-1:
+        bot.delete_message(chat_id=call.message.chat.id, message_id=call.message.message_id-1)
     users = record_get("users.json")
     user = str(call.from_user.id)
     group = users[user]
@@ -159,13 +151,14 @@ def choose_group(call):
     result = ''
     for day in week_list:
         result += day
-    bot.send_message(call.message.chat.id, result)
+    bot.send_message(chat_id=call.message.chat.id, text=result, parse_mode="HTML")
     schedule_menu(call.message, str(call.from_user.id))
 
 @bot.callback_query_handler(func=lambda call: call.data.startswith('lesson'))
 def choose_group(call):
     bot.delete_message(chat_id=call.message.chat.id, message_id=call.message.message_id)
-    bot.delete_message(chat_id=call.message.chat.id, message_id=call.message.message_id-1)
+    if call.message.message_id-1:
+        bot.delete_message(chat_id=call.message.chat.id, message_id=call.message.message_id-1)
     users = record_get("users.json")
     user = str(call.from_user.id)
     group = users[user]
@@ -173,13 +166,12 @@ def choose_group(call):
     result = ''
     for day in lesson_list:
         result += day
-    bot.send_message(call.message.chat.id, result)
+    bot.send_message(chat_id=call.message.chat.id, text=result, parse_mode="HTML")
     schedule_menu(call.message, str(call.from_user.id))
 
 @bot.callback_query_handler(func=lambda call: call.data.startswith('change_group'))
 def change_group(call):
     bot.delete_message(chat_id=call.message.chat.id, message_id=call.message.message_id)
-    bot.delete_message(chat_id=call.message.chat.id, message_id=call.message.message_id-1)
     users = record_get("users.json")
     user = str(call.from_user.id)
     if user in users:
