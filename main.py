@@ -121,21 +121,21 @@ def get_schedule_for_group(group, day):                                         
                         for elective in lesson['electives']:
                             electives.append(f"\n{elective}")
                             elective_string += f"\n{elective}"
-                        result.append(f"\n&#x1F4DA;  Electives:{elective_string}\n&#x1F552 {lesson['time']}\n\n")
+                        result.append(f"&#x1F4DA;  Electives:{elective_string}\n&#x1F552 <b>{lesson['time']}</b>\n\n")
                     elif lesson['lesson'] == "LANGUAGE_ELECTIVES":
                         electives = []
                         elective_string = ''
                         for elective in lesson['electives']:
                             electives.append(f"\n{elective}")
                             elective_string += f"\n{elective}"
-                        result.append(f"\n&#x1F1EC;&#x1F1E7;  Languages:{elective_string}\n&#x1F552 {lesson['time']}\n\n")
+                        result.append(f"&#x1F1EC;&#x1F1E7;  Languages:{elective_string}\n&#x1F552 <b>{lesson['time']}</b>\n\n")
                     elif lesson['lesson'] == "DEPARTMENT_ELECTIVE":
                         electives = []
                         elective_string = ''
                         for elective in lesson['electives']:
                             electives.append(f"\n{elective}")
                             elective_string += f"\n{elective}"
-                        result.append(f"\n&#x1F4DA;  Department Electives:{elective_string}\n&#x1F552 {lesson['time']}\n\n")
+                        result.append(f"&#x1F4DA;  Department Electives:{elective_string}\n&#x1F552 <b>{lesson['time']}</b>\n\n")
                     else:
                         result.append(f"&#x1F4D6 {lesson['lesson']}\n&#x1F3E2 {lesson['audience']}\n&#x1F474;&#x1F3FB; {lesson['teacher']}\n&#x1F552 <b>{lesson['time']}</b>\n\n")
             result.append('\n\n')
@@ -144,16 +144,14 @@ def get_schedule_for_group(group, day):                                         
     if day == 'today':
         today = datetime.now().strftime('%A').lower()
         if today == 'sunday':
-            result.append('<b>Today is a sunday, you dont have any lessons</b>')
-            return result
+            return ['<b>Today is a sunday, you dont have any lessons</b>']
         elif "saturday" not in week['days'].keys() and today == "saturday":
-            result.append('<b>Today is a saturday, you dont have any lessons</b>')
-            return result
+            return ['<b>Today is a saturday, you dont have any lessons</b>']
         result.append(f"Today is {today.capitalize()}:\n\n")
     else:
         today = day
     if group not in week["days"][today] or len(week['days'][today][group]) == 0:
-        return f"Your group doesn't any lessons on {today}\n"
+        return [f"<b>Your group doesn't have any lessons on {today}</b>\n"]
     for lesson in week['days'][today][group]:
         if lesson["lesson"] == "LUNCH-TIME":
             result.append(f"&#x1F37D <b>Lunch at {lesson['time']}</b>\n\n")
@@ -163,140 +161,144 @@ def get_schedule_for_group(group, day):                                         
             for elective in lesson['electives']:
                 electives.append(f"\n{elective}")
                 elective_string += f"\n{elective}"
-            result.append(f"\n&#x1F4DA;  Electives:{elective_string}\n&#x1F552 {lesson['time']}\n\n")
+            result.append(f"&#x1F4DA;  Electives:{elective_string}\n&#x1F552 <b>{lesson['time']}</b>\n\n")
         elif lesson['lesson'] == "LANGUAGE_ELECTIVES":
             electives = []
             elective_string = ''
             for elective in lesson['electives']:
                 electives.append(f"\n{elective}")
                 elective_string += f"\n{elective}"
-            result.append(f"\n&#x1F1EC;&#x1F1E7;  Languages:{elective_string}\n&#x1F552 {lesson['time']}\n\n")
+            result.append(f"&#x1F1EC;&#x1F1E7;  Languages:{elective_string}\n&#x1F552 <b>{lesson['time']}</b>\n\n")
         elif lesson['lesson'] == "DEPARTMENT_ELECTIVE":
             electives = []
             elective_string = ''
             for elective in lesson['electives']:
                 electives.append(f"\n{elective}")
                 elective_string += f"\n{elective}"
-            result.append(f"&#x1F4DA;  Department Electives:{elective_string}\n&#x1F552 {lesson['time']}\n\n")
+            result.append(f"&#x1F4DA;  Department Electives:{elective_string}\n&#x1F552 <b>{lesson['time']}</b>\n\n")
         else:
             result.append(f"&#x1F4D6 {lesson['lesson']}\n&#x1F3E2 {lesson['audience']}\n&#x1F474;&#x1F3FB; {lesson['teacher']}\n&#x1F552 <b>{lesson['time']}</b>\n\n")
     return result
 
 def get_lesson(group):                                                             
-    current_lesson, next_lesson, today, group, id = next_or_current_lesson_today(group) 
     today = datetime.now().strftime("%A").lower()
-    result = []
     if today == 'sunday':
-        result.append('<b>Today is a sunday, you dont have any lessons</b>')
-    if current_lesson:
-        if current_lesson['lesson'] == "LUNCH-TIME":
-            result.append(f"&#x1F37D  Your group is having a lunch! {time_left(current_lesson['time'].split('-')[1].strip(), 'going_on')}\n&#x1F552  Lunch time: <b>{current_lesson['time']}</b>\n")
-            if id + 1 < len(week['days'][today][group]):
-                next_lesson_after_lunch = week['days'][today][group][id+1]
-                if next_lesson_after_lunch['lesson'] == "ELECTIVES":
-                    electives = []
-                    elective_string = ''
-                    for elective in next_lesson_after_lunch['electives']:
-                        electives.append(f"\n{elective}")
-                        elective_string += f"\n{elective}"
-                    result.append(f"\n&#x1F4DA;  You have electives after the lunch:{elective_string}\n&#x1F552 {next_lesson_after_lunch['time']}\n")
-                elif next_lesson_after_lunch['lesson'] == "LANGUAGE_ELECTIVES":
-                    electives = []
-                    elective_string = ''
-                    for elective in next_lesson_after_lunch['electives']:
-                        electives.append(f"\n{elective}")
-                        elective_string += f"\n{elective}"
-                    result.append(f"\n\n&#x1F1EC;&#x1F1E7;  You have the language after the lunch:{elective_string}\n&#x1F552 {next_lesson_after_lunch['time']}\n")
-                elif next_lesson_after_lunch['lesson'] == "DEPARTMENT_ELECTIVE":
-                    electives = []
-                    elective_string = ''
-                    for elective in next_lesson_after_lunch['electives']:
-                        electives.append(f"\n{elective}")
-                        elective_string += f"\n{elective}"
-                    result.append(f"\n&#x1F4DA;  You have the department elective after the lunch:{elective_string}\n&#x1F552 {next_lesson_after_lunch['time']}\n")
-                else:
-                    result.append(f"\n<code> Lesson after lunch: {next_lesson_after_lunch['lesson']}\n&#x1F3E2 {next_lesson_after_lunch['audience']}\n&#x1F474;&#x1F3FB; {next_lesson_after_lunch['teacher']}\n&#x1F552  <b>{next_lesson_after_lunch['time']}</b>\n")
-        elif current_lesson['lesson'] == "ELECTIVES":
-            electives = []
-            elective_string = ''
-            for elective in current_lesson['electives']:
-                electives.append(f"\n{elective}")
-                elective_string += f"\n{elective}"
-            result.append(f"&#x1F4DA;  Your electives are going on!: {time_left(current_lesson['time'].split('-')[1].strip(), 'going_on')}{elective_string}\n&#x1F552 Time: <b>{current_lesson['time']}</b>")
-        elif current_lesson['lesson'] == "LANGUAGE_ELECTIVES":
-            electives = []
-            elective_string = ''
-            for elective in current_lesson['electives']:
-                electives.append(f"\n{elective}")
-                elective_string += f"\n{elective}"
-            result.append(f"&#x1F1EC;&#x1F1E7;  Your language is going on!: {time_left(current_lesson['time'].split('-')[1].strip(), 'going_on')}{elective_string}\n&#x1F552 Time: <b>{current_lesson['time']}</b>")
-        elif current_lesson['lesson'] == "DEPARTMENT_ELECTIVE":
-            electives = []
-            elective_string = ''
-            for elective in current_lesson['electives']:
-                electives.append(f"\n{elective}")
-                elective_string += f"\n{elective}"
-            result.append(f"&#x1F4DA;  Your department elective is going on!: {time_left(current_lesson['time'].split('-')[1].strip(), 'going_on')}{elective_string}\n&#x1F552 Time: <b>{current_lesson['time']}</b>")
-        else:
-            result.append(f"&#x1F4DA;  Your lesson is going on!: {time_left(current_lesson['time'].split('-')[1].strip(), 'going_on')}\n\n&#x1F4D6 {current_lesson['lesson']}\n&#x1F3E2 {current_lesson['audience']}\n&#x1F474;&#x1F3FB; {current_lesson['teacher']}\n&#x1F552  <b>{current_lesson['time']}</b>")
-    elif next_lesson: 
-        if next_lesson['lesson'] == "LUNCH-TIME": 
-            result.append(f"&#x1F37D  You're gonna have a lunch! {time_left(next_lesson['time'].split('-')[0].strip(), 'next')}\n&#x1F552 <b> Lunch: {next_lesson['time']}</b>")
-            if id + 1 <= len(week['days'][today][group]):
-                next_lesson_after_lunch = week['days'][today][group][id+1]
-                if next_lesson_after_lunch['lesson'] == "ELECTIVES":
-                    electives = []
-                    elective_string = ''
-                    for elective in next_lesson_after_lunch['electives']:
-                        electives.append(f"\n{elective}")
-                        elective_string += f"\n{elective}"
-                    result.append(f"&#x1F4DA;  You have the electives after the lunch:{elective_string}\n&#x1F552 {next_lesson_after_lunch['time']}</b>")
-                elif next_lesson_after_lunch['lesson'] == "LANGUAGE_ELECTIVES":
-                    electives = []
-                    elective_string = ''
-                    for elective in next_lesson_after_lunch['electives']:
-                        electives.append(f"\n{elective}")
-                        elective_string += f"\n{elective}"
-                    result.append(f"&#x1F1EC;&#x1F1E7;  You have the language after the lunch:{elective_string}\n&#x1F552 {next_lesson_after_lunch['time']}</b>")
-                elif next_lesson_after_lunch['lesson'] == "DEPARTMENT_ELECTIVE":
-                    electives = []
-                    elective_string = ''
-                    for elective in next_lesson_after_lunch['electives']:
-                        electives.append(f"\n{elective}")
-                        elective_string += f"\n{elective}"
-                    result.append(f"&#x1F4DA;  You have the department elective after the lunch:{elective_string}\n&#x1F552 {next_lesson_after_lunch['time']}</b>")
-                else:
-                    result.append(f"\n&#x1F4DA;  Lesson after lunch: {next_lesson_after_lunch['lesson']}\n&#x1F3E2 {next_lesson_after_lunch['audience']}\n&#x1F474;&#x1F3FB; {next_lesson_after_lunch['teacher']}\n&#x1F552  <b>{next_lesson_after_lunch['time']}</b>")
+            return ['<b>Today is a sunday, you dont have any lessons</b>']
+    elif "saturday" not in week['days'].keys() and today == "saturday":
+        return ['<b>Today is a saturday, you dont have any lessons</b>']
+    elif len(week['days'][today][group]) != 0:
+        current_lesson, next_lesson, today, group, id = next_or_current_lesson_today(group) 
+        result = []
+        if current_lesson:
+            if current_lesson['lesson'] == "LUNCH-TIME":
+                result.append(f"&#x1F37D  Your group is having a lunch! {time_left(current_lesson['time'].split('-')[1].strip(), 'going_on')}\n&#x1F552  Lunch time: <b>{current_lesson['time']}</b>\n\n")
+                if id + 1 < len(week['days'][today][group]):
+                    next_lesson_after_lunch = week['days'][today][group][id+1]
+                    if next_lesson_after_lunch['lesson'] == "ELECTIVES":
+                        electives = []
+                        elective_string = ''
+                        for elective in next_lesson_after_lunch['electives']:
+                            electives.append(f"\n{elective}")
+                            elective_string += f"\n{elective}"
+                        result.append(f"&#x1F4DA;  You have electives after the lunch:{elective_string}\n&#x1F552 {next_lesson_after_lunch['time']}\n")
+                    elif next_lesson_after_lunch['lesson'] == "LANGUAGE_ELECTIVES":
+                        electives = []
+                        elective_string = ''
+                        for elective in next_lesson_after_lunch['electives']:
+                            electives.append(f"\n{elective}")
+                            elective_string += f"\n{elective}"
+                        result.append(f"&#x1F1EC;&#x1F1E7;  You have the language after the lunch:{elective_string}\n&#x1F552 {next_lesson_after_lunch['time']}\n")
+                    elif next_lesson_after_lunch['lesson'] == "DEPARTMENT_ELECTIVE":
+                        electives = []
+                        elective_string = ''
+                        for elective in next_lesson_after_lunch['electives']:
+                            electives.append(f"\n{elective}")
+                            elective_string += f"\n{elective}"
+                        result.append(f"&#x1F4DA;  You have the department elective after the lunch:{elective_string}\n&#x1F552 {next_lesson_after_lunch['time']}\n")
+                    else:
+                        result.append(f"\n<code> Lesson after lunch: {next_lesson_after_lunch['lesson']}\n&#x1F3E2 {next_lesson_after_lunch['audience']}\n&#x1F474;&#x1F3FB; {next_lesson_after_lunch['teacher']}\n&#x1F552  <b>{next_lesson_after_lunch['time']}</b>\n")
+            elif current_lesson['lesson'] == "ELECTIVES":
+                electives = []
+                elective_string = ''
+                for elective in current_lesson['electives']:
+                    electives.append(f"\n{elective}")
+                    elective_string += f"\n{elective}"
+                result.append(f"&#x1F4DA;  Your electives are going on!: {time_left(current_lesson['time'].split('-')[1].strip(), 'going_on')}{elective_string}\n&#x1F552 Time: <b>{current_lesson['time']}</b>")
+            elif current_lesson['lesson'] == "LANGUAGE_ELECTIVES":
+                electives = []
+                elective_string = ''
+                for elective in current_lesson['electives']:
+                    electives.append(f"\n{elective}")
+                    elective_string += f"\n{elective}"
+                result.append(f"&#x1F1EC;&#x1F1E7;  Your language is going on!: {time_left(current_lesson['time'].split('-')[1].strip(), 'going_on')}{elective_string}\n&#x1F552 Time: <b>{current_lesson['time']}</b>")
+            elif current_lesson['lesson'] == "DEPARTMENT_ELECTIVE":
+                electives = []
+                elective_string = ''
+                for elective in current_lesson['electives']:
+                    electives.append(f"\n{elective}")
+                    elective_string += f"\n{elective}"
+                result.append(f"&#x1F4DA;  Your department elective is going on!: {time_left(current_lesson['time'].split('-')[1].strip(), 'going_on')}{elective_string}\n&#x1F552 Time: <b>{current_lesson['time']}</b>")
             else:
-                result.append("<b>There's no lessons after lunch, you can go home</b>")
-                return result
-        elif next_lesson['lesson'] == "ELECTIVES":
-            electives = []
-            elective_string = ''
-            for elective in next_lesson['electives']:
-                electives.append(f"\n{elective}")
-                elective_string += f"\n{elective}"
-            result.append(f"&#x1F4DA;  Your elective is gonna start!: {time_left(next_lesson['time'].split('-')[0].strip(), 'next')}{elective_string}\n&#x1F552 {next_lesson['time']}</b>")
-        elif next_lesson['lesson'] == "LANGUAGE_ELECTIVES":
-            result.append(f"&#x1F1EC;&#x1F1E7;  Your language is gonna start!: {time_left(next_lesson['time'].split('-')[0].strip(), 'next')}{elective_string}\n&#x1F552 {next_lesson['time']}</b>")
-            electives = []
-            elective_string = ''
-            for elective in next_lesson['electives']:
-                electives.append(f"\n{elective}")
-                elective_string += f"\n{elective}"
-        elif next_lesson['lesson'] == "DEPARTMENT_ELECTIVE":
-            electives = []
-            elective_string = ''
-            for elective in next_lesson['electives']:
-                electives.append(f"\n{elective}")
-                elective_string += f"\n{elective}"
-            result.append(f"&#x1F4DA;  Your department elective is gonna start!: {time_left(next_lesson['time'].split('-')[0].strip(), 'next')}{elective_string}\n&#x1F552 {next_lesson['time']}</b>")
+                result.append(f"&#x1F4DA;  Your lesson is going on!: {time_left(current_lesson['time'].split('-')[1].strip(), 'going_on')}\n\n&#x1F4D6 {current_lesson['lesson']}\n&#x1F3E2 {current_lesson['audience']}\n&#x1F474;&#x1F3FB; {current_lesson['teacher']}\n&#x1F552  <b>{current_lesson['time']}</b>")
+        elif next_lesson: 
+            if next_lesson['lesson'] == "LUNCH-TIME": 
+                result.append(f"&#x1F37D  You're gonna have a lunch! {time_left(next_lesson['time'].split('-')[0].strip(), 'next')}\n&#x1F552 <b> Lunch: {next_lesson['time']}</b>")
+                if id + 1 <= len(week['days'][today][group]):
+                    next_lesson_after_lunch = week['days'][today][group][id+1]
+                    if next_lesson_after_lunch['lesson'] == "ELECTIVES":
+                        electives = []
+                        elective_string = ''
+                        for elective in next_lesson_after_lunch['electives']:
+                            electives.append(f"\n{elective}")
+                            elective_string += f"\n{elective}"
+                        result.append(f"&#x1F4DA;  You have the electives after the lunch:{elective_string}\n&#x1F552 <b>{next_lesson_after_lunch['time']}</b>")
+                    elif next_lesson_after_lunch['lesson'] == "LANGUAGE_ELECTIVES":
+                        electives = []
+                        elective_string = ''
+                        for elective in next_lesson_after_lunch['electives']:
+                            electives.append(f"\n{elective}")
+                            elective_string += f"\n{elective}"
+                        result.append(f"&#x1F1EC;&#x1F1E7;  You have the language after the lunch:{elective_string}\n&#x1F552 <b>{next_lesson_after_lunch['time']}</b>")
+                    elif next_lesson_after_lunch['lesson'] == "DEPARTMENT_ELECTIVE":
+                        electives = []
+                        elective_string = ''
+                        for elective in next_lesson_after_lunch['electives']:
+                            electives.append(f"\n{elective}")
+                            elective_string += f"\n{elective}"
+                        result.append(f"&#x1F4DA;  You have the department elective after the lunch:{elective_string}\n&#x1F552 <b>{next_lesson_after_lunch['time']}</b>")
+                    else:
+                        result.append(f"\n&#x1F4DA;  Lesson after lunch: {next_lesson_after_lunch['lesson']}\n&#x1F3E2 {next_lesson_after_lunch['audience']}\n&#x1F474;&#x1F3FB; {next_lesson_after_lunch['teacher']}\n&#x1F552  <b>{next_lesson_after_lunch['time']}</b>")
+                else:
+                    result.append("<b>There's no lessons after lunch, you can go home</b>")
+                    return result
+            elif next_lesson['lesson'] == "ELECTIVES":
+                electives = []
+                elective_string = ''
+                for elective in next_lesson['electives']:
+                    electives.append(f"\n{elective}")
+                    elective_string += f"\n{elective}"
+                result.append(f"&#x1F4DA;  Your elective is gonna start!: {time_left(next_lesson['time'].split('-')[0].strip(), 'next')}{elective_string}\n&#x1F552 {next_lesson['time']}</b>")
+            elif next_lesson['lesson'] == "LANGUAGE_ELECTIVES":
+                result.append(f"&#x1F1EC;&#x1F1E7;  Your language is gonna start!: {time_left(next_lesson['time'].split('-')[0].strip(), 'next')}{elective_string}\n&#x1F552 {next_lesson['time']}</b>")
+                electives = []
+                elective_string = ''
+                for elective in next_lesson['electives']:
+                    electives.append(f"\n{elective}")
+                    elective_string += f"\n{elective}"
+            elif next_lesson['lesson'] == "DEPARTMENT_ELECTIVE":
+                electives = []
+                elective_string = ''
+                for elective in next_lesson['electives']:
+                    electives.append(f"\n{elective}")
+                    elective_string += f"\n{elective}"
+                result.append(f"&#x1F4DA;  Your department elective is gonna start!: {time_left(next_lesson['time'].split('-')[0].strip(), 'next')}{elective_string}\n&#x1F552 {next_lesson['time']}</b>")
+            else:
+                result.append(f"&#x1F4DA;  Your next lesson is {next_lesson['lesson']}!:  {time_left(next_lesson['time'].split('-')[0].strip(), 'next')}\n\n&#x1F3E2 {next_lesson['audience']}\n&#x1F474;&#x1F3FB; {next_lesson['teacher']}\n&#x1F552  <b>{next_lesson['time']}</b>")
         else:
-            result.append(f"&#x1F4DA;  Your next lesson is {next_lesson['lesson']}!:  {time_left(next_lesson['time'].split('-')[0].strip(), 'next')}\n\n&#x1F3E2 {next_lesson['audience']}\n&#x1F474;&#x1F3FB; {next_lesson['teacher']}\n&#x1F552  <b>{next_lesson['time']}</b>")
-    else:
-        result.append("<b>Your group doesn't have any lessons for today or they already passed</b>")
-    return result
+            result.append("<b>Your group doesn't have any lessons for today or they already passed</b>")
+        return result
+    return ["<b>Your group doesn't have any lessons for today</b>"]
 
-# print(get_lesson('EEAIR-23'))
-# print(get_schedule_for_group('EEAIR-23', 'monday')) 
+# print(get_lesson('COM-21a'))
+# print(get_schedule_for_group('EEAIR-23', 'week')) 
 # print(passed_or_not(week['days']['monday']['COMSEP-23'][0], 'lesson')

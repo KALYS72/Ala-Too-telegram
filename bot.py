@@ -1,6 +1,6 @@
 from decouple import config
 from telebot import types
-import telebot
+import telebot, datetime
 from main import record_get, record_push, get_schedule_for_group, get_lesson, user_exists, sort_today
 
 week = record_get("source.json")
@@ -14,7 +14,7 @@ def start_message(message):
         message.chat.id, 
         'Hello, I am a bot that will help you to know where you are supposed to be at a particular time!\n\nCommands:\n\n/info - information about bot and Ala-too\n/schedule - begin to work with a bot!'
     )
-    review_message = bot.send_message(message.chat.id, '/review - Please leave your review if:\n-Something goes wrong (nothing shows up on some button, then leave what group you were using and what a particular button doesnt works)\n-You have some idea to improve this bot')
+    review_message = bot.send_message(message.chat.id, '/review - Please leave your review if:\n-Something goes wrong\n-You have some idea to improve this bot')
     bot.pin_chat_message(message.chat.id, review_message.id)
 
 @bot.message_handler(commands=["info"])
@@ -45,7 +45,7 @@ Commands:
 
 @bot.message_handler(commands=['review'])
 def start_message(message):
-    bot.send_message(message.chat.id, "Please leave your review: (If this is an Error 'EEAIR-23 Today')")
+    bot.send_message(message.chat.id, "Please leave your review: ")
     bot.register_next_step_handler(message, process_review)
 
 def process_review(message):
@@ -59,7 +59,7 @@ def process_review(message):
     record_push('reviews.json', reviews)
     bot.send_message(message.chat.id, "Thank you for your review!\n\nCommands:\n\n/start - get back to menu\n/info - information about bot and Ala-too\n/schedule - begin to work with a bot!")
 
-def get_group_with_elective(message):
+def get_group_with_elective(message, back=None):
     keyboard = types.InlineKeyboardMarkup()
     count = []
     for group in week['groups']:
@@ -71,7 +71,10 @@ def get_group_with_elective(message):
     if len(count) == 1:
         keyboard.add(count[0])
     text='Your group has been deleted. Choose another one:\n'
-    bot.send_message(chat_id=message.chat.id, text=text, reply_markup=keyboard)
+    if back:
+        bot.edit_message_text(chat_id=back[0], message_id=back[1], text=text, reply_markup=keyboard)
+    else:
+        bot.send_message(chat_id=message.chat.id, text=text, reply_markup=keyboard)
 
 def schedule_menu(message, user=None, back=None): 
     users = record_get("users.json")
@@ -89,7 +92,7 @@ def schedule_menu(message, user=None, back=None):
     keyboard.add(button_change_group)
     text = f'Your group is {group}!\nPlease choose an option:'
     if back:
-        bot.edit_message_text(chat_id=back[0], message_id=back[1], text=text, reply_markup=keyboard)
+        bot.edit_message_text(chat_id=back[0], message_id=back[1], text=text, reply_markup=keyboard, parse_mode="HTML")
     else :
         bot.send_message(message.chat.id, text=text, reply_markup=keyboard, parse_mode="HTML")
     
@@ -115,8 +118,7 @@ def choose_group_callback(call):
     group = call.data.split('_')[1]
     users[user] = group
     record_push("users.json", users)
-    bot.delete_message(chat_id=call.message.chat.id, message_id=call.message.message_id)
-    schedule_menu(call.message, str(call.from_user.id))
+    schedule_menu(call.message, str(call.from_user.id), back=(call.message.chat.id, call.message.message_id))
 
 @bot.callback_query_handler(func=lambda call: call.data.startswith('days'))
 def choose_days_callback(call):
@@ -130,75 +132,76 @@ def choose_days_callback(call):
 
 @bot.callback_query_handler(func=lambda call: call.data.startswith('day_'))
 def choose_day_callback(call):
-    bot.delete_message(chat_id=call.message.chat.id, message_id=call.message.message_id)
-    if call.message.message_id-1:
-        bot.delete_message(chat_id=call.message.chat.id, message_id=call.message.message_id-1)
     users = record_get("users.json")
     user = str(call.from_user.id)
     group = users[user]
     day = call.data.split('_')[1]
     day_list = get_schedule_for_group(group, day)
     result = ''
+    if not day_list[0].startswith("Your group doesn't have any lessons on"):
+        result += f'{day.capitalize()}:\n\n'
     for day in day_list:
         result += day
+    bot.delete_message(chat_id=call.message.chat.id, message_id=call.message.message_id)
+    if call.message.message_id-1:
+        bot.delete_message(chat_id=call.message.chat.id, message_id=call.message.message_id-1)
     bot.send_message(chat_id=call.message.chat.id, text=result, parse_mode="HTML")
     schedule_menu(call.message, str(call.from_user.id))
 
 @bot.callback_query_handler(func=lambda call: call.data.startswith('today'))
 def choose_group(call):
-    bot.delete_message(chat_id=call.message.chat.id, message_id=call.message.message_id)
-    if call.message.message_id-1:
-        bot.delete_message(chat_id=call.message.chat.id, message_id=call.message.message_id-1)
     users = record_get("users.json")
     user = str(call.from_user.id)
     group = users[user]
     today_list = get_schedule_for_group(group, 'today')
     result = sort_today(today_list=today_list)
+    bot.delete_message(chat_id=call.message.chat.id, message_id=call.message.message_id)
+    if call.message.message_id-1:
+        bot.delete_message(chat_id=call.message.chat.id, message_id=call.message.message_id-1)
     bot.send_message(chat_id=call.message.chat.id, text=result, parse_mode="HTML")
     schedule_menu(call.message, str(call.from_user.id))
 
 @bot.callback_query_handler(func=lambda call: call.data.startswith('week'))
 def choose_group(call):
-    bot.delete_message(chat_id=call.message.chat.id, message_id=call.message.message_id)
-    if call.message.message_id-1:
-        bot.delete_message(chat_id=call.message.chat.id, message_id=call.message.message_id-1)
     users = record_get("users.json")
     user = str(call.from_user.id)
     group = users[user]
     week_list = get_schedule_for_group(group, "week")
-    result = ''
+    result = '' 
     for day in week_list:
         result += day
+    bot.delete_message(chat_id=call.message.chat.id, message_id=call.message.message_id)
+    if call.message.message_id-1:
+        bot.delete_message(chat_id=call.message.chat.id, message_id=call.message.message_id-1)
     bot.send_message(chat_id=call.message.chat.id, text=result, parse_mode="HTML")
     schedule_menu(call.message, str(call.from_user.id))
 
 @bot.callback_query_handler(func=lambda call: call.data.startswith('lesson'))
 def choose_group(call):
-    bot.delete_message(chat_id=call.message.chat.id, message_id=call.message.message_id)
-    if call.message.message_id-1:
-        bot.delete_message(chat_id=call.message.chat.id, message_id=call.message.message_id-1)
     users = record_get("users.json")
     user = str(call.from_user.id)
     group = users[user]
     lesson_list = get_lesson(group)
-    result = ''
+    result = '' 
     for day in lesson_list:
         result += day
+    bot.delete_message(chat_id=call.message.chat.id, message_id=call.message.message_id)
+    if call.message.message_id-1:
+        bot.delete_message(chat_id=call.message.chat.id, message_id=call.message.message_id-1)
     bot.send_message(chat_id=call.message.chat.id, text=result, parse_mode="HTML")
     schedule_menu(call.message, str(call.from_user.id))
 
 @bot.callback_query_handler(func=lambda call: call.data.startswith('change_group'))
 def change_group(call):
-    bot.delete_message(chat_id=call.message.chat.id, message_id=call.message.message_id)
     users = record_get("users.json")
     user = str(call.from_user.id)
     if user in users:
         del users[user]
         record_push('users.json', users)
-        get_group_with_elective(call.message)
+        get_group_with_elective(call.message, back=(call.message.chat.id, call.message.message_id))
     else:
         bot.send_message(call.message.chat.id, 'You don\'t have a group to delete. Choose one:\n')
-        get_group_with_elective(call.message)
+        get_group_with_elective(call.message, back=(call.message.chat.id, call.message.message_id))
     
 if __name__ == '__main__':
     bot.infinity_polling()

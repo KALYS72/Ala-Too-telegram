@@ -3,6 +3,10 @@
     "semester":"2023-2024 SPRING SEMESTER",
     "schedule":"https://docs.google.com/spreadsheets/d/1jlJ6kG4FXChjH3a01dOmEX6BQ3i-QHeQzFgyjDup35o/edit#gid=1118793443",
     "groups":["COMSEP-23","EEAIR-23","COMCEH-23","COMSE-23","COMFCI-23","IEMIT-23","COM-22a","COM-22b","COM-21a","COM-21b","COM-20"],
+    "electives":["Philosophy","Robotics","English","Russian Language","Family psychology","Graphic Design","Computer literacy","Programming in Python",
+    "Physics","Human Rights","First Aid","Web design","Startup: from idea to launch","Sociology","Accounting & Finance","Crime Prevention and Legal Culture","Pedagogy",
+    "Informatics l/ll","Ecology","Introduction to Law","Data Analysis & Visualization with Python","Art & Design","Marketing","French","German Beginner/Elemantary","Turkish",
+    "Electronics","Competitive programming"],
     "days":{
       "monday":{
         "COMSEP-23":[
@@ -31,15 +35,15 @@
           {
             "lesson":"ELECTIVES",
             "time":"14:30-16:40",
-            "electives":["Philosophy / Edilova M / B201","Robotics(14:30-17:25) / Mr. Artur Kutlugildin / School"]
+            "electives":["Philosophy / Edilova M / B201","Robotics(14:30-17:25) / Mr. Artur Kutlugildin / B213"]
           }
         ],
         "COMCEH-23": [
           {
             "lesson": "Discrete Mathematics",
             "time": "09:15-10:40",
-            "teacher": "Ms. Dr. Remudin Mekuria",
-            "audience": "B203"
+            "teacher": "Mr. Dr. Remudin Mekuria",
+            "audience": "B205"
           },
           {
             "lesson": "Programming Languages - ll",
@@ -60,15 +64,15 @@
           {
             "lesson":"ELECTIVES",
             "time":"14:30-16:40",
-            "electives":["Philosophy / Edilova M / B201","Robotics(14:30-17:25) / Mr. Artur Kutlugildin / School"]
+            "electives":["Philosophy / Edilova M / B201","Robotics(14:30-17:25) / Mr. Artur Kutlugildin / B213"]
           }
         ],
         "EEAIR-23": [
           {
             "lesson": "Discrete Mathematics",
             "time": "09:15-10:40",
-            "teacher": "Ms. Dr. Remudin Mekuria",
-            "audience": "B203"
+            "teacher": "Mr. Dr. Remudin Mekuria",
+            "audience": "B205"
           },
           {
             "lesson": "Programming Languages - ll",
@@ -89,7 +93,7 @@
           {
             "lesson":"ELECTIVES",
             "time":"14:30-16:40",
-            "electives":["Philosophy / Edilova M / B201","Robotics(14:30-17:25) / Mr. Artur Kutlugildin / School"]
+            "electives":["Philosophy / Edilova M / B201","Robotics(14:30-17:25) / Mr. Artur Kutlugildin / B213"]
           }
         ],
         "COMSE-23": [
@@ -106,13 +110,13 @@
           {
             "lesson":"Calculus - 11",
             "time":"13:00-14:25",
-            "audience":"B203",
+            "audience":"B202",
             "teacher":"Mr. Esen Rakhmanov"
           },
           {
             "lesson":"ELECTIVES",
             "time":"14:30-16:40",
-            "electives":["Philosophy / Edilova M / B201","Robotics(14:30-17:25) / Mr. Artur Kutlugildin / School"]
+            "electives":["Philosophy / Edilova M / B201","Robotics(14:30-17:25) / Mr. Artur Kutlugildin / B213"]
           }
         ],
         "COMFCI-23": [
@@ -129,13 +133,13 @@
           {
             "lesson": "Discrete Mathematics",
             "time": "13:00-14:25",
-            "teacher": "Ms. Dr. Remudin Mekuria",
+            "teacher": "Mr. Dr. Remudin Mekuria",
             "audience": "B205"
           },
           {
             "lesson":"ELECTIVES",
             "time":"14:30-16:40",
-            "electives":["Philosophy / Edilova M / B201","Robotics(14:30-17:25) / Mr. Artur Kutlugildin / School"]
+            "electives":["Philosophy / Edilova M / B201","Robotics(14:30-17:25) / Mr. Artur Kutlugildin / B213"]
           }
         ],
         "IEMIT-23": [
@@ -152,13 +156,13 @@
           {
             "lesson": "Discrete Mathematics",
             "time": "13:00-14:25",
-            "teacher": "Ms. Dr. Remudin Mekuria",
+            "teacher": "Mr. Dr. Remudin Mekuria",
             "audience": "B205"
           },
           {
             "lesson":"ELECTIVES",
             "time":"14:30-16:40",
-            "electives":["Philosophy / Edilova M / B201","Robotics(14:30-17:25) / Mr. Artur Kutlugildin / School"]
+            "electives":["Philosophy / Edilova M / B201","Robotics(14:30-17:25) / Mr. Artur Kutlugildin / B213"]
           }
         ],
         "COM-22a": [
@@ -181,12 +185,12 @@
           {
             "lesson": "DEPARTMENT_ELECTIVE",
             "time": "13:00-14:25",
-            "electives": ["Electronics / Dr. Tauheed Khan / B213", "Competitive programming / Mr. Zhenishbek Orozakhunov / B211", "Data Analysis & Visualization with Python / Ms. Mekia Gaso Shigute / B210"]
+            "electives": ["Electronics(13:00-15:55) / Dr. Tauheed Khan / B213 / B210", "Competitive programming(13:00-15:55) / Mr. Zhenishbek Orozakhunov / B211", "Data Analysis & Visualization with Python / Ms. Mekia Gaso Shigute / B210"]
           },
           {
             "lesson":"ELECTIVES",
             "time":"14:30-16:40",
-            "electives":["Philosophy / Edilova M / B201","Robotics(14:30-17:25) / Mr. Artur Kutlugildin / School"]
+            "electives":["Philosophy / Edilova M / B201","Robotics(14:30-17:25) / Mr. Artur Kutlugildin / B213"]
           }
         ],
         "COM-22b": [
@@ -209,12 +213,12 @@
           {
             "lesson": "DEPARTMENT_ELECTIVE",
             "time": "13:00-14:25",
-            "electives": ["Electronics / Dr. Tauheed Khan / B213", "Competitive programming / Mr. Zhenishbek Orozakhunov / B211", "Data Analysis & Visualization with Python / Ms. Mekia Gaso Shigute / B210"]
+            "electives": ["Electronics(13:00-15:55) / Dr. Tauheed Khan / B213 / B210", "Competitive programming(13:00-15:55) / Mr. Zhenishbek Orozakhunov / B211", "Data Analysis & Visualization with Python / Ms. Mekia Gaso Shigute / B210"]
           },
           {
             "lesson":"ELECTIVES",
             "time":"14:30-16:40",
-            "electives":["Philosophy / Edilova M / B201","Robotics(14:30-17:25) / Mr. Artur Kutlugildin / School"]
+            "electives":["Philosophy / Edilova M / B201","Robotics(14:30-17:25) / Mr. Artur Kutlugildin / B213"]
           }
         ],
         "COM-21a": [
@@ -222,7 +226,7 @@
             "lesson": "Operating Systems",
             "time": "08:30-10:40",
             "teacher": "Mr. Imtiyaz Gulbarga",
-            "audience": "B201"
+            "audience": "B213"
           }
         ],
         "COM-21b": [],
@@ -268,7 +272,7 @@
             "lesson":"Discrete Mathematics",
             "time":"12:15-13:40",
             "audience":"B205",
-            "teacher":"Ms. Dr. Remudin Mekuria"
+            "teacher":"Mr. Dr. Remudin Mekuria"
           },
           {
             "lesson":"LUNCH-TIME",
@@ -374,7 +378,7 @@
             "lesson":"Discrete Mathematics",
             "time":"10:45-12:10",
             "audience":"B205",
-            "teacher":"Ms. Dr. Remudin Mekuria"
+            "teacher":"Mr. Dr. Remudin Mekuria"
           },
           {
             "lesson":"Programming Languages - 1",
@@ -436,7 +440,7 @@
           {
             "lesson":"Kyrgyz language",
             "time":"11:30-12:55",
-            "teacher":"Ms. Elnura Kaldybaeva / C410 / Ms. Gulshair Samatova / C302",
+            "teacher":"Ms. Elnura Kaldybaeva / C102 / Ms. Gulshair Samatova / C302",
             "audience":"unknown"
           },
           {
@@ -458,14 +462,14 @@
           },
           {
             "lesson":"Kyrgyz language",
-            "time":"11:30-12:55",
+            "time":"10:30-11:25",
             "teacher":"Ms. Altynai Saidalieva",
             "audience":"C302"
           },
           {
             "lesson":"Backend development",
-            "time":"10:00-11:25",
-            "audience":"B213",
+            "time":"11:30-12:55",
+            "audience":"B211",
             "teacher":"Mr. Zhavlon Khamidov"
           },
           {
@@ -512,7 +516,7 @@
           {
             "lesson":"Operating Systems",
             "time":"13:45-15:55",
-            "audience":"B213",
+            "audience":"Big Lab",
             "teacher":"Mr. Imtiyaz Gulbarga"
           }
         ],
@@ -539,7 +543,7 @@
           {
             "lesson":"ELECTIVES",
             "time":"14:30-16:40",
-            "electives":["Graphic Design / Dr. Andrei Ermakov / B211","Computer literacy(14:30-17:25) / Mr. Zhenishbek Orozakhunov / B211","Programming in Python(14:30-17:25) / Ms. Burul Shambetova / Big Lab","Physics(14:30-15:55)(COMCEH / COMFCI / COMSE / COMSEP) / Ms. Asiya Abdyldaeva / B203","Human Rights / Bedii Gurzhan / D208","First Aid / E bock 105"]
+            "electives":["Graphic Design / Dr. Andrei Ermakov / B213","Computer literacy(14:30-17:25) / Mr. Zhenishbek Orozakhunov / B210","Programming in Python(14:30-17:25) / Ms. Burul Shambetova / Big Lab","Physics(14:30-15:55)(COMCEH / COMFCI / COMSE / COMSEP) / Ms. Asiya Abdyldaeva / B203","Human Rights / Bedii Gurzhan / D208","First Aid / E bock 105"]
           }
         ],
         "EEAIR-23":[
@@ -562,7 +566,7 @@
           {
             "lesson":"ELECTIVES",
             "time":"14:30-16:40",
-            "electives":["Graphic Design / Dr. Andrei Ermakov / B211","Computer literacy(14:30-17:25) / Mr. Zhenishbek Orozakhunov / B211","Programming in Python(14:30-17:25) / Ms. Burul Shambetova / Big Lab","Physics(14:30-15:55)(COMCEH / COMFCI / COMSE / COMSEP) / Ms. Asiya Abdyldaeva / B203","Human Rights / Bedii Gurzhan / D208","First Aid / E bock 105"]
+            "electives":["Graphic Design / Dr. Andrei Ermakov / B213","Computer literacy(14:30-17:25) / Mr. Zhenishbek Orozakhunov / B210","Programming in Python(14:30-17:25) / Ms. Burul Shambetova / Big Lab","Physics(14:30-15:55)(COMCEH / COMFCI / COMSE / COMSEP) / Ms. Asiya Abdyldaeva / B203","Human Rights / Bedii Gurzhan / D208","First Aid / E bock 105"]
           }
         ],
         "COMCEH-23":[
@@ -579,22 +583,22 @@
           {
             "lesson":"ELECTIVES",
             "time":"14:30-16:40",
-            "electives":["Graphic Design / Dr. Andrei Ermakov / B211","Computer literacy(14:30-17:25) / Mr. Zhenishbek Orozakhunov / B211","Programming in Python(14:30-17:25) / Ms. Burul Shambetova / Big Lab","Physics(14:30-15:55)(COMCEH / COMFCI / COMSE / COMSEP) / Ms. Asiya Abdyldaeva / B203","Human Rights / Bedii Gurzhan / D208","First Aid / E bock 105"]
+            "electives":["Graphic Design / Dr. Andrei Ermakov / B213","Computer literacy(14:30-17:25) / Mr. Zhenishbek Orozakhunov / B210","Programming in Python(14:30-17:25) / Ms. Burul Shambetova / Big Lab","Physics(14:30-15:55)(COMCEH / COMFCI / COMSE / COMSEP) / Ms. Asiya Abdyldaeva / B203","Human Rights / Bedii Gurzhan / D208","First Aid / E bock 105"]
           }
         ],
         "COMSE-23":[
           {
             "lesson":"ELECTIVES",
             "time":"14:30-16:40",
-            "electives":["Graphic Design / Dr. Andrei Ermakov / B211","Computer literacy(14:30-17:25) / Mr. Zhenishbek Orozakhunov / B211","Programming in Python(14:30-17:25) / Ms. Burul Shambetova / Big Lab","Physics(14:30-15:55)(COMCEH / COMFCI / COMSE / COMSEP) / Ms. Asiya Abdyldaeva / B203","Human Rights / Bedii Gurzhan / D208","First Aid / E bock 105"]
+            "electives":["Graphic Design / Dr. Andrei Ermakov / B213","Computer literacy(14:30-17:25) / Mr. Zhenishbek Orozakhunov / B210","Programming in Python(14:30-17:25) / Ms. Burul Shambetova / Big Lab","Physics(14:30-15:55)(COMCEH / COMFCI / COMSE / COMSEP) / Ms. Asiya Abdyldaeva / B203","Human Rights / Bedii Gurzhan / D208","First Aid / E bock 105"]
           }
         ],
         "COMFCI-23":[
           {
             "lesson":"Discrete Mathematics",
             "time":"10:00-11:25",
-            "audience":"C107",
-            "teacher":"Ms. Dr. Remudin Mekuria"
+            "audience":"C007",
+            "teacher":"Mr. Dr. Remudin Mekuria"
           },
           {
             "lesson":"Calculus - ll",
@@ -616,7 +620,7 @@
           {
             "lesson":"Discrete Mathematics",
             "time":"10:00-11:25",
-            "audience":"C107",
+            "audience":"C007",
             "teacher":"Ms. Dr. Remudin Mekuria"
           },
           {
@@ -632,14 +636,14 @@
           {
             "lesson":"ELECTIVES",
             "time":"14:30-16:40",
-            "electives":["Graphic Design / Dr. Andrei Ermakov / B211","Computer literacy(14:30-17:25) / Mr. Zhenishbek Orozakhunov / B211","Programming in Python(14:30-17:25) / Ms. Burul Shambetova / Big Lab","Physics(14:30-15:55)(COMCEH / COMFCI / COMSE / COMSEP) / Ms. Asiya Abdyldaeva / B203","Human Rights / Bedii Gurzhan / D208","First Aid / E bock 105"]
+            "electives":["Graphic Design / Dr. Andrei Ermakov / B213","Computer literacy(14:30-17:25) / Mr. Zhenishbek Orozakhunov / B210","Programming in Python(14:30-17:25) / Ms. Burul Shambetova / Big Lab","Physics(14:30-15:55)(COMCEH / COMFCI / COMSE / COMSEP) / Ms. Asiya Abdyldaeva / B203","Human Rights / Bedii Gurzhan / D208","First Aid / E bock 105"]
           }
         ],
         "COM-22a":[
           {
             "lesson":"ELECTIVES",
             "time":"14:30-16:40",
-            "electives":["Graphic Design / Dr. Andrei Ermakov / B211","Computer literacy(14:30-17:25) / Mr. Zhenishbek Orozakhunov / B211","Programming in Python(14:30-17:25) / Ms. Burul Shambetova / Big Lab","Physics(14:30-15:55)(COMCEH / COMFCI / COMSE / COMSEP) / Ms. Asiya Abdyldaeva / B203","Human Rights / Bedii Gurzhan / D208","First Aid / E bock 105"]
+            "electives":["Graphic Design / Dr. Andrei Ermakov / B213","Computer literacy(14:30-17:25) / Mr. Zhenishbek Orozakhunov / B210","Programming in Python(14:30-17:25) / Ms. Burul Shambetova / Big Lab","Physics(14:30-15:55)(COMCEH / COMFCI / COMSE / COMSEP) / Ms. Asiya Abdyldaeva / B203","Human Rights / Bedii Gurzhan / D208","First Aid / E bock 105"]
           }
         ],
         "COM-22b":[
@@ -652,7 +656,7 @@
           {
             "lesson":"Backend development",
             "time":"11:30-13:40",
-            "audience":"Big Lab",
+            "audience":"B211",
             "teacher":"Mr. Zhavlon Khamidov"
           },
           {
@@ -662,7 +666,7 @@
           {
             "lesson":"ELECTIVES",
             "time":"14:30-16:40",
-            "electives":["Graphic Design / Dr. Andrei Ermakov / B211","Computer literacy(14:30-17:25) / Mr. Zhenishbek Orozakhunov / B211","Programming in Python(14:30-17:25) / Ms. Burul Shambetova / Big Lab","Physics(14:30-15:55)(COMCEH / COMFCI / COMSE / COMSEP) / Ms. Asiya Abdyldaeva / B203","Human Rights / Bedii Gurzhan / D208","First Aid / E bock 105"]
+            "electives":["Graphic Design / Dr. Andrei Ermakov / B213","Computer literacy(14:30-17:25) / Mr. Zhenishbek Orozakhunov / B210","Programming in Python(14:30-17:25) / Ms. Burul Shambetova / Big Lab","Physics(14:30-15:55)(COMCEH / COMFCI / COMSE / COMSEP) / Ms. Asiya Abdyldaeva / B203","Human Rights / Bedii Gurzhan / D208","First Aid / E bock 105"]
           }
         ],
         "COM-21a":[
@@ -702,7 +706,7 @@
             "lesson":"Discrete Mathematics",
             "time":"12:15-13:40",
             "audience":"B205",
-            "teacher":"Ms. Dr. Remudin Mekuria"
+            "teacher":"Mr. Dr. Remudin Mekuria"
           },
           {
             "lesson":"LUNCH-TIME",
@@ -711,7 +715,7 @@
           {
             "lesson":"ELECTIVES",
             "time":"14:30-16:40",
-            "electives":["Startup: from idea to launch / Mr. Radmir Gumerov / B202","Web design / Mr. Zhavlon Khamidov / B211","Physics(14:30-15:55)(COMCEH / COMFCI / COMSE / COMSEP) / Ms. Asiya Abdyldaeva / B203","Sociology / Edilova M. / unknown","Accounting & Finance(14:00-16:30) / unknown / unknown","Crime Prevention and Legal Culture(15:40-18:00) / Dzhalgasynova G. / D202","Family psychology / Nurzat Kubanychbek kyzy / D106","Pedagogy (ONLY YEAR 2) / Aikokul Mamaeva / B201","First Aid / unknown / E bock 105"]
+            "electives":["Startup: from idea to launch / Mr. Radmir Gumerov / B202","Web design / Mr. Zhavlon Khamidov / B211","Physics(14:30-15:55)(COMCEH / COMFCI / COMSE / COMSEP) / Ms. Asiya Abdyldaeva / B203","Sociology / Edilova M. / B107","Accounting & Finance(14:00-16:30) / unknown / unknown","Crime Prevention and Legal Culture(15:40-18:00) / Dzhalgasynova G. / D202","Family psychology / Nurzat Kubanychbek kyzy / D106","Pedagogy (ONLY YEAR 2) / Aikokul Mamaeva / B201","First Aid / unknown / E bock 105"]
           }
         ],
         "EEAIR-23":[
@@ -734,7 +738,7 @@
           {
             "lesson":"ELECTIVES",
             "time":"14:30-16:40",
-            "electives":["Startup: from idea to launch / Mr. Radmir Gumerov / B202","Web design / Mr. Zhavlon Khamidov / B211","Physics(14:30-15:55)(COMCEH / COMFCI / COMSE / COMSEP) / Ms. Asiya Abdyldaeva / B203","Sociology / Edilova M. / unknown","Accounting & Finance(14:00-16:30) / unknown / unknown","Crime Prevention and Legal Culture(15:40-18:00) / Dzhalgasynova G. / D202","Family psychology / Nurzat Kubanychbek kyzy / D106","Pedagogy (ONLY YEAR 2) / Aikokul Mamaeva / B201","First Aid / unknown / E bock 105"]
+            "electives":["Startup: from idea to launch / Mr. Radmir Gumerov / B202","Web design / Mr. Zhavlon Khamidov / B211","Physics(14:30-15:55)(COMCEH / COMFCI / COMSE / COMSEP) / Ms. Asiya Abdyldaeva / B203","Sociology / Edilova M. / B107","Accounting & Finance(14:00-16:30) / unknown / unknown","Crime Prevention and Legal Culture(15:40-18:00) / Dzhalgasynova G. / D202","Family psychology / Nurzat Kubanychbek kyzy / D106","Pedagogy (ONLY YEAR 2) / Aikokul Mamaeva / B201","First Aid / unknown / E bock 105"]
           }
         ],
         "COMCEH-23":[
@@ -757,7 +761,7 @@
           {
             "lesson":"ELECTIVES",
             "time":"14:30-16:40",
-            "electives":["Startup: from idea to launch / Mr. Radmir Gumerov / B202","Web design / Mr. Zhavlon Khamidov / B211","Physics(14:30-15:55)(COMCEH / COMFCI / COMSE / COMSEP) / Ms. Asiya Abdyldaeva / B203","Sociology / Edilova M. / unknown","Accounting & Finance(14:00-16:30) / unknown / unknown","Crime Prevention and Legal Culture(15:40-18:00) / Dzhalgasynova G. / D202","Family psychology / Nurzat Kubanychbek kyzy / D106","Pedagogy (ONLY YEAR 2) / Aikokul Mamaeva / B201","First Aid / unknown / E bock 105"]
+            "electives":["Startup: from idea to launch / Mr. Radmir Gumerov / B202","Web design / Mr. Zhavlon Khamidov / B211","Physics(14:30-15:55)(COMCEH / COMFCI / COMSE / COMSEP) / Ms. Asiya Abdyldaeva / B203","Sociology / Edilova M. / B107","Accounting & Finance(14:00-16:30) / unknown / unknown","Crime Prevention and Legal Culture(15:40-18:00) / Dzhalgasynova G. / D202","Family psychology / Nurzat Kubanychbek kyzy / D106","Pedagogy (ONLY YEAR 2) / Aikokul Mamaeva / B201","First Aid / unknown / E bock 105"]
           }
         ],
         "COMSE-23":[
@@ -765,7 +769,7 @@
             "lesson":"Discrete Mathematics",
             "time":"09:15-12:10",
             "audience":"B205",
-            "teacher":"Ms. Dr. Remudin Mekuria"
+            "teacher":"Mr. Dr. Remudin Mekuria"
           },
           {
             "lesson":"Programming Languages - l",
@@ -780,21 +784,21 @@
           {
             "lesson":"ELECTIVES",
             "time":"14:30-16:40",
-            "electives":["Startup: from idea to launch / Mr. Radmir Gumerov / B202","Web design / Mr. Zhavlon Khamidov / B211","Physics(14:30-15:55)(COMCEH / COMFCI / COMSE / COMSEP) / Ms. Asiya Abdyldaeva / B203","Sociology / Edilova M. / unknown","Accounting & Finance(14:00-16:30) / unknown / unknown","Crime Prevention and Legal Culture(15:40-18:00) / Dzhalgasynova G. / D202","Family psychology / Nurzat Kubanychbek kyzy / D106","Pedagogy (ONLY YEAR 2) / Aikokul Mamaeva / B201","First Aid / unknown / E bock 105"]
+            "electives":["Startup: from idea to launch / Mr. Radmir Gumerov / B202","Web design / Mr. Zhavlon Khamidov / B211","Physics(14:30-15:55)(COMCEH / COMFCI / COMSE / COMSEP) / Ms. Asiya Abdyldaeva / B203","Sociology / Edilova M. / B107","Accounting & Finance(14:00-16:30) / unknown / unknown","Crime Prevention and Legal Culture(15:40-18:00) / Dzhalgasynova G. / D202","Family psychology / Nurzat Kubanychbek kyzy / D106","Pedagogy (ONLY YEAR 2) / Aikokul Mamaeva / B201","First Aid / unknown / E bock 105"]
           }
         ],
         "COMFCI-23":[
           {
             "lesson":"ELECTIVES",
             "time":"14:30-16:40",
-            "electives":["Startup: from idea to launch / Mr. Radmir Gumerov / B202","Web design / Mr. Zhavlon Khamidov / B211","Physics(14:30-15:55)(COMCEH / COMFCI / COMSE / COMSEP) / Ms. Asiya Abdyldaeva / B203","Sociology / Edilova M. / unknown","Accounting & Finance(14:00-16:30) / unknown / unknown","Crime Prevention and Legal Culture(15:40-18:00) / Dzhalgasynova G. / D202","Family psychology / Nurzat Kubanychbek kyzy / D106","Pedagogy (ONLY YEAR 2) / Aikokul Mamaeva / B201","First Aid / unknown / E bock 105"]
+            "electives":["Startup: from idea to launch / Mr. Radmir Gumerov / B202","Web design / Mr. Zhavlon Khamidov / B211","Physics(14:30-15:55)(COMCEH / COMFCI / COMSE / COMSEP) / Ms. Asiya Abdyldaeva / B203","Sociology / Edilova M. / B107","Accounting & Finance(14:00-16:30) / unknown / unknown","Crime Prevention and Legal Culture(15:40-18:00) / Dzhalgasynova G. / D202","Family psychology / Nurzat Kubanychbek kyzy / D106","Pedagogy (ONLY YEAR 2) / Aikokul Mamaeva / B201","First Aid / unknown / E bock 105"]
           }
         ],
         "IEMIT-23":[
           {
             "lesson":"ELECTIVES",
             "time":"14:30-16:40",
-            "electives":["Startup: from idea to launch / Mr. Radmir Gumerov / B202","Web design / Mr. Zhavlon Khamidov / B211","Physics(14:30-15:55)(COMCEH / COMFCI / COMSE / COMSEP) / Ms. Asiya Abdyldaeva / B203","Sociology / Edilova M. / unknown","Accounting & Finance(14:00-16:30) / unknown / unknown","Crime Prevention and Legal Culture(15:40-18:00) / Dzhalgasynova G. / D202","Family psychology / Nurzat Kubanychbek kyzy / D106","Pedagogy (ONLY YEAR 2) / Aikokul Mamaeva / B201","First Aid / unknown / E bock 105"]
+            "electives":["Startup: from idea to launch / Mr. Radmir Gumerov / B202","Web design / Mr. Zhavlon Khamidov / B211","Physics(14:30-15:55)(COMCEH / COMFCI / COMSE / COMSEP) / Ms. Asiya Abdyldaeva / B203","Sociology / Edilova M. / B107","Accounting & Finance(14:00-16:30) / unknown / unknown","Crime Prevention and Legal Culture(15:40-18:00) / Dzhalgasynova G. / D202","Family psychology / Nurzat Kubanychbek kyzy / D106","Pedagogy (ONLY YEAR 2) / Aikokul Mamaeva / B201","First Aid / unknown / E bock 105"]
           }
         ],
         "COM-22a":[
@@ -829,7 +833,7 @@
           {
             "lesson":"ELECTIVES",
             "time":"14:30-16:40",
-            "electives":["Startup: from idea to launch / Mr. Radmir Gumerov / B202","Web design / Mr. Zhavlon Khamidov / B211","Physics(14:30-15:55)(COMCEH / COMFCI / COMSE / COMSEP) / Ms. Asiya Abdyldaeva / B203","Sociology / Edilova M. / unknown","Accounting & Finance(14:00-16:30) / unknown / unknown","Crime Prevention and Legal Culture(15:40-18:00) / Dzhalgasynova G. / D202","Family psychology / Nurzat Kubanychbek kyzy / D106","Pedagogy (ONLY YEAR 2) / Aikokul Mamaeva / B201","First Aid / unknown / E bock 105"]
+            "electives":["Startup: from idea to launch / Mr. Radmir Gumerov / B202","Web design / Mr. Zhavlon Khamidov / B211","Physics(14:30-15:55)(COMCEH / COMFCI / COMSE / COMSEP) / Ms. Asiya Abdyldaeva / B203","Sociology / Edilova M. / B107","Accounting & Finance(14:00-16:30) / unknown / unknown","Crime Prevention and Legal Culture(15:40-18:00) / Dzhalgasynova G. / D202","Family psychology / Nurzat Kubanychbek kyzy / D106","Pedagogy (ONLY YEAR 2) / Aikokul Mamaeva / B201","First Aid / unknown / E bock 105"]
           }
         ],
         "COM-22b":[
@@ -858,7 +862,7 @@
           {
             "lesson":"ELECTIVES",
             "time":"14:30-16:40",
-            "electives":["Startup: from idea to launch / Mr. Radmir Gumerov / B202","Web design / Mr. Zhavlon Khamidov / B211","Physics(14:30-15:55)(COMCEH / COMFCI / COMSE / COMSEP) / Ms. Asiya Abdyldaeva / B203","Sociology / Edilova M. / unknown","Accounting & Finance(14:00-16:30) / unknown / unknown","Crime Prevention and Legal Culture(15:40-18:00) / Dzhalgasynova G. / D202","Family psychology / Nurzat Kubanychbek kyzy / D106","Pedagogy (ONLY YEAR 2) / Aikokul Mamaeva / B201","First Aid / unknown / E bock 105"]
+            "electives":["Startup: from idea to launch / Mr. Radmir Gumerov / B202","Web design / Mr. Zhavlon Khamidov / B211","Physics(14:30-15:55)(COMCEH / COMFCI / COMSE / COMSEP) / Ms. Asiya Abdyldaeva / B203","Sociology / Edilova M. / B107","Accounting & Finance(14:00-16:30) / unknown / unknown","Crime Prevention and Legal Culture(15:40-18:00) / Dzhalgasynova G. / D202","Family psychology / Nurzat Kubanychbek kyzy / D106","Pedagogy (ONLY YEAR 2) / Aikokul Mamaeva / B201","First Aid / unknown / E bock 105"]
           }
         ],
         "COM-21a":[
@@ -916,7 +920,7 @@
           {
             "lesson":"ELECTIVES",
             "time":"14:30-16:40",
-            "electives":["Informatics ll (14:30-17:25)/ Mr. Imitiyaz Gulbarga / B211","Informatics l (14:30-17:25)/ Ms. Burul Shambetova / B210","Ecology / Bekimbetov T. / unknown","Introduction to Law(15:40-16:00) / Suleimanov A. / D206"]
+            "electives":["Informatics ll (14:30-17:25)/ Mr. Imitiyaz Gulbarga / B211","Informatics l (14:30-17:25)/ Ms. Burul Shambetova / B213","Ecology / Bekimbetova T. / B107","Introduction to Law(15:40-16:00) / Suleimanov A. / D206"]
           }
         ],
         "EEAIR-23":[
@@ -924,7 +928,7 @@
             "lesson":"Discrete Mathematics",
             "time":"08:30-09:55",
             "audience":"B205",
-            "teacher":"Ms. Dr. Remudin Mekuria"
+            "teacher":"Mr. Dr. Remudin Mekuria"
           },
           {
             "lesson":"Calculus - ll",
@@ -936,7 +940,7 @@
             "lesson":"Discrete Mathematics",
             "time":"11:30-12:55",
             "audience":"B204",
-            "teacher":"Ms. Dr. Remudin Mekuria"
+            "teacher":"Mr. Dr. Remudin Mekuria"
           },
           {
             "lesson":"LUNCH-TIME",
@@ -945,7 +949,7 @@
           {
             "lesson":"ELECTIVES",
             "time":"14:30-16:40",
-            "electives":["Informatics ll (14:30-17:25)/ Mr. Imitiyaz Gulbarga / B211","Informatics l (14:30-17:25)/ Ms. Burul Shambetova / B210","Ecology / Bekimbetov T. / unknown","Introduction to Law(15:40-16:00) / Suleimanov A. / D206"]
+            "electives":["Informatics ll (14:30-17:25)/ Mr. Imitiyaz Gulbarga / B211","Informatics l (14:30-17:25)/ Ms. Burul Shambetova / B213","Ecology / Bekimbetova T. / B107","Introduction to Law(15:40-16:00) / Suleimanov A. / D206"]
           }
         ],
         "COMCEH-23":[
@@ -953,7 +957,7 @@
             "lesson":"Discrete Mathematics",
             "time":"08:30-09:55",
             "audience":"B205",
-            "teacher":"Ms. Dr. Remudin Mekuria"
+            "teacher":"Mr. Dr. Remudin Mekuria"
           },
           {
             "lesson":"Calculus - ll",
@@ -965,7 +969,7 @@
             "lesson":"Discrete Mathematics",
             "time":"11:30-12:55",
             "audience":"B204",
-            "teacher":"Ms. Dr. Remudin Mekuria"
+            "teacher":"Mr. Dr. Remudin Mekuria"
           },
           {
             "lesson":"LUNCH-TIME",
@@ -974,7 +978,7 @@
           {
             "lesson":"ELECTIVES",
             "time":"14:30-16:40",
-            "electives":["Informatics ll (14:30-17:25)/ Mr. Imitiyaz Gulbarga / B211","Informatics l (14:30-17:25)/ Ms. Burul Shambetova / B210","Ecology / Bekimbetov T. / unknown","Introduction to Law(15:40-16:00) / Suleimanov A. / D206"]
+            "electives":["Informatics ll (14:30-17:25)/ Mr. Imitiyaz Gulbarga / B211","Informatics l (14:30-17:25)/ Ms. Burul Shambetova / B213","Ecology / Bekimbetova T. / B107","Introduction to Law(15:40-16:00) / Suleimanov A. / D206"]
           }
         ],
         "COMSE-23":[
@@ -988,7 +992,7 @@
             "lesson":"Discrete Mathematics",
             "time":"10:00-11:25",
             "audience":"B205",
-            "teacher":"Ms. Dr. Remudin Mekuria"
+            "teacher":"Mr. Dr. Remudin Mekuria"
           },
           {
             "lesson":"Calculus - ll",
@@ -1003,7 +1007,7 @@
           {
             "lesson":"ELECTIVES",
             "time":"14:30-16:40",
-            "electives":["Informatics ll (14:30-17:25)/ Mr. Imitiyaz Gulbarga / B211","Informatics l (14:30-17:25)/ Ms. Burul Shambetova / B210","Ecology / Bekimbetov T. / unknown","Introduction to Law(15:40-16:00) / Suleimanov A. / D206"]
+            "electives":["Informatics ll (14:30-17:25)/ Mr. Imitiyaz Gulbarga / B211","Informatics l (14:30-17:25)/ Ms. Burul Shambetova / B213","Ecology / Bekimbetova T. / B107","Introduction to Law(15:40-16:00) / Suleimanov A. / D206"]
           }
         ],
         "COMFCI-23":[
@@ -1016,7 +1020,7 @@
           {
             "lesson":"Programming Languages - l",
             "time":"10:00-12:55",
-            "audience":"B205",
+            "audience":"Big Lab",
             "teacher":"Mr. Dim Shayahmetov"
           },
           {
@@ -1026,7 +1030,7 @@
           {
             "lesson":"ELECTIVES",
             "time":"14:30-16:40",
-            "electives":["Informatics ll (14:30-17:25)/ Mr. Imitiyaz Gulbarga / B211","Informatics l (14:30-17:25)/ Ms. Burul Shambetova / B210","Ecology / Bekimbetov T. / unknown","Introduction to Law(15:40-16:00) / Suleimanov A. / D206"]
+            "electives":["Informatics ll (14:30-17:25)/ Mr. Imitiyaz Gulbarga / B211","Informatics l (14:30-17:25)/ Ms. Burul Shambetova / B213","Ecology / Bekimbetova T. / B107","Introduction to Law(15:40-16:00) / Suleimanov A. / D206"]
           }
         ],
         "IEMIT-23":[
@@ -1039,7 +1043,7 @@
           {
             "lesson":"Programming Languages - l",
             "time":"10:00-12:55",
-            "audience":"B205",
+            "audience":"Big Lab",
             "teacher":"Mr. Dim Shayahmetov"
           },
           {
@@ -1049,7 +1053,7 @@
           {
             "lesson":"ELECTIVES",
             "time":"14:30-16:40",
-            "electives":["Informatics ll (14:30-17:25)/ Mr. Imitiyaz Gulbarga / B211","Informatics l (14:30-17:25)/ Ms. Burul Shambetova / B210","Ecology / Bekimbetov T. / unknown","Introduction to Law(15:40-16:00) / Suleimanov A. / D206"]
+            "electives":["Informatics ll (14:30-17:25)/ Mr. Imitiyaz Gulbarga / B211","Informatics l (14:30-17:25)/ Ms. Burul Shambetova / B213","Ecology / Bekimbetova T. / B107","Introduction to Law(15:40-16:00) / Suleimanov A. / D206"]
           }
         ],
         "COM-22a":[
@@ -1062,23 +1066,7 @@
           {
             "lesson":"DEPARTMENT_ELECTIVE",
             "time":"12:15-13:40",
-            "electives":["Electronics / Dr. Tauheed Khan / B213","Competitive programming / Mr. Zhenishbek Orozakhunov / B211","Data Analysis & Visualization with Python / Ms. Mekia Gaso Shigute / B210"]
-          },
-          {
-            "lesson":"LUNCH-TIME",
-            "time":"13:45-14:25"
-          },
-          {
-              "lesson":"ELECTIVES",
-              "time":"14:30-16:40",
-              "electives":["Informatics ll (14:30-17:25)/ Mr. Imitiyaz Gulbarga / B211","Informatics l (14:30-17:25)/ Ms. Burul Shambetova / B210","Ecology / Bekimbetov T. / unknown","Introduction to Law(15:40-16:00) / Suleimanov A. / D206"]
-            }
-        ],
-        "COM-22b":[
-          {
-            "lesson":"DEPARTMENT_ELECTIVE",
-            "time":"12:15-13:40",
-            "electives":["Electronics / Dr. Tauheed Khan / B213","Competitive programming / Mr. Zhenishbek Orozakhunov / B211","Data Analysis & Visualization with Python / Ms. Mekia Gaso Shigute / B210"]
+            "electives":["Data Analysis & Visualization with Python / Ms. Mekia Gaso Shigute / B213"]
           },
           {
             "lesson":"LUNCH-TIME",
@@ -1087,14 +1075,30 @@
           {
             "lesson":"ELECTIVES",
             "time":"14:30-16:40",
-            "electives":["Informatics ll (14:30-17:25)/ Mr. Imitiyaz Gulbarga / B211","Informatics l (14:30-17:25)/ Ms. Burul Shambetova / B210","Ecology / Bekimbetov T. / unknown","Introduction to Law(15:40-16:00) / Suleimanov A. / D206"]
+            "electives":["Informatics ll (14:30-17:25)/ Mr. Imitiyaz Gulbarga / B211","Informatics l (14:30-17:25)/ Ms. Burul Shambetova / B213","Ecology / Bekimbetova T. / B107","Introduction to Law(15:40-16:00) / Suleimanov A. / D206"]
+          }
+        ],
+        "COM-22b":[
+          {
+            "lesson":"DEPARTMENT_ELECTIVE",
+            "time":"12:15-13:40",
+            "electives":["Data Analysis & Visualization with Python / Ms. Mekia Gaso Shigute / B213"]
+          },
+          {
+            "lesson":"LUNCH-TIME",
+            "time":"13:45-14:25"
+          },
+          {
+            "lesson":"ELECTIVES",
+            "time":"14:30-16:40",
+            "electives":["Informatics ll (14:30-17:25)/ Mr. Imitiyaz Gulbarga / B211","Informatics l (14:30-17:25)/ Ms. Burul Shambetova / B213","Ecology / Bekimbetova T. / B107","Introduction to Law(15:40-16:00) / Suleimanov A. / D206"]
           }
         ],
         "COM-21a":[
           {
             "lesson":"ELECTIVES",
             "time":"11:30-12:55",
-            "elective":["Art & Design / Dr. Andrei Ermakov / Big Lab","Marketing / Dr. Rustam Umarov / B201"]
+            "electives":["Art & Design / Dr. Andrei Ermakov / B211","Marketing / Dr. Rustam Umarov / B201"]
           },
           {
             "lesson":"LUNCH-TIME",
@@ -1117,7 +1121,7 @@
           {
             "lesson":"ELECTIVES",
             "time":"11:30-12:55",
-            "elective":["Art & Design / Dr. Andrei Ermakov / Big Lab","Marketing / Dr. Rustam Umarov / B201"]
+            "electives":["Art & Design / Dr. Andrei Ermakov / B211","Marketing / Dr. Rustam Umarov / B201"]
           },
           {
             "lesson":"LUNCH-TIME",
