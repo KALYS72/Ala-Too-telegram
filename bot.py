@@ -46,7 +46,7 @@ Commands:
 
 
 @bot.message_handler(commands=['review'])
-def start_message(message):
+def start_review(message):
     bot.send_message(message.chat.id, "Please leave your review: ")
     bot.register_next_step_handler(message, process_review)
 
@@ -62,6 +62,7 @@ def process_review(message):
     bot.send_message(message.chat.id, "Thank you for your review!\n\nCommands:\n\n/start - get back to menu\n/info - information about bot and Ala-too\n/schedule - begin to work with a bot!")
 
 def get_groups(message, back=None):
+    week = record_get("source.json")
     keyboard = types.InlineKeyboardMarkup()
     count = []
     for group in week['groups']:
@@ -79,6 +80,7 @@ def get_groups(message, back=None):
         bot.send_message(chat_id=message.chat.id, text=text, reply_markup=keyboard)
 
 def get_electives(message, user, group, back=None, electives=[], again=False):
+    week = record_get("source.json")
     keyboard = types.InlineKeyboardMarkup()
     count = []
     for elective in week['electives']:
@@ -124,7 +126,7 @@ def choose_group_callback(call):
     get_electives(call.message, back=(call.message.chat.id, call.message.message_id), user=user, group=group)
 
 @bot.callback_query_handler(func=lambda call: call.data.startswith('elective_'))
-def choose_group_callback(call):
+def choose_elective_callback(call):
     user = str(call.from_user.id)
     elective = call.data.split('_')[1]
     if user in user_electives:
@@ -173,23 +175,27 @@ def schedule_menu(message, user=None, back=None):
         bot.send_message(message.chat.id, text=text, reply_markup=keyboard, parse_mode="HTML")
 
 @bot.callback_query_handler(func=lambda call: call.data.startswith('back'))
-def choose_group(call):
+def back(call):
     schedule_menu(call.message, user=str(call.from_user.id), back=(call.message.chat.id, call.message.message_id))
 
 @bot.callback_query_handler(func=lambda call: call.data.startswith('confirm'))
-def choose_group_callback(call):
+def confirm(call):
     users = record_get("users.json")
     user = str(call.from_user.id)
     elective_list = user_electives[user]
     users[user]['electives'] = elective_list
     record_push("users.json", users)
     del user_electives[user]
-    bot.delete_message(chat_id=call.message.chat.id, message_id=call.message.message_id-1)
+    try:
+        bot.delete_message(chat_id=call.message.chat.id, message_id=call.message.message_id-1)
+    except:
+        print('confirm')
     schedule_menu(call.message, user=str(call.from_user.id), back=(call.message.chat.id, call.message.message_id))
 
 
 @bot.callback_query_handler(func=lambda call: call.data.startswith('days'))
-def choose_days_callback(call):
+def choose_days(call):
+    week = record_get("source.json")
     keyboard = types.InlineKeyboardMarkup()  
     for day in week['days'].keys():
         button = types.InlineKeyboardButton(text=day.capitalize(), callback_data=f"day_{day}")
@@ -219,12 +225,12 @@ def choose_day_callback(call):
     try:
         bot.delete_message(chat_id=call.message.chat.id, message_id=call.message.message_id-1)
     except:
-        print('yes')
+        print('day')
     bot.send_message(chat_id=call.message.chat.id, text=result, parse_mode="HTML")
     schedule_menu(call.message, str(call.from_user.id))
 
 @bot.callback_query_handler(func=lambda call: call.data.startswith('today'))
-def choose_group(call):
+def today(call):
     users = record_get("users.json")
     user = str(call.from_user.id)
     group = users[user]['group']
@@ -235,12 +241,12 @@ def choose_group(call):
     try:
         bot.delete_message(chat_id=call.message.chat.id, message_id=call.message.message_id-1)
     except:
-        print('yes')
+        print('today')
     bot.send_message(chat_id=call.message.chat.id, text=result, parse_mode="HTML")
     schedule_menu(call.message, str(call.from_user.id))
 
 @bot.callback_query_handler(func=lambda call: call.data.startswith('week'))
-def choose_group(call):
+def week(call):
     users = record_get("users.json")
     user = str(call.from_user.id)
     group = users[user]['group']
@@ -263,7 +269,7 @@ def choose_group(call):
     schedule_menu(call.message, str(call.from_user.id))
 
 @bot.callback_query_handler(func=lambda call: call.data.startswith('lesson'))
-def choose_group(call):
+def lesson(call):
     users = record_get("users.json")
     user = str(call.from_user.id)
     group = users[user]['group']
@@ -296,7 +302,6 @@ def change_group(call):
         record_push('users.json', users)
         get_groups(call.message, back=(call.message.chat.id, call.message.message_id))
     else:
-        bot.send_message(call.message.chat.id, 'You don\'t have a group to delete. Choose one:\n')
         get_groups(call.message, back=(call.message.chat.id, call.message.message_id))
     
 if __name__ == '__main__':

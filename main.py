@@ -159,7 +159,7 @@ def get_lesson(group, user_electives):
                             elective_name, teacher, room = user_elective_final.split('/')
                             result.append(f"&#x1F1EC;&#x1F1E7; You have the language after the lunch:&#x1F4D6 {elective_name}\n&#x1F3E2{room}\n&#x1F474;&#x1F3FB;{teacher}\n&#x1F552 {next_lesson_after_lunch['time']}\n")
                         else:
-                            result.append(f'<b>There are electives going on, but none of them are yours!</b>') 
+                            result.append(f"<b>There are electives going on, but none of them are yours!</b>") 
                     elif next_lesson_after_lunch['lesson'] == "DEPARTMENT_ELECTIVE":
                         electives = []
                         user_elective_final = None
@@ -174,7 +174,7 @@ def get_lesson(group, user_electives):
                             elective_name, teacher, room = user_elective_final.split('/')
                             result.append(f"&#x1F4DA; You have the department elective after the lunch:&#x1F4D6 {elective_name}\n&#x1F3E2{room}\n&#x1F474;&#x1F3FB;{teacher}\n&#x1F552 {next_lesson_after_lunch['time']}\n")
                         else:
-                            result.append(f'<b>There are electives going on, but none of them are yours!</b>') 
+                            result.append(f"<b>There are electives going on, but none of them are yours!</b>") 
                     else:
                         result.append(f"\nLesson after lunch: {next_lesson_after_lunch['lesson']}\n&#x1F3E2 {next_lesson_after_lunch['audience']}\n&#x1F474;&#x1F3FB; {next_lesson_after_lunch['teacher']}\n&#x1F552  <b>{next_lesson_after_lunch['time']}</b>\n")
             elif current_lesson['lesson'] == "ELECTIVES":
@@ -191,7 +191,7 @@ def get_lesson(group, user_electives):
                     elective_name, teacher, room = user_elective_final.split('/')
                     result.append(f"&#x1F4DA; Your electives are going on!: {time_left(current_lesson['time'].split('-')[1].strip(), 'going_on')}&#x1F4D6 {elective_name}\n&#x1F3E2{room}\n&#x1F474;&#x1F3FB;{teacher}\n&#x1F552 Time: <b>{current_lesson['time']}</b>")
                 else:
-                    result.append(f'<b>There are electives going on, but none of them are yours!</b>')
+                    result.append(f"<b>There are electives going on, but none of them are yours!</b>")
             elif current_lesson['lesson'] == "LANGUAGE_ELECTIVES":
                 electives = []
                 user_elective_final = None
@@ -206,7 +206,7 @@ def get_lesson(group, user_electives):
                     elective_name, teacher, room = user_elective_final.split('/')
                     result.append(f"&#x1F1EC;&#x1F1E7; Your language is going on!: {time_left(current_lesson['time'].split('-')[1].strip(), 'going_on')}&#x1F4D6 {elective_name}\n&#x1F3E2{room}\n&#x1F474;&#x1F3FB;{teacher}\n&#x1F552 Time: <b>{current_lesson['time']}</b>")
                 else:
-                    result.append(f'<b>There are electives going on, but none of them are yours!</b>')
+                    result.append('<b>There are electives going on, but none of them are yours!</b>')
             elif current_lesson['lesson'] == "DEPARTMENT_ELECTIVE":
                 electives = []
                 user_elective_final = None
@@ -221,7 +221,7 @@ def get_lesson(group, user_electives):
                     elective_name, teacher, room = user_elective_final.split('/')
                     result.append(f"&#x1F4DA; Your department elective is going on!: {time_left(current_lesson['time'].split('-')[1].strip(), 'going_on')}&#x1F4D6 {elective_name}\n&#x1F3E2{room}\n&#x1F474;&#x1F3FB;{teacher}\n&#x1F552 Time: <b>{current_lesson['time']}</b>")
                 else:
-                    result.append(f'<b>There are electives going on, but none of them are yours!</b>')
+                    result.append(f"<b>There are electives going on, but none of them are yours!</b>")
             else:
                 result.append(f"&#x1F4DA; Your lesson is going on!: {time_left(current_lesson['time'].split('-')[1].strip(), 'going_on')}\n\n&#x1F4D6 {current_lesson['lesson']}\n&#x1F3E2 {current_lesson['audience']}\n&#x1F474;&#x1F3FB; {current_lesson['teacher']}\n&#x1F552 <b>{current_lesson['time']}</b>")
         elif next_lesson: 
@@ -273,7 +273,7 @@ def get_lesson(group, user_electives):
                             elective_name, teacher, room = user_elective_final.split('/')
                             result.append(f"&#x1F4DA; You have the department elective after the lunch:&#x1F4D6 {elective_name}\n&#x1F3E2{room}\n&#x1F474;&#x1F3FB;{teacher}\n&#x1F552 <b>{next_lesson_after_lunch['time']}</b>")
                         else:
-                            result.append(f'<b>There are electives going on, but none of them are yours!</b>')
+                            result.append(f"<b>There are electives going on, but none of them are yours!</b>")
                     else:
                         result.append(f"\n&#x1F4DA; Lesson after lunch: {next_lesson_after_lunch['lesson']}\n&#x1F3E2 {next_lesson_after_lunch['audience']}\n&#x1F474;&#x1F3FB; {next_lesson_after_lunch['teacher']}\n&#x1F552  <b>{next_lesson_after_lunch['time']}</b>")
                 else:
@@ -293,7 +293,7 @@ def get_lesson(group, user_electives):
                     elective_name, teacher, room = user_elective_final.split('/')
                     result.append(f"&#x1F4DA; Your elective is gonna start!: {time_left(next_lesson['time'].split('-')[0].strip(), 'next')}&#x1F4D6 {elective_name}\n&#x1F3E2{room}\n&#x1F474;&#x1F3FB;{teacher}\n&#x1F552 {next_lesson['time']}</b>")
                 else:
-                    result.append(f'<b>There are electives going on, but none of them are yours!</b>')
+                    result.append(f"<b>There are electives going on, but none of them are yours!</b>")
             elif next_lesson['lesson'] == "LANGUAGE_ELECTIVES":
                 electives = []
                 user_elective_final = None
@@ -308,7 +308,7 @@ def get_lesson(group, user_electives):
                     elective_name, teacher, room = user_elective_final.split('/')
                     result.append(f"&#x1F1EC;&#x1F1E7; Your language is gonna start!: {time_left(next_lesson['time'].split('-')[0].strip(), 'next')}&#x1F4D6 {elective_name}\n&#x1F3E2{room}\n&#x1F474;&#x1F3FB;{teacher}\n&#x1F552 {next_lesson['time']}</b>")
                 else:
-                    result.append(f'<b>There are electives going on, but none of them are yours!</b>')
+                    result.append(f"<b>There are electives going on, but none of them are yours!</b>")
             elif next_lesson['lesson'] == "DEPARTMENT_ELECTIVE":
                 electives = []
                 user_elective_final = None
@@ -323,7 +323,7 @@ def get_lesson(group, user_electives):
                     elective_name, teacher, room = user_elective_final.split('/')
                     result.append(f"&#x1F4DA; Your department elective is gonna start!: {time_left(next_lesson['time'].split('-')[0].strip(), 'next')}&#x1F4D6 {elective_name}\n&#x1F3E2{room}\n&#x1F474;&#x1F3FB;{teacher}\n&#x1F552 {next_lesson['time']}</b>")
                 else:
-                    result.append(f'<b>There are electives going on, but none of them are yours!</b>')
+                    result.append(f"<b>There are electives going on, but none of them are yours!</b>")
             else:
                 result.append(f"&#x1F4DA; Your next lesson is {next_lesson['lesson']}!:  {time_left(next_lesson['time'].split('-')[0].strip(), 'next')}\n\n&#x1F3E2 {next_lesson['audience']}\n&#x1F474;&#x1F3FB; {next_lesson['teacher']}\n&#x1F552 <b>{next_lesson['time']}</b>")
         else:
