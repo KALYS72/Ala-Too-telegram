@@ -3,9 +3,9 @@
     "semester":"2023-2024 SPRING SEMESTER",
     "schedule":"https://docs.google.com/spreadsheets/d/1jlJ6kG4FXChjH3a01dOmEX6BQ3i-QHeQzFgyjDup35o/edit#gid=1118793443",
     "groups":["COMSEP-23","EEAIR-23","COMCEH-23","COMSE-23","COMFCI-23","IEMIT-23","COM-22a","COM-22b","COM-21a","COM-21b","COM-20"],
-    "electives":["Philosophy","Robotics","English","Russian Language","Family psychology","Graphic Design","Computer literacy","Programming in Python",
+    "electives":["Philosophy","Robotics","English","Russian Language","Family psychology","Graphic Design","Computer literacy","Programming in Python","Ecology",
     "Physics","Human Rights","First Aid","Web design","Startup: from idea to launch","Sociology","Accounting & Finance","Crime Prevention and Legal Culture","Pedagogy",
-    "Informatics l/ll","Ecology","Introduction to Law","Data Analysis & Visualization with Python","Art & Design","Marketing","French","German Beginner/Elemantary","Turkish",
+    "Informatics ll", "Ecology","Introduction to Law","Data Analysis & Visualization with Python","Art & Design","Marketing","French","German","Turkish",
     "Electronics","Competitive programming"],
     "days":{
       "monday":{
@@ -257,7 +257,7 @@
       },
       "tuesday":{
         "COMSEP-23":[
-          {
+        {
             "lesson":"LANGUAGE_ELECTIVES",
             "time":"08:30-10:40",
             "electives":["English / Mr. Murray / B205","French / Ms. Aida Iliyazova / B201","German Beginner / Ms. Dinara / B202","German Elemantary/ Ms. Aruuke - Ms. Erika / B203","Turkish / Ms. Aigul Beisheeva/ B204"]
@@ -543,7 +543,7 @@
           {
             "lesson":"ELECTIVES",
             "time":"14:30-16:40",
-            "electives":["Graphic Design / Dr. Andrei Ermakov / B213","Computer literacy(14:30-17:25) / Mr. Zhenishbek Orozakhunov / B210","Programming in Python(14:30-17:25) / Ms. Burul Shambetova / Big Lab","Physics(14:30-15:55)(COMCEH / COMFCI / COMSE / COMSEP) / Ms. Asiya Abdyldaeva / B203","Human Rights / Bedii Gurzhan / D208","First Aid / E bock 105"]
+            "electives":["Graphic Design / Dr. Andrei Ermakov / B213","Computer literacy(14:30-17:25) / Mr. Zhenishbek Orozakhunov / B210","Programming in Python(14:30-17:25) / Ms. Burul Shambetova / Big Lab","Physics(14:30-15:55) / Ms. Asiya Abdyldaeva / B203","Human Rights / Bedii Gurzhan / D208","First Aid / E bock 105"]
           }
         ],
         "EEAIR-23":[
@@ -566,7 +566,7 @@
           {
             "lesson":"ELECTIVES",
             "time":"14:30-16:40",
-            "electives":["Graphic Design / Dr. Andrei Ermakov / B213","Computer literacy(14:30-17:25) / Mr. Zhenishbek Orozakhunov / B210","Programming in Python(14:30-17:25) / Ms. Burul Shambetova / Big Lab","Physics(14:30-15:55)(COMCEH / COMFCI / COMSE / COMSEP) / Ms. Asiya Abdyldaeva / B203","Human Rights / Bedii Gurzhan / D208","First Aid / E bock 105"]
+            "electives":["Graphic Design / Dr. Andrei Ermakov / B213","Computer literacy(14:30-17:25) / Mr. Zhenishbek Orozakhunov / B210","Programming in Python(14:30-17:25) / Ms. Burul Shambetova / Big Lab","Physics(14:30-15:55) / Ms. Asiya Abdyldaeva / B203","Human Rights / Bedii Gurzhan / D208","First Aid / E bock 105"]
           }
         ],
         "COMCEH-23":[
@@ -583,14 +583,14 @@
           {
             "lesson":"ELECTIVES",
             "time":"14:30-16:40",
-            "electives":["Graphic Design / Dr. Andrei Ermakov / B213","Computer literacy(14:30-17:25) / Mr. Zhenishbek Orozakhunov / B210","Programming in Python(14:30-17:25) / Ms. Burul Shambetova / Big Lab","Physics(14:30-15:55)(COMCEH / COMFCI / COMSE / COMSEP) / Ms. Asiya Abdyldaeva / B203","Human Rights / Bedii Gurzhan / D208","First Aid / E bock 105"]
+            "electives":["Graphic Design / Dr. Andrei Ermakov / B213","Computer literacy(14:30-17:25) / Mr. Zhenishbek Orozakhunov / B210","Programming in Python(14:30-17:25) / Ms. Burul Shambetova / Big Lab","Physics(14:30-15:55) / Ms. Asiya Abdyldaeva / B203","Human Rights / Bedii Gurzhan / D208","First Aid / E bock 105"]
           }
         ],
         "COMSE-23":[
           {
             "lesson":"ELECTIVES",
             "time":"14:30-16:40",
-            "electives":["Graphic Design / Dr. Andrei Ermakov / B213","Computer literacy(14:30-17:25) / Mr. Zhenishbek Orozakhunov / B210","Programming in Python(14:30-17:25) / Ms. Burul Shambetova / Big Lab","Physics(14:30-15:55)(COMCEH / COMFCI / COMSE / COMSEP) / Ms. Asiya Abdyldaeva / B203","Human Rights / Bedii Gurzhan / D208","First Aid / E bock 105"]
+            "electives":["Graphic Design / Dr. Andrei Ermakov / B213","Computer literacy(14:30-17:25) / Mr. Zhenishbek Orozakhunov / B210","Programming in Python(14:30-17:25) / Ms. Burul Shambetova / Big Lab","Physics(14:30-15:55) / Ms. Asiya Abdyldaeva / B203","Human Rights / Bedii Gurzhan / D208","First Aid / E bock 105"]
           }
         ],
         "COMFCI-23":[
@@ -613,7 +613,7 @@
           {
             "lesson":"ELECTIVES",
             "time":"14:30-16:40",
-            "electives":["Graphic Design / Dr. Andrei Ermakov / B211","Computer literacy(14:30-17:25) / Mr. Zhenishbek Orozakhunov / B211","Programming in Python(14:30-17:25) / Ms. Burul Shambetova / Big Lab","Physics(14:30-15:55)(COMCEH / COMFCI / COMSE / COMSEP) / Ms. Asiya Abdyldaeva / B203","Human Rights / Bedii Gurzhan / D208","First Aid / E bock 105"]
+            "electives":["Graphic Design / Dr. Andrei Ermakov / B211","Computer literacy(14:30-17:25) / Mr. Zhenishbek Orozakhunov / B211","Programming in Python(14:30-17:25) / Ms. Burul Shambetova / Big Lab","Physics(14:30-15:55) / Ms. Asiya Abdyldaeva / B203","Human Rights / Bedii Gurzhan / D208","First Aid / E bock 105"]
           }
         ],
         "IEMIT-23":[
@@ -636,14 +636,14 @@
           {
             "lesson":"ELECTIVES",
             "time":"14:30-16:40",
-            "electives":["Graphic Design / Dr. Andrei Ermakov / B213","Computer literacy(14:30-17:25) / Mr. Zhenishbek Orozakhunov / B210","Programming in Python(14:30-17:25) / Ms. Burul Shambetova / Big Lab","Physics(14:30-15:55)(COMCEH / COMFCI / COMSE / COMSEP) / Ms. Asiya Abdyldaeva / B203","Human Rights / Bedii Gurzhan / D208","First Aid / E bock 105"]
+            "electives":["Graphic Design / Dr. Andrei Ermakov / B213","Computer literacy(14:30-17:25) / Mr. Zhenishbek Orozakhunov / B210","Programming in Python(14:30-17:25) / Ms. Burul Shambetova / Big Lab","Physics(14:30-15:55) / Ms. Asiya Abdyldaeva / B203","Human Rights / Bedii Gurzhan / D208","First Aid / E bock 105"]
           }
         ],
         "COM-22a":[
           {
             "lesson":"ELECTIVES",
             "time":"14:30-16:40",
-            "electives":["Graphic Design / Dr. Andrei Ermakov / B213","Computer literacy(14:30-17:25) / Mr. Zhenishbek Orozakhunov / B210","Programming in Python(14:30-17:25) / Ms. Burul Shambetova / Big Lab","Physics(14:30-15:55)(COMCEH / COMFCI / COMSE / COMSEP) / Ms. Asiya Abdyldaeva / B203","Human Rights / Bedii Gurzhan / D208","First Aid / E bock 105"]
+            "electives":["Graphic Design / Dr. Andrei Ermakov / B213","Computer literacy(14:30-17:25) / Mr. Zhenishbek Orozakhunov / B210","Programming in Python(14:30-17:25) / Ms. Burul Shambetova / Big Lab","Physics(14:30-15:55) / Ms. Asiya Abdyldaeva / B203","Human Rights / Bedii Gurzhan / D208","First Aid / E bock 105"]
           }
         ],
         "COM-22b":[
@@ -666,7 +666,7 @@
           {
             "lesson":"ELECTIVES",
             "time":"14:30-16:40",
-            "electives":["Graphic Design / Dr. Andrei Ermakov / B213","Computer literacy(14:30-17:25) / Mr. Zhenishbek Orozakhunov / B210","Programming in Python(14:30-17:25) / Ms. Burul Shambetova / Big Lab","Physics(14:30-15:55)(COMCEH / COMFCI / COMSE / COMSEP) / Ms. Asiya Abdyldaeva / B203","Human Rights / Bedii Gurzhan / D208","First Aid / E bock 105"]
+            "electives":["Graphic Design / Dr. Andrei Ermakov / B213","Computer literacy(14:30-17:25) / Mr. Zhenishbek Orozakhunov / B210","Programming in Python(14:30-17:25) / Ms. Burul Shambetova / Big Lab","Physics(14:30-15:55) / Ms. Asiya Abdyldaeva / B203","Human Rights / Bedii Gurzhan / D208","First Aid / E bock 105"]
           }
         ],
         "COM-21a":[
@@ -715,7 +715,7 @@
           {
             "lesson":"ELECTIVES",
             "time":"14:30-16:40",
-            "electives":["Startup: from idea to launch / Mr. Radmir Gumerov / B202","Web design / Mr. Zhavlon Khamidov / B211","Physics(14:30-15:55)(COMCEH / COMFCI / COMSE / COMSEP) / Ms. Asiya Abdyldaeva / B203","Sociology / Edilova M. / B107","Accounting & Finance(14:00-16:30) / unknown / unknown","Crime Prevention and Legal Culture(15:40-18:00) / Dzhalgasynova G. / D202","Family psychology / Nurzat Kubanychbek kyzy / D106","Pedagogy (ONLY YEAR 2) / Aikokul Mamaeva / B201","First Aid / unknown / E bock 105"]
+            "electives":["Startup: from idea to launch / Mr. Radmir Gumerov / B202","Web design / Mr. Zhavlon Khamidov / B211","Physics(14:30-15:55) / Ms. Asiya Abdyldaeva / B203","Sociology / Edilova M. / B107","Accounting & Finance(14:00-16:30) / unknown / unknown","Crime Prevention and Legal Culture(15:40-18:00) / Dzhalgasynova G. / D202","Family psychology / Nurzat Kubanychbek kyzy / D106","Pedagogy (ONLY YEAR 2) / Aikokul Mamaeva / B201","First Aid / unknown / E bock 105"]
           }
         ],
         "EEAIR-23":[
@@ -738,7 +738,7 @@
           {
             "lesson":"ELECTIVES",
             "time":"14:30-16:40",
-            "electives":["Startup: from idea to launch / Mr. Radmir Gumerov / B202","Web design / Mr. Zhavlon Khamidov / B211","Physics(14:30-15:55)(COMCEH / COMFCI / COMSE / COMSEP) / Ms. Asiya Abdyldaeva / B203","Sociology / Edilova M. / B107","Accounting & Finance(14:00-16:30) / unknown / unknown","Crime Prevention and Legal Culture(15:40-18:00) / Dzhalgasynova G. / D202","Family psychology / Nurzat Kubanychbek kyzy / D106","Pedagogy (ONLY YEAR 2) / Aikokul Mamaeva / B201","First Aid / unknown / E bock 105"]
+            "electives":["Startup: from idea to launch / Mr. Radmir Gumerov / B202","Web design / Mr. Zhavlon Khamidov / B211","Physics(14:30-15:55) / Ms. Asiya Abdyldaeva / B203","Sociology / Edilova M. / B107","Accounting & Finance(14:00-16:30) / unknown / unknown","Crime Prevention and Legal Culture(15:40-18:00) / Dzhalgasynova G. / D202","Family psychology / Nurzat Kubanychbek kyzy / D106","Pedagogy (ONLY YEAR 2) / Aikokul Mamaeva / B201","First Aid / unknown / E bock 105"]
           }
         ],
         "COMCEH-23":[
@@ -761,7 +761,7 @@
           {
             "lesson":"ELECTIVES",
             "time":"14:30-16:40",
-            "electives":["Startup: from idea to launch / Mr. Radmir Gumerov / B202","Web design / Mr. Zhavlon Khamidov / B211","Physics(14:30-15:55)(COMCEH / COMFCI / COMSE / COMSEP) / Ms. Asiya Abdyldaeva / B203","Sociology / Edilova M. / B107","Accounting & Finance(14:00-16:30) / unknown / unknown","Crime Prevention and Legal Culture(15:40-18:00) / Dzhalgasynova G. / D202","Family psychology / Nurzat Kubanychbek kyzy / D106","Pedagogy (ONLY YEAR 2) / Aikokul Mamaeva / B201","First Aid / unknown / E bock 105"]
+            "electives":["Startup: from idea to launch / Mr. Radmir Gumerov / B202","Web design / Mr. Zhavlon Khamidov / B211","Physics(14:30-15:55) / Ms. Asiya Abdyldaeva / B203","Sociology / Edilova M. / B107","Accounting & Finance(14:00-16:30) / unknown / unknown","Crime Prevention and Legal Culture(15:40-18:00) / Dzhalgasynova G. / D202","Family psychology / Nurzat Kubanychbek kyzy / D106","Pedagogy (ONLY YEAR 2) / Aikokul Mamaeva / B201","First Aid / unknown / E bock 105"]
           }
         ],
         "COMSE-23":[
@@ -784,21 +784,21 @@
           {
             "lesson":"ELECTIVES",
             "time":"14:30-16:40",
-            "electives":["Startup: from idea to launch / Mr. Radmir Gumerov / B202","Web design / Mr. Zhavlon Khamidov / B211","Physics(14:30-15:55)(COMCEH / COMFCI / COMSE / COMSEP) / Ms. Asiya Abdyldaeva / B203","Sociology / Edilova M. / B107","Accounting & Finance(14:00-16:30) / unknown / unknown","Crime Prevention and Legal Culture(15:40-18:00) / Dzhalgasynova G. / D202","Family psychology / Nurzat Kubanychbek kyzy / D106","Pedagogy (ONLY YEAR 2) / Aikokul Mamaeva / B201","First Aid / unknown / E bock 105"]
+            "electives":["Startup: from idea to launch / Mr. Radmir Gumerov / B202","Web design / Mr. Zhavlon Khamidov / B211","Physics(14:30-15:55) / Ms. Asiya Abdyldaeva / B203","Sociology / Edilova M. / B107","Accounting & Finance(14:00-16:30) / unknown / unknown","Crime Prevention and Legal Culture(15:40-18:00) / Dzhalgasynova G. / D202","Family psychology / Nurzat Kubanychbek kyzy / D106","Pedagogy (ONLY YEAR 2) / Aikokul Mamaeva / B201","First Aid / unknown / E bock 105"]
           }
         ],
         "COMFCI-23":[
           {
             "lesson":"ELECTIVES",
             "time":"14:30-16:40",
-            "electives":["Startup: from idea to launch / Mr. Radmir Gumerov / B202","Web design / Mr. Zhavlon Khamidov / B211","Physics(14:30-15:55)(COMCEH / COMFCI / COMSE / COMSEP) / Ms. Asiya Abdyldaeva / B203","Sociology / Edilova M. / B107","Accounting & Finance(14:00-16:30) / unknown / unknown","Crime Prevention and Legal Culture(15:40-18:00) / Dzhalgasynova G. / D202","Family psychology / Nurzat Kubanychbek kyzy / D106","Pedagogy (ONLY YEAR 2) / Aikokul Mamaeva / B201","First Aid / unknown / E bock 105"]
+            "electives":["Startup: from idea to launch / Mr. Radmir Gumerov / B202","Web design / Mr. Zhavlon Khamidov / B211","Physics(14:30-15:55) / Ms. Asiya Abdyldaeva / B203","Sociology / Edilova M. / B107","Accounting & Finance(14:00-16:30) / unknown / unknown","Crime Prevention and Legal Culture(15:40-18:00) / Dzhalgasynova G. / D202","Family psychology / Nurzat Kubanychbek kyzy / D106","Pedagogy (ONLY YEAR 2) / Aikokul Mamaeva / B201","First Aid / unknown / E bock 105"]
           }
         ],
         "IEMIT-23":[
           {
             "lesson":"ELECTIVES",
             "time":"14:30-16:40",
-            "electives":["Startup: from idea to launch / Mr. Radmir Gumerov / B202","Web design / Mr. Zhavlon Khamidov / B211","Physics(14:30-15:55)(COMCEH / COMFCI / COMSE / COMSEP) / Ms. Asiya Abdyldaeva / B203","Sociology / Edilova M. / B107","Accounting & Finance(14:00-16:30) / unknown / unknown","Crime Prevention and Legal Culture(15:40-18:00) / Dzhalgasynova G. / D202","Family psychology / Nurzat Kubanychbek kyzy / D106","Pedagogy (ONLY YEAR 2) / Aikokul Mamaeva / B201","First Aid / unknown / E bock 105"]
+            "electives":["Startup: from idea to launch / Mr. Radmir Gumerov / B202","Web design / Mr. Zhavlon Khamidov / B211","Physics(14:30-15:55) / Ms. Asiya Abdyldaeva / B203","Sociology / Edilova M. / B107","Accounting & Finance(14:00-16:30) / unknown / unknown","Crime Prevention and Legal Culture(15:40-18:00) / Dzhalgasynova G. / D202","Family psychology / Nurzat Kubanychbek kyzy / D106","Pedagogy (ONLY YEAR 2) / Aikokul Mamaeva / B201","First Aid / unknown / E bock 105"]
           }
         ],
         "COM-22a":[
@@ -833,7 +833,7 @@
           {
             "lesson":"ELECTIVES",
             "time":"14:30-16:40",
-            "electives":["Startup: from idea to launch / Mr. Radmir Gumerov / B202","Web design / Mr. Zhavlon Khamidov / B211","Physics(14:30-15:55)(COMCEH / COMFCI / COMSE / COMSEP) / Ms. Asiya Abdyldaeva / B203","Sociology / Edilova M. / B107","Accounting & Finance(14:00-16:30) / unknown / unknown","Crime Prevention and Legal Culture(15:40-18:00) / Dzhalgasynova G. / D202","Family psychology / Nurzat Kubanychbek kyzy / D106","Pedagogy (ONLY YEAR 2) / Aikokul Mamaeva / B201","First Aid / unknown / E bock 105"]
+            "electives":["Startup: from idea to launch / Mr. Radmir Gumerov / B202","Web design / Mr. Zhavlon Khamidov / B211","Physics(14:30-15:55) / Ms. Asiya Abdyldaeva / B203","Sociology / Edilova M. / B107","Accounting & Finance(14:00-16:30) / unknown / unknown","Crime Prevention and Legal Culture(15:40-18:00) / Dzhalgasynova G. / D202","Family psychology / Nurzat Kubanychbek kyzy / D106","Pedagogy (ONLY YEAR 2) / Aikokul Mamaeva / B201","First Aid / unknown / E bock 105"]
           }
         ],
         "COM-22b":[
@@ -862,7 +862,7 @@
           {
             "lesson":"ELECTIVES",
             "time":"14:30-16:40",
-            "electives":["Startup: from idea to launch / Mr. Radmir Gumerov / B202","Web design / Mr. Zhavlon Khamidov / B211","Physics(14:30-15:55)(COMCEH / COMFCI / COMSE / COMSEP) / Ms. Asiya Abdyldaeva / B203","Sociology / Edilova M. / B107","Accounting & Finance(14:00-16:30) / unknown / unknown","Crime Prevention and Legal Culture(15:40-18:00) / Dzhalgasynova G. / D202","Family psychology / Nurzat Kubanychbek kyzy / D106","Pedagogy (ONLY YEAR 2) / Aikokul Mamaeva / B201","First Aid / unknown / E bock 105"]
+            "electives":["Startup: from idea to launch / Mr. Radmir Gumerov / B202","Web design / Mr. Zhavlon Khamidov / B211","Physics(14:30-15:55) / Ms. Asiya Abdyldaeva / B203","Sociology / Edilova M. / B107","Accounting & Finance(14:00-16:30) / unknown / unknown","Crime Prevention and Legal Culture(15:40-18:00) / Dzhalgasynova G. / D202","Family psychology / Nurzat Kubanychbek kyzy / D106","Pedagogy (ONLY YEAR 2) / Aikokul Mamaeva / B201","First Aid / unknown / E bock 105"]
           }
         ],
         "COM-21a":[
