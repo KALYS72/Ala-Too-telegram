@@ -15,12 +15,5 @@
     "2111795303": {
         "electives": [],
         "group": "COMFCI-23"
-    },
-    "1674025540": {
-        "electives": [
-            "Robotics",
-            "German"
-        ],
-        "group": "EEAIR-23"
     }
 }

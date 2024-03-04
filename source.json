@@ -5,10 +5,105 @@
     "groups":["COMSEP-23","EEAIR-23","COMCEH-23","COMSE-23","COMFCI-23","IEMIT-23","COM-22a","COM-22b","COM-21a","COM-21b","COM-20"],
     "electives":["Philosophy","Robotics","English","Russian Language","Family psychology","Graphic Design","Computer literacy","Programming in Python","Ecology",
     "Physics","Human Rights","First Aid","Web design","Startup: from idea to launch","Sociology","Accounting & Finance","Crime Prevention and Legal Culture","Pedagogy",
-    "Informatics ll", "Ecology","Introduction to Law","Data Analysis & Visualization with Python","Art & Design","Marketing","French","German","Turkish",
+    "Informatics ll", "Ecology","Introduction to Law","Data Analysis & Visualization with Python","Art & Design","Marketing","French","German Beginner","German Elemantary","German A1","Turkish",
     "Electronics","Competitive programming"],
     "days":{
       "monday":{
+        "MATDAIS-23":[
+          {
+            "lesson":"Introduction to Engineering and Computer Science",
+            "time":"09:15-11:25",
+            "teacher":"Dr. Tauheed Khan",
+            "audience":"Lab 3"
+          },
+          {
+            "lesson":"LUNCH-TIME",
+            "time":"11:30-12:10"
+          },
+          {
+            "lesson":"English Language",
+            "time":"12:15-14:25",
+            "teacher":"Mr. Murrey",
+            "audience":"B201"
+          },
+          {
+            "lesson":"ELECTIVES",
+            "time":"14:30-16:40",
+            "electives":["Philosophy / Edilova M / B201","Robotics(14:30-17:25) / Mr. Artur Kutlugildin / B213"]
+          }
+        ],
+        "MATMIE-23":[
+          {
+            "lesson":"Introduction to Engineering and Computer Science",
+            "time":"09:15-11:25",
+            "teacher":"Dr. Tauheed Khan",
+            "audience":"Lab 3"
+          },
+          {
+            "lesson":"LUNCH-TIME",
+            "time":"11:30-12:10"
+          },
+          {
+            "lesson":"English Language",
+            "time":"12:15-14:25",
+            "teacher":"Mr. Murrey",
+            "audience":"B201"
+          },
+          {
+            "lesson":"ELECTIVES",
+            "time":"14:30-16:40",
+            "electives":["Philosophy / Edilova M / B201","Robotics(14:30-17:25) / Mr. Artur Kutlugildin / B213"]
+          }
+        ],
+        "MATH-22":[
+          {
+            "lesson": "Educational Internship",
+            "time": "08:30-14:25",
+            "teacher": "none",
+            "audience": "none"
+          },
+          {
+            "lesson":"ELECTIVES",
+            "time":"14:30-16:40",
+            "electives":["Philosophy / Edilova M / B201","Robotics(14:30-17:25) / Mr. Artur Kutlugildin / B213"]
+          },
+          {
+            "lesson":"Kyrgyz Language for foreigners",
+            "time":"16:45-18:10",
+            "teacher":"Ms. Altynai Saidalieva",
+            "audience":"A209"
+          }
+        ],
+        "MATH-21":[
+          {
+            "lesson":"Numerical methods",
+            "time":"11:30-12:55",
+            "teacher":"Dr. Ruslan Isaev",
+            "audience":"Lab 3"
+          },
+          {
+            "lesson":"LUNCH-TIME",
+            "time":"13:00-13:40"
+          }
+        ],
+        "MATH-20":[
+          {
+            "lesson":"LUNCH-TIME",
+            "time":"11:30-12:10"
+          },
+          {
+            "lesson":"Operation Systems",
+            "time":"11:30-12:55",
+            "teacher":"Mr. Imtiyaz Gulbarga",
+            "audience":"Big Lab"
+          },
+          {
+            "lesson":"Functional Analysis",
+            "time":"14:30-16:40",
+            "teacher":"Mr. Esen Rakhmanov",
+            "audience":"B204"
+          }
+        ],
         "COMSEP-23":[
           {
             "lesson":"Programming Languages - 1",
@@ -20,7 +115,7 @@
             "lesson":"Discrete Mathematics",
             "time":"10:45-12:10",
             "audience":"B205",
-            "teacher":"Mr. Dr. Remudin Mekuria"
+            "teacher":"Dr. Remudin Mekuria"
           },
           {
             "lesson":"LUNCH-TIME",
@@ -42,7 +137,7 @@
           {
             "lesson": "Discrete Mathematics",
             "time": "09:15-10:40",
-            "teacher": "Mr. Dr. Remudin Mekuria",
+            "teacher": "Dr. Remudin Mekuria",
             "audience": "B205"
           },
           {
@@ -71,7 +166,7 @@
           {
             "lesson": "Discrete Mathematics",
             "time": "09:15-10:40",
-            "teacher": "Mr. Dr. Remudin Mekuria",
+            "teacher": "Dr. Remudin Mekuria",
             "audience": "B205"
           },
           {
@@ -133,7 +228,7 @@
           {
             "lesson": "Discrete Mathematics",
             "time": "13:00-14:25",
-            "teacher": "Mr. Dr. Remudin Mekuria",
+            "teacher": "Dr. Remudin Mekuria",
             "audience": "B205"
           },
           {
@@ -156,7 +251,7 @@
           {
             "lesson": "Discrete Mathematics",
             "time": "13:00-14:25",
-            "teacher": "Mr. Dr. Remudin Mekuria",
+            "teacher": "Dr. Remudin Mekuria",
             "audience": "B205"
           },
           {
@@ -256,6 +351,116 @@
         ]
       },
       "tuesday":{
+        "MATDAIS-23":[
+        {
+            "lesson":"LANGUAGE_ELECTIVES",
+            "time":"08:30-10:40",
+            "electives":["German A1 / Ms. Erika - Ms. Aruuke / B202 - B203"]
+          },
+          {
+            "lesson": "Programming Languages - ll",
+            "time": "10:45-12:10",
+            "teacher": "Dr. Tauheed Khan",
+            "audience": "B203"
+          },
+          {
+            "lesson":"LUNCH-TIME",
+            "time":"12:15-12:55"
+          },
+          {
+            "lesson":"Algebra Geometry",
+            "time":"13:00-14:25",
+            "audience":"B201",
+            "teacher":"Ms. Siren Kerimbaeva"
+          }, 
+          {
+            "lesson":"ELECTIVES",
+            "time":"08:30-10:40",
+            "electives":["German Beginner / Ms. Dinara / B202","German Elemantary/ Ms. Aruuke - Ms. Erika / B203"]
+          }
+        ],
+        "MATMIE-23":[
+          {
+            "lesson":"LANGUAGE_ELECTIVES",
+            "time":"08:30-10:40",
+            "electives":["German A1 / Ms. Erika - Ms. Aruuke / B202 - B203"]
+          },
+          {
+            "lesson":"Algebra Geometry",
+            "time":"10:45-12:10",
+            "audience":"B201",
+            "teacher":"Ms. Siren Kerimbaeva"
+          },
+          {
+            "lesson":"LUNCH-TIME",
+            "time":"12:15-12:55"
+          },
+          {
+            "lesson": "Programming Languages - ll",
+            "time": "13:00-14:25",
+            "teacher": "Dr. Tauheed Khan",
+            "audience": "B204"
+          },
+          {
+            "lesson":"ELECTIVES",
+            "time":"14:30-16:40",
+            "electives":["English ll / Mr. Murray / B205","Russian Language (Only YEAR 1)/ Ms. S. Alymbekova / B201 / Ms. G. Chokusheva / B204 / Ms.A.Orozova / B203","Family psychology / Nurzat Kubanychbek kyzy / D106"]
+          }
+        ],
+        "MATH-22":[
+          {
+            "lesson": "Probability and Statistics - ll",
+            "time": "09:15-10:40",
+            "teacher": "Ms. Siren  Kerimbaeva",
+            "audience": "C007"
+          },
+          {
+            "lesson": "Physical Education",
+            "time": "10:45-12:10",
+            "teacher": "Ms. Asina Bopushova",
+            "audience": "Gym"
+          },
+          {
+            "lesson":"LUNCH-TIME",
+            "time":"12:15-12:55"
+          },
+          {
+            "lesson": "Kyrgyz language and Literature",
+            "time": "13:00-14:25",
+            "teacher": "Ms. D. Orozalieva",
+            "audience": "B203"
+          },
+          {
+            "lesson":"ELECTIVES",
+            "time":"14:30-16:40",
+            "electives":["English ll / Mr. Murray / B205","Russian Language (Only YEAR 1)/ Ms. S. Alymbekova / B201 / Ms. G. Chokusheva / B204 / Ms.A.Orozova / B203","Family psychology / Nurzat Kubanychbek kyzy / D106"]
+          }
+        ],
+        "MATH-21":[
+          {
+            "lesson": "Computer graphics",
+            "time": "10:45-12:10",
+            "teacher": "Dr Sanjarbek Erdolatov",
+            "audience": "Lab 5"
+          },
+          {
+            "lesson":"LUNCH-TIME",
+            "time":"12:15-12:55"
+          },
+          {
+            "lesson": "Math elective (AI)",
+            "time": "13:00-14:25",
+            "teacher": "Dr. Ruslan Isaev",
+            "audience": "B204"
+          },
+          {
+            "lesson": "Programming languages and Methods",
+            "time": "14:30-15:55",
+            "teacher": "Mr. Javlon Khamidov",
+            "audience": "Lab 4"
+          }
+        ],
+        "MATH-20":[],
         "COMSEP-23":[
         {
             "lesson":"LANGUAGE_ELECTIVES",
@@ -272,7 +477,7 @@
             "lesson":"Discrete Mathematics",
             "time":"12:15-13:40",
             "audience":"B205",
-            "teacher":"Mr. Dr. Remudin Mekuria"
+            "teacher":"Dr. Remudin Mekuria"
           },
           {
             "lesson":"LUNCH-TIME",
@@ -378,7 +583,7 @@
             "lesson":"Discrete Mathematics",
             "time":"10:45-12:10",
             "audience":"B205",
-            "teacher":"Mr. Dr. Remudin Mekuria"
+            "teacher":"Dr. Remudin Mekuria"
           },
           {
             "lesson":"Programming Languages - 1",
@@ -523,6 +728,11 @@
         "COM-20": []
       },
       "wednesday":{
+        "MATDAIS-23":[],
+        "MATMIE-23":[],
+        "MATH-22":[],
+        "MATH-21":[],
+        "MATH-20":[],
         "COMSEP-23": [
           {
             "lesson":"Calculus - ll",
@@ -598,7 +808,7 @@
             "lesson":"Discrete Mathematics",
             "time":"10:00-11:25",
             "audience":"C007",
-            "teacher":"Mr. Dr. Remudin Mekuria"
+            "teacher":"Dr. Remudin Mekuria"
           },
           {
             "lesson":"Calculus - ll",
@@ -701,12 +911,17 @@
         ]
       },
       "thursday":{
+        "MATDAIS-23":[],
+        "MATMIE-23":[],
+        "MATH-22":[],
+        "MATH-21":[],
+        "MATH-20":[],
         "COMSEP-23":[
           {
             "lesson":"Discrete Mathematics",
             "time":"12:15-13:40",
             "audience":"B205",
-            "teacher":"Mr. Dr. Remudin Mekuria"
+            "teacher":"Dr. Remudin Mekuria"
           },
           {
             "lesson":"LUNCH-TIME",
@@ -769,7 +984,7 @@
             "lesson":"Discrete Mathematics",
             "time":"09:15-12:10",
             "audience":"B205",
-            "teacher":"Mr. Dr. Remudin Mekuria"
+            "teacher":"Dr. Remudin Mekuria"
           },
           {
             "lesson":"Programming Languages - l",
@@ -916,6 +1131,11 @@
         "COM-20":[]
       },
       "friday":{
+        "MATDAIS-23":[],
+        "MATMIE-23":[],
+        "MATH-22":[],
+        "MATH-21":[],
+        "MATH-20":[],
         "COMSEP-23":[
           {
             "lesson":"ELECTIVES",
@@ -928,7 +1148,7 @@
             "lesson":"Discrete Mathematics",
             "time":"08:30-09:55",
             "audience":"B205",
-            "teacher":"Mr. Dr. Remudin Mekuria"
+            "teacher":"Dr. Remudin Mekuria"
           },
           {
             "lesson":"Calculus - ll",
@@ -940,7 +1160,7 @@
             "lesson":"Discrete Mathematics",
             "time":"11:30-12:55",
             "audience":"B204",
-            "teacher":"Mr. Dr. Remudin Mekuria"
+            "teacher":"Dr. Remudin Mekuria"
           },
           {
             "lesson":"LUNCH-TIME",
@@ -957,7 +1177,7 @@
             "lesson":"Discrete Mathematics",
             "time":"08:30-09:55",
             "audience":"B205",
-            "teacher":"Mr. Dr. Remudin Mekuria"
+            "teacher":"Dr. Remudin Mekuria"
           },
           {
             "lesson":"Calculus - ll",
@@ -969,7 +1189,7 @@
             "lesson":"Discrete Mathematics",
             "time":"11:30-12:55",
             "audience":"B204",
-            "teacher":"Mr. Dr. Remudin Mekuria"
+            "teacher":"Dr. Remudin Mekuria"
           },
           {
             "lesson":"LUNCH-TIME",
@@ -992,7 +1212,7 @@
             "lesson":"Discrete Mathematics",
             "time":"10:00-11:25",
             "audience":"B205",
-            "teacher":"Mr. Dr. Remudin Mekuria"
+            "teacher":"Dr. Remudin Mekuria"
           },
           {
             "lesson":"Calculus - ll",
