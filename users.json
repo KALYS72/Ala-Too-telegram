@@ -6,14 +6,12 @@
         ],
         "group": "EEAIR-23"
     },
-    "6641829093": {
-        "electives": [
-            "French"
-        ],
-        "group": "COMCEH-23"
-    },
     "2111795303": {
         "electives": [],
         "group": "COMFCI-23"
+    },
+    "6641829093": {
+        "electives": [],
+        "group": "MATH-20"
     }
 }

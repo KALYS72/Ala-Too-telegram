@@ -2,7 +2,7 @@
     "university":"ALATOO INTERNATIONAL UNIVERSITY - DEPARTMENT OF COMPUTER SCIENCE",
     "semester":"2023-2024 SPRING SEMESTER",
     "schedule":"https://docs.google.com/spreadsheets/d/1jlJ6kG4FXChjH3a01dOmEX6BQ3i-QHeQzFgyjDup35o/edit#gid=1118793443",
-    "groups":["COMSEP-23","EEAIR-23","COMCEH-23","COMSE-23","COMFCI-23","IEMIT-23","COM-22a","COM-22b","COM-21a","COM-21b","COM-20"],
+    "groups":["COMSEP-23","EEAIR-23","COMCEH-23","COMSE-23","COMFCI-23","IEMIT-23","COM-22a","COM-22b","COM-21a","COM-21b","COM-20","MATMIE-23","MATDAIS-23","MATH-22","MATH-21","MATH-20"],
     "electives":["Philosophy","Robotics","English","Russian Language","Family psychology","Graphic Design","Computer literacy","Programming in Python","Ecology",
     "Physics","Human Rights","First Aid","Web design","Startup: from idea to launch","Sociology","Accounting & Finance","Crime Prevention and Legal Culture","Pedagogy",
     "Informatics ll", "Ecology","Introduction to Law","Data Analysis & Visualization with Python","Art & Design","Marketing","French","German Beginner","German Elemantary","German A1","Turkish",
@@ -728,11 +728,145 @@
         "COM-20": []
       },
       "wednesday":{
-        "MATDAIS-23":[],
-        "MATMIE-23":[],
-        "MATH-22":[],
-        "MATH-21":[],
-        "MATH-20":[],
+        "MATDAIS-23":[
+          {
+            "lesson":"LANGUAGE_ELECTIVES",
+            "time" :"08:30-10:40",
+            "electives":"Turkish / Ms. Auigul Beisheeva / D400"
+          },
+          {
+            "lesson":"Calculus - ll",
+            "time":"11:30-12:10",
+            "audience":"B203",
+            "teacher":"Mr. Hussien Chebsi"
+          },
+          {
+            "lesson":"Introduction to Engineering and Computer Science",
+            "time":"12:15-13:40",
+            "audience":"B204",
+            "teacher":"Dr. Tauheed Khan"
+          },
+          {
+            "lesson":"LUNCH-TIME",
+            "time":"13:45-14:25"
+          },
+          {
+            "lesson":"ELECTIVES",
+            "time":"14:30-16:40",
+            "electives":["Graphic Design / Dr. Andrei Ermakov / B213","Computer literacy(14:30-17:25) / Mr. Zhenishbek Orozakhunov / B210","Programming in Python(14:30-17:25) / Ms. Burul Shambetova / Big Lab","Human Rights / Bedii Gurzhan / D208"]
+          }
+        ],
+        "MATMIE-23":[
+          {
+            "lesson":"LANGUAGE_ELECTIVES",
+            "time" :"08:30-10:40",
+            "electives":["Turkish / Ms. Auigul Beisheeva / D400"]
+          },
+          {
+            "lesson":"Introduction to Engineering and Computer Science",
+            "time":"10:45-12:10",
+            "audience":"Lab 3",
+            "teacher":"Dr. Tauheed Khan"
+          },
+          {
+            "lesson":"Calculus - ll",
+            "time":"12:15-13:40",
+            "audience":"B203",
+            "teacher":"Mr. Hussien Chebsi"
+          },
+          {
+            "lesson":"LUNCH-TIME",
+            "time":"13:45-14:25"
+          },
+          {
+            "lesson":"ELECTIVES",
+            "time":"14:30-16:40",
+            "electives":["Graphic Design / Dr. Andrei Ermakov / B213","Computer literacy(14:30-17:25) / Mr. Zhenishbek Orozakhunov / B210","Programming in Python(14:30-17:25) / Ms. Burul Shambetova / Big Lab","Human Rights / Bedii Gurzhan / D208"]
+          }
+        ],
+        "MATH-22":[
+          {
+            "lesson":"Geography",
+            "time":"08:30-09:55",
+            "audience":"Lab 4",
+            "teacher":"Mr. Javlon Khamidov"
+          },
+          {
+            "lesson":"Kyrgyz language and Literature",
+            "time":"10:00-11:25",
+            "audience":"B201",
+            "teacher":"Ms. D. Orozalieva"
+          },
+          {
+            "lesson":"Probability and Statistics - ll",
+            "time":"11:30-12:55",
+            "audience":"B202",
+            "teacher":"Ms. Siren Kerimbaeva"
+          },
+          {
+            "lesson":"LUNCH-TIME",
+            "time":"13:00-14:25"
+          },
+          {
+            "lesson":"ELECTIVES",
+            "time":"14:30-16:40",
+            "electives":["Graphic Design / Dr. Andrei Ermakov / B213","Computer literacy(14:30-17:25) / Mr. Zhenishbek Orozakhunov / B210","Programming in Python(14:30-17:25) / Ms. Burul Shambetova / Big Lab","Human Rights / Bedii Gurzhan / D208"]
+          }
+        ],
+        "MATH-21":[
+          {
+            "lesson":"Programming languages and Methods",
+            "time":"08:30-09:55",
+            "audience":"Lab 4",
+            "teacher":"Mr. Javlon Khamidov"
+          },
+          {
+            "lesson":"Probability and Statistics - ll",
+            "time":"10:00-11:25",
+            "audience":"B202",
+            "teacher":"Ms. Siren Kerimbaeva"
+          },
+          {
+            "lesson":"Numerical methods",
+            "time":"11:30-12:55",
+            "audience":"Lab 5",
+            "teacher":"Dr. Ruslan Isaev"
+          },
+          {
+            "lesson":"LUNCH-TIME",
+            "time":"13:00-13:40"
+          },
+          {
+            "lesson":"Philosophy",
+            "time":"13:45-15:10",
+            "audience":"B201",
+            "teacher":"Dr. Cholpon Alieva"
+          }
+        ],
+        "MATH-20":[
+          {
+            "lesson":"Complex Analysis",
+            "time":"08:30-10:40",
+            "audience":"B205",
+            "teacher":"Mr. Esen Rakhmanov"
+          },
+          {
+            "lesson":"Game Theory",
+            "time":"10:45-12:10",
+            "audience":"B204",
+            "teacher":"Dr. Arslan Khan"
+          },
+          {
+            "lesson":"LUNCH-TIME",
+            "time":"12:15-12:55"
+          },
+          {
+            "lesson":"Operating Systems",
+            "time":"13:00-14:25",
+            "audience":"Lab 5",
+            "teacher":"Mr. Imtiyaz Gulbarga"
+          }
+        ],
         "COMSEP-23": [
           {
             "lesson":"Calculus - ll",
@@ -911,11 +1045,161 @@
         ]
       },
       "thursday":{
-        "MATDAIS-23":[],
-        "MATMIE-23":[],
-        "MATH-22":[],
-        "MATH-21":[],
-        "MATH-20":[],
+        "MATDAIS-23":[
+          {
+            "lesson":"Calculus - ll",
+            "time":"08:30-09:55",
+            "audience":"B203",
+            "teacher":"Mr. Hussien Chebsi"
+          },
+          {
+            "lesson":"Programming Languages - ll",
+            "time":"10:00-11:25",
+            "audience":"Lab 4",
+            "teacher":"Dr. Tauheed Khan"
+          },
+          {
+            "lesson":"LUNCH-TIME",
+            "time":"11:30-12:10"
+          },
+          {
+            "lesson":"Algebra Geometry",
+            "time":"12:15-13:40",
+            "audience":"B203",
+            "teacher":"Ms. Siren Kerimbaeva"
+          },
+          {
+            "lesson":"Meeting with an adviser",
+            "time":"13:45-14:25",
+            "audience":"B205",
+            "teacher":"Mr. Zhenishbek Orozakhunov"
+          },
+          {
+            "lesson":"ELECTIVES",
+            "time":"14:30-16:40",
+            "electives":["Startup: from idea to launch / Mr. Radmir Gumerov / B202","Web design / Mr. Zhavlon Khamidov / B211","Sociology / Edilova M. / B107","Accounting & Finance(14:00-16:30) / Dzhagasynova G / D 202","Crime Prevention and Legal Culture(15:40-18:00) / Dzhalgasynova G. / D202","Family psychology / Nurzat Kubanychbek kyzy / D106","First Aid / E bock 105","Pedagogy / Aikokul Mamaeva / B201"]
+          }
+        ],
+        "MATMIE-23":[
+          {
+            "lesson":"Programming Languages - ll",
+            "time":"08:30-09:55",
+            "audience":"Lab 3",
+            "teacher":"Dr. Tauheed Khan"
+          },
+          {
+            "lesson":"Algebra Geometry",
+            "time":"10:00-11:25",
+            "audience":"B203",
+            "teacher":"Ms. Siren Kerimbaeva"
+          },
+          {
+            "lesson":"Introduction to Engineering and Computer Science",
+            "time":"11:30-13:40",
+            "audience":"Lab 4",
+            "teacher":"Dr. Tauheed Khan"
+          },
+          {
+            "lesson":"LUNCH-TIME",
+            "time":"13:45-14:25"
+          },
+          {
+            "lesson":"ELECTIVES",
+            "time":"14:30-16:40",
+            "electives":["Startup: from idea to launch / Mr. Radmir Gumerov / B202","Web design / Mr. Zhavlon Khamidov / B211","Sociology / Edilova M. / B107","Accounting & Finance(14:00-16:30) / Dzhagasynova G / D 202","Crime Prevention and Legal Culture(15:40-18:00) / Dzhalgasynova G. / D202","Family psychology / Nurzat Kubanychbek kyzy / D106","First Aid / E bock 105","Pedagogy / Aikokul Mamaeva / B201"]
+          }
+        ],
+        "MATH-22":[
+          {
+            "lesson":"History of Kyrgyzstan",
+            "time":"08:30-09:55",
+            "audience":"B201",
+            "teacher":"Mr. Amantur uulu Edilbek"
+          },
+          {
+            "lesson":"Differential equations",
+            "time":"10:00-12:10",
+            "audience":"B204",
+            "teacher":"Mr. Hussien Chebsi"
+          },
+          {
+            "lesson":"Meeting with an adviser",
+            "time":"12:15-12:55",
+            "audience":"B101",
+            "teacher":"Mr. Zhenishbek Orozakhunov"
+          },
+          {
+            "lesson":"LUNCH-TIME",
+            "time":"13:45-14:25"
+          },
+          {
+            "lesson":"ELECTIVES",
+            "time":"14:30-16:40",
+            "electives":["Startup: from idea to launch / Mr. Radmir Gumerov / B202","Web design / Mr. Zhavlon Khamidov / B211","Sociology / Edilova M. / B107","Accounting & Finance(14:00-16:30) / Dzhagasynova G / D 202","Crime Prevention and Legal Culture(15:40-18:00) / Dzhalgasynova G. / D202","Family psychology / Nurzat Kubanychbek kyzy / D106","First Aid / E bock 105","Pedagogy / Aikokul Mamaeva / B201"]
+          },
+          {
+            "lesson":"Kyrgyz Language for foreigners",
+            "time":"16:45-18:10",
+            "audience":"A209",
+            "teacher":"Ms. Altynai Saidalieva"
+          }
+        ],
+        "MATH-21":[
+          {
+            "lesson":"Probability and Statistics - ll",
+            "time":"08:30-09:55",
+            "audience":"B202",
+            "teacher":"Ms. Siren Kerimbaeva"
+          },
+          {
+            "lesson":"Meeting with an adviser",
+            "time":"10:00-10:40",
+            "audience":"C304",
+            "teacher":"Mr. Zhenishbek Orozakhunov"
+          },
+          {
+            "lesson":" Computer graphics",
+            "time":"10:45-12:10",
+            "audience":"Lab 5",
+            "teacher":"Dr. Sanjarbek Erdolatov"
+          },
+          {
+            "lesson":"Math elective (AI)",
+            "time":"12:15-13:40",
+            "audience":"Lab 5",
+            "teacher":"Dr. Ruslan Isaev"
+          }
+        ],
+        "MATH-20":[
+          {
+            "lesson":"Operating Systems",
+            "time":"08:30-10:40",
+            "audience":"Lab 5",
+            "teacher":"Mr. Imtiyaz Gulbarga"
+          },
+          {
+            "lesson":"Functional Analysis",
+            "time":"10:45-12:10",
+            "audience":"C007",
+            "teacher":"Mr. Esen Rakhmanov"
+          },
+          {
+            "lesson":"LUNCH-TIME",
+            "time":"12:15-12:55"
+          },
+          {
+            "lesson":"Meeting with an adviser",
+            "time":"13:00-13:40",
+            "audience":"B103",
+            "teacher":"Dr. Andrei Ermakov"
+          },
+          {
+            "lesson":"Game Theory",
+            "time":"13:45-15:10",
+            "audience":"B204",
+            "teacher":"Dr. Arslan Khan"
+          }
+        ],
         "COMSEP-23":[
           {
             "lesson":"Discrete Mathematics",
@@ -1131,10 +1415,94 @@
         "COM-20":[]
       },
       "friday":{
-        "MATDAIS-23":[],
-        "MATMIE-23":[],
-        "MATH-22":[],
-        "MATH-21":[],
+        "MATDAIS-23":[
+          {
+            "lesson":"Calculus - ll",
+            "time":"08:30-10:40",
+            "audience":"B201",
+            "teacher":"Mr. Hussien Chebsi"
+          },
+          {
+            "lesson":"Programming Languages - ll",
+            "time":"10:45-12:10",
+            "audience":"Lab 3",
+            "teacher":"Dr. Tauheed Khan"
+          },
+          {
+            "lesson":"Physical Education",
+            "time":"12:15-13:40",
+            "audience":"Gym",
+            "teacher":"Ms. Z. Kamchybekova"            
+          },
+          {
+            "lesson":"LUNCH-TIME",
+            "time":"13:45-14:25"
+          },
+          {
+            "lesson":"ELECTIVES",
+            "time":"14:30-16:40",
+            "electives":["Informatics l (14:30-17:25)/ Ms. Burul Shambetova / Lab5","Informatics ll (14:30-17:25)/ Mr. Imitiyaz Gulbarga / Lab4","Ecology (14:50-16:40) / Bekimbetova T. / B107","Introduction to Law(15:40-16:00) / Suleimanov A. / D206"]
+          }
+        ],
+        "MATMIE-23":[
+          {
+            "lesson":"Programming Languages - ll",
+            "time":"09:15-10:40",
+            "audience":"Lab 3",
+            "teacher":"Dr. Tauheed Khan"
+          },
+          {
+            "lesson":"Meeting with an adviser",
+            "time":"10:45-11:25",
+            "audience":"C107",
+            "teacher":"Mr. Zhenishbek Orozakhunov"
+          },
+          {
+            "lesson":"Physical Education",
+            "time":"12:15-13:40",
+            "audience":"Gym",
+            "teacher":"Ms. Z. Kamchybekova"            
+          },
+          {
+            "lesson":"LUNCH-TIME",
+            "time":"13:45-14:25"
+          },
+          {
+            "lesson":"ELECTIVES",
+            "time":"14:30-16:40",
+            "electives":["Informatics l (14:30-17:25)/ Ms. Burul Shambetova / Lab5","Informatics ll (14:30-17:25)/ Mr. Imitiyaz Gulbarga / Lab4","Ecology (14:50-16:40) / Bekimbetova T. / B107","Introduction to Law(15:40-16:00) / Suleimanov A. / D206"]
+          }
+        ],
+        "MATH-22":[
+          {
+            "lesson":"LANGUAGE_ELECTIVES",
+            "time":"08:30-10:40",
+            "electives":["German language / Ms. Aruuke / B202"]
+          },
+          {
+            "lesson":"Differential equations",
+            "time":"10:45-12:10",
+            "audience":"B203",
+            "teacher":"Mr. Hussien Chebsi"
+          },
+          {
+            "lesson":"LUNCH-TIME",
+            "time":"13:45-14:25"
+          },
+          {
+            "lesson":"ELECTIVES",
+            "time":"14:30-16:40",
+            "electives":["Informatics l (14:30-17:25)/ Ms. Burul Shambetova / Lab5","Informatics ll (14:30-17:25)/ Mr. Imitiyaz Gulbarga / Lab4","Ecology (14:50-16:40) / Bekimbetova T. / B107","Introduction to Law(15:40-16:00) / Suleimanov A. / D206"]
+          }
+        ],
+        "MATH-21":[
+          {
+            "lesson":"Industrial Internship",
+            "time":"08:30-16:40",
+            "audience":"unknown",
+            "teacher":"unknown"
+          }
+        ],
         "MATH-20":[],
         "COMSEP-23":[
           {

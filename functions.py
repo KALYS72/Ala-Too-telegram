@@ -49,7 +49,7 @@ def next_or_current_lesson_today(group):
     current_lesson = None
     next_lesson = None
     next_lesson_time = None
-    now = (datetime.strptime(datetime.strftime(datetime.now(), '%H:%M'), '%H:%M') + timedelta(hours=6)).strftime('%H:%M')
+    now = (datetime.strptime(datetime.strftime(datetime.now(), '%H:%M'), '%H:%M')).strftime('%H:%M')
     today_name = datetime.now().strftime("%A").lower()
     today_schedule = week["days"].get(today_name, {}).get(group, {})
     now_minutes = time_to_minutes(now)
@@ -73,7 +73,7 @@ def next_or_current_lesson_today(group):
     return current_lesson, next_lesson, today_name, group, lesson_id
 
 def time_left(end_time, state):
-    current_time = (datetime.strptime(datetime.strftime(datetime.now(), '%H:%M'), '%H:%M') + timedelta(hours=6)).strftime('%H:%M')
+    current_time = (datetime.strptime(datetime.strftime(datetime.now(), '%H:%M'), '%H:%M')).strftime('%H:%M')
     end_time_datetime = datetime.strptime(end_time, "%H:%M")
     end_time_hour = datetime.strftime(end_time_datetime, "%H:%M")
     time_difference = time_to_minutes(end_time_hour) - time_to_minutes(current_time)
